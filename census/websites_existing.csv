@@ -1,0 +1,534 @@
+region_slug,company,website
+biotech_beach,Aardvark Therapeutics,https://aardvarktherapeutics.com
+biotech_beach,Acadia Pharmaceuticals,https://www.acadia.com
+biotech_beach,ADARx Pharmaceuticals,https://www.adarx.com
+biotech_beach,AnaptysBio,https://www.anaptys.com
+biotech_beach,Arcturus Therapeutics,https://arcturusrx.com
+biotech_beach,ARS Pharmaceuticals,https://ars-pharma.com
+biotech_beach,Atrium Therapeutics,https://www.atriumtx.com
+biotech_beach,Belite Bio,https://www.belitebio.com
+biotech_beach,BlossomHill Therapeutics,https://www.blossomhilltx.com
+biotech_beach,Capricor Therapeutics,https://www.capricor.com
+biotech_beach,Connect Biopharma Holdings Ltd,https://www.connectbiopharm.com
+biotech_beach,Contineum Therapeutics,https://www.contineum-tx.com
+biotech_beach,Dare Bioscience,https://www.darebioscience.com
+biotech_beach,Dermata Therapeutics,https://www.dermatarx.com
+biotech_beach,Erasca,https://www.erasca.com
+biotech_beach,First Tracks Biotherapeutics,https://www.firsttracksbio.com
+biotech_beach,Gossamer Bio,https://www.gossamerbio.com
+biotech_beach,Gyre Therapeutics,https://www.gyretx.com
+biotech_beach,Heron Therapeutics,https://www.herontx.com
+biotech_beach,Janux Therapeutics,https://www.januxrx.com
+biotech_beach,Kura Oncology,https://kuraoncology.com
+biotech_beach,Ligand Pharmaceuticals,https://www.ligand.com
+biotech_beach,Maravai LifeSciences Holdings (incl. TriLink BioTechnologies),https://www.maravai.com
+biotech_beach,Oncolytics Biotech,https://www.oncolyticsbiotech.com
+biotech_beach,Revelation Biosciences,https://www.revbiosciences.com
+biotech_beach,Skye Bioscience,https://skyebioscience.com
+biotech_beach,Travere Therapeutics,https://travere.com
+biotech_beach,Viking Therapeutics,https://www.vikingtherapeutics.com
+biotech_beach,Zentalis Pharmaceuticals,https://www.zentalis.com
+biotech_beach,QuidelOrtho,https://www.quidelortho.com
+biotech_beach,Artiva Biotherapeutics,https://www.artivabio.com
+biotech_beach,aTyr Pharma,https://www.atyrpharma.com
+biotech_beach,Calidi Biotherapeutics,https://www.calidibio.com
+biotech_beach,Cardiff Oncology,https://www.cardiffoncology.com
+biotech_beach,Fate Therapeutics,https://fatetherapeutics.com
+biotech_beach,Halozyme Therapeutics,https://www.halozyme.com
+biotech_beach,Iambic Therapeutics,https://www.iambic.ai
+biotech_beach,ImageneBio,https://www.imagenebio.com
+biotech_beach,ImmunityBio,https://immunitybio.com
+biotech_beach,Neurocrine Biosciences,https://www.neurocrine.com
+biotech_beach,VivoSim Labs,https://vivosim.ai
+biotech_beach,Bionano Genomics,https://bionano.com
+biotech_beach,Illumina,https://www.illumina.com
+biotech_beach,Cibus,https://www.cibus.com
+biotech_beach,Evofem Biosciences,https://www.evofem.com
+biotech_beach,Design Therapeutics,https://www.designtx.com
+biotech_beach,Ionis Pharmaceuticals,https://www.ionis.com
+biotech_beach,Tyra Biosciences,https://tyra.bio
+biotech_beach,Lineage Cell Therapeutics,https://lineagecell.com
+biotech_beach,Palisade Bio,https://palisadebio.com
+biotech_beach,Exagen,https://exagen.com
+biotech_beach,Kiora Pharmaceuticals,https://kiorapharma.com
+biotech_beach,LENZ Therapeutics,https://www.lenz-tx.com
+biotech_beach,Artelo Biosciences,https://artelobio.com
+biotech_beach,Boundless Bio,https://www.boundlessbio.com
+biotech_beach,CalciMedica,https://calcimedica.com
+biotech_beach,Ensysce Biosciences,https://ensysce.com
+biotech_beach,Equillium,https://www.equilliumbio.com
+biotech_beach,GRI Bio,https://gribio.com
+biotech_beach,MediciNova,https://medicinova.com
+biotech_beach,Inhibrx Biosciences,https://www.inhibrx.com
+biotech_beach,Zura Bio,https://zurabio.com
+biotech_beach,AEON Biopharma,https://aeonbiopharma.com
+biotech_beach,Eledon Pharmaceuticals,https://eledon.com
+biotech_beach,Biomerica,https://www.biomerica.com
+biotech_beach,Tarsus Pharmaceuticals,https://tarsusrx.com
+biotech_beach,SpyGlass Pharma,https://www.spyglasspharma.com
+biotech_beach,Evolus,https://www.evolus.com
+biotech_beach,Vyome Holdings,https://vyometx.com
+biotech_beach,Fulgent Genetics,https://www.fulgentgenetics.com
+biotech_beach,Immix Biopharma,https://immixbio.com
+biotech_beach,Kairos Pharma,https://kairospharma.com
+biotech_beach,Puma Biotechnology,https://www.pumabiotechnology.com
+biotech_beach,Armata Pharmaceuticals,https://www.armatapharma.com
+biotech_beach,eXoZymes,https://exozymes.com
+biotech_beach,Arrowhead Pharmaceuticals,https://arrowheadpharma.com
+biotech_beach,Xencor,https://xencor.com
+biotech_beach,Liminatus Pharma,https://www.liminatuspharma.com
+biotech_beach,Apollomics,https://www.apollomicsinc.com
+biotech_beach,NeOnc Technologies Holdings,https://neonc.com
+biotech_beach,Lunai Bioworks,https://lunaibio.com
+biotech_beach,Amgen,https://www.amgen.com
+biotech_beach,Atara Biotherapeutics,https://www.atarabio.com
+biotech_beach,Latigo Biotherapeutics,https://www.latigobio.com
+biotech_beach,Arcutis Biotherapeutics,https://www.arcutis.com
+biotech_beach,Genelux,https://genelux.com
+biotech_beach,Turn Therapeutics,https://turntherapeutics.com
+biotech_beach,Emmaus Life Sciences,https://emmausmedical.com
+biotech_beach,Arrowhead Pharmaceuticals,https://arrowheadpharma.com
+biotech_beach,Eli Lilly and Company (Lilly Biotechnology Center / Gateway Labs San Diego),https://www.lilly.com
+biotech_beach,Bristol Myers Squibb (San Diego R&D hub),https://www.bms.com
+biotech_beach,Pfizer (Oncology R&D San Diego),https://www.pfizer.com
+biotech_beach,Novartis (Biomedical Research San Diego),https://www.novartis.com
+biotech_beach,Novartis (Carlsbad radioligand therapy plant),https://www.novartis.com
+biotech_beach,Genentech (Roche) Oceanside,https://www.gene.com
+biotech_beach,Kite Pharma (Gilead) headquarters,https://www.kitepharma.com
+biotech_beach,Kite Pharma (Gilead) El Segundo manufacturing,https://www.kitepharma.com
+biotech_beach,Gilead Sciences Oceanside,https://www.gilead.com
+biotech_beach,Gilead Sciences La Verne,https://www.gilead.com
+biotech_beach,"Vertex Pharmaceuticals (ex-Crinetics, San Diego)",https://www.vrtx.com
+biotech_beach,Bayer (Vividion Therapeutics),https://www.vividion.com
+biotech_beach,Merck & Co. (Merck Research Labs San Diego),https://www.merck.com
+biotech_beach,"Lundbeck (La Jolla, ex-Longboard)",https://www.lundbeck.com
+biotech_beach,Siegfried Irvine,https://www.siegfried.ch
+biotech_beach,Bachem Americas,https://www.bachem.com
+biotech_beach,Avid Bioservices,https://www.avidbio.com
+biotech_beach,Crown Bioscience,https://www.crownbio.com
+biotech_beach,FUJIFILM Biosciences (Irvine Scientific),https://www.fujifilm.com
+biotech_beach,Pacira BioSciences (San Diego Science Center Campus),https://www.pacira.com
+biotech_beach,Mirador Therapeutics,https://www.miradortx.com
+biotech_beach,Candid Therapeutics,
+biotech_beach,Avenzo Therapeutics,https://www.avenzotx.com
+biotech_beach,Crystalys Therapeutics,https://www.crystalystx.com
+biotech_beach,Timberlyne Therapeutics,https://www.timberlyne.com
+biotech_beach,Protego Biopharma,https://www.protegobio.com
+biotech_beach,Aspen Neuroscience,https://www.aspenneuroscience.com
+biotech_beach,Tr1X,https://www.tr1x.bio
+biotech_beach,Neomorph,https://www.neomorph.com
+biotech_beach,Sidewinder Therapeutics,
+biotech_beach,Ray Therapeutics,https://www.raytherapeutics.com
+biotech_beach,RayThera,
+biotech_beach,Rakuten Medical,https://rakuten-med.com
+biotech_beach,Recludix Pharma,https://www.recludixpharma.com
+biotech_beach,Actio Biosciences,https://www.actiobio.com
+biotech_beach,Arnatar Therapeutics,https://www.arnatar.com
+biotech_beach,Enlaza Therapeutics,https://www.enlazatx.com
+biotech_beach,Endeavor BioMedicines,https://www.endeavorbiomedicines.com
+biotech_beach,A2 Biotherapeutics,https://www.a2bio.com
+biotech_beach,Neurelis,https://www.neurelis.com
+biotech_beach,Salk Institute for Biological Studies,https://www.salk.edu
+biotech_beach,Scripps Research,https://www.scripps.edu
+biotech_beach,Sanford Burnham Prebys,https://sbpdiscovery.org
+biotech_beach,La Jolla Institute for Immunology,https://www.lji.org
+biotech_beach,UC San Diego,https://ucsd.edu
+biotech_beach,JLABS @ San Diego (Johnson & Johnson),https://jnjinnovation.com
+biotech_beach,UC Irvine,https://uci.edu
+biotech_beach,Ucla,https://www.ucla.edu
+genetown,908 Devices Inc.,https://908devices.com
+genetown,"Acrivon Therapeutics, Inc.",https://acrivon.com
+genetown,"Acumen Pharmaceuticals, Inc.",https://acumenpharm.com
+genetown,"Adicet Bio, Inc.",https://www.adicetbio.com
+genetown,Agenus,https://agenusbio.com
+genetown,Agios Pharmaceuticals,https://www.agios.com
+genetown,"Akebia Therapeutics, Inc.",https://akebia.com
+genetown,"Aktis Oncology, Inc.",https://www.aktisoncology.com
+genetown,"Aldeyra Therapeutics, Inc.",https://www.aldeyra.com
+genetown,"Allarity Therapeutics, Inc.",https://allarity.com
+genetown,Alnylam Pharmaceuticals,https://www.alnylam.com
+genetown,"Amylyx Pharmaceuticals, Inc.",https://www.amylyx.com
+genetown,"Anika Therapeutics, Inc.",https://www.anika.com
+genetown,"Apnimed, Inc.",https://apnimed.com
+genetown,"Atea Pharmaceuticals, Inc.",https://ateapharma.com
+genetown,"Aura Biosciences, Inc.",https://aurabiosciences.com
+genetown,Avalyn Pharma Inc.,https://avalynpharma.com
+genetown,"Azenta, Inc.",https://www.azenta.com
+genetown,Beam Therapeutics Inc.,https://beamtx.com
+genetown,Bicara Therapeutics Inc.,https://www.bicara.com
+genetown,Biofrontera Inc.,https://www.biofrontera-us.com
+genetown,Biogen,https://www.biogen.com
+genetown,"Black Diamond Therapeutics, Inc.",https://www.blackdiamondtherapeutics.com
+genetown,"Bluejay Diagnostics, Inc.",https://bluejaydx.com
+genetown,Bone Biologics Corp,https://www.bonebiologics.com
+genetown,Bruker,https://www.bruker.com
+genetown,"C4 Therapeutics, Inc.",https://c4therapeutics.com
+genetown,Camp4 Therapeutics Corp,https://camp4tx.com
+genetown,"Candel Therapeutics, Inc.",https://www.candeltx.com
+genetown,CervoMed Inc.,https://www.cervomed.com
+genetown,Charles River Laboratories,https://www.criver.com
+genetown,City Therapeutics,https://www.citytherapeutics.com
+genetown,"Climb Bio, Inc.",https://climbbio.com
+genetown,"Cogent Biosciences, Inc.",https://www.cogentbio.com
+genetown,Collegium Pharmaceutical,https://www.collegiumpharma.com
+genetown,"Compass Therapeutics, Inc.",https://www.compasstherapeutics.com
+genetown,"Corbus Pharmaceuticals Holdings, Inc.",https://corbuspharma.com
+genetown,Crescent Biopharma,https://crescentbiopharma.com
+genetown,"Cue Biopharma, Inc.",https://www.cuebiopharma.com
+genetown,"Cullinan Therapeutics, Inc.",https://cullinantherapeutics.com
+genetown,Curis,https://www.curis.com
+genetown,"Damora Therapeutics, Inc.",https://www.damoratx.com
+genetown,"Disc Medicine, Inc.",https://www.discmedicine.com
+genetown,"Dyne Therapeutics, Inc.",https://www.dyne-tx.com
+genetown,"Editas Medicine, Inc.",https://www.editasmedicine.com
+genetown,"Elicio Therapeutics, Inc.",https://elicio.com
+genetown,Enanta Pharmaceuticals,https://www.enanta.com
+genetown,"Entrada Therapeutics, Inc.",https://www.entradatx.com
+genetown,"Enveric Biosciences, Inc.",https://www.enveric.com
+genetown,Ernexa Therapeutics Inc.,https://ernexatx.com
+genetown,"EyePoint, Inc.",https://eyepointpharma.com
+genetown,Foghorn Therapeutics Inc.,https://foghorntx.com
+genetown,Fractyl Health,https://www.fractyl.com
+genetown,"Fulcrum Therapeutics, Inc.",https://www.fulcrumtx.com
+genetown,"Generate Biomedicines, Inc.",https://generatebiomedicines.com
+genetown,"Ginkgo Bioworks Holdings, Inc.",https://www.ginkgobioworks.com
+genetown,Harvard Bioscience,https://www.harvardbioscience.com
+genetown,"Hemab Therapeutics Holdings, Inc.",https://www.hemab.com
+genetown,Immuneering Corp,https://immuneering.com
+genetown,"Intellia Therapeutics, Inc.",https://www.intelliatx.com
+genetown,Ironwood Pharmaceuticals,https://www.ironwoodpharma.com
+genetown,iSpecimen Inc.,https://www.ispecimen.com
+genetown,"Jade Biosciences, Inc.",https://www.jadebiosciences.com
+genetown,"Kailera Therapeutics, Inc.",https://www.kailera.com
+genetown,KALA BIO,https://kalarx.com
+genetown,Karyopharm Therapeutics Inc.,https://www.karyopharm.com
+genetown,"Keros Therapeutics, Inc.",https://www.kerostx.com
+genetown,"Korro Bio, Inc.",https://korrobio.com
+genetown,"Korsana Biosciences, Inc.",
+genetown,"Kymera Therapeutics, Inc.",https://www.kymeratx.com
+genetown,"Lantheus Holdings, Inc.",https://www.lantheus.com
+genetown,MetaVia Inc.,https://metaviatx.com
+genetown,"Minerva Neurosciences, Inc.",https://minervaneurosciences.com
+genetown,"Moderna, Inc.",https://www.modernatx.com
+genetown,"Monte Rosa Therapeutics, Inc.",https://www.monterosatx.com
+genetown,Mustang Bio,https://www.mustangbio.com
+genetown,"Neumora Therapeutics, Inc.",https://neumoratx.com
+genetown,Neuphoria Therapeutics Inc.,https://neuphoriatx.com
+genetown,"Obsidian Therapeutics, Inc.",https://obsidiantx.com
+genetown,Ocular Therapeutix,https://www.ocutx.com
+genetown,"Odyssey Therapeutics, Inc.",https://odysseytx.com
+genetown,Organogenesis Holdings Inc.,https://organogenesis.com
+genetown,"Parabilis Medicines, Inc.",https://www.parabilismed.com
+genetown,PepGen Inc.,https://pepgen.com
+genetown,"Praxis Precision Medicines, Inc.",https://praxismedicines.com
+genetown,"Prime Medicine, Inc.",https://primemedicine.com
+genetown,"Pulmatrix, Inc.",https://www.pulmatrix.com
+genetown,"Pyxis Oncology, Inc.",https://pyxisoncology.com
+genetown,Q32 Bio Inc.,https://www.q32bio.com
+genetown,Quanterix Corp,https://www.quanterix.com
+genetown,Rapid Micro Biosystems,https://www.rapidmicrobio.com
+genetown,"Rapport Therapeutics, Inc.",https://www.rapportrx.com
+genetown,"Relay Therapeutics, Inc.",https://relaytx.com
+genetown,Repligen,https://www.repligen.com
+genetown,"Replimune Group, Inc.",https://replimune.com
+genetown,Revvity,https://www.revvity.com
+genetown,Rhythm Pharmaceuticals,https://www.rhythmtx.com
+genetown,"Sarepta Therapeutics, Inc.",https://www.sarepta.com
+genetown,Scholar Rock Holding Corp,https://scholarrock.com
+genetown,"Seaport Therapeutics, Inc.",https://seaporttx.com
+genetown,"Seres Therapeutics, Inc.",https://www.serestherapeutics.com
+genetown,"Sionna Therapeutics, Inc.",https://sionnatx.com
+genetown,Solid Biosciences Inc.,https://www.solidbio.com
+genetown,"Spero Therapeutics, Inc.",https://sperotherapeutics.com
+genetown,"Spyre Therapeutics, Inc.",https://spyre.com
+genetown,Standard BioTools,https://www.standardbio.com
+genetown,"Stoke Therapeutics, Inc.",https://www.stoketherapeutics.com
+genetown,"Tango Therapeutics, Inc.",https://www.tangotx.com
+genetown,"Tectonic Therapeutic, Inc.",https://tectonictx.com
+genetown,Thermo Fisher Scientific,https://www.thermofisher.com
+genetown,"TScan Therapeutics, Inc.",https://tscan.com
+genetown,"Upstream Bio, Inc.",https://upstreambio.com
+genetown,"Verastem, Inc.",https://www.verastem.com
+genetown,Vericel Corp,https://www.vcel.com
+genetown,Vertex Pharmaceuticals,https://www.vrtx.com
+genetown,"Viridian Therapeutics, Inc.",https://www.viridiantherapeutics.com
+genetown,Vor Biopharma Inc.,https://www.vorbio.com
+genetown,"Voyager Therapeutics, Inc.",https://www.voyagertherapeutics.com
+genetown,Waters Corporation,https://www.waters.com
+genetown,"Wave Life Sciences, Inc.",https://wavelifesciences.com
+genetown,"Werewolf Therapeutics, Inc.",https://werewolftx.com
+genetown,"X4 Pharmaceuticals, Inc",https://www.x4pharma.com
+genetown,"Xenetic Biosciences, Inc.",https://www.xeneticbio.com
+genetown,"Xilio Therapeutics, Inc.",https://www.xiliotx.com
+genetown,"Zenas BioPharma, Inc.",https://www.zenasbio.com
+genetown,Zevra Therapeutics,https://zevra.com
+genetown,Takeda,https://www.takeda.com
+genetown,Takeda,https://www.takeda.com
+genetown,Sanofi,https://www.sanofi.com
+genetown,Sanofi,https://www.sanofi.com
+genetown,Pfizer,https://www.pfizer.com
+genetown,Pfizer,https://www.pfizer.com
+genetown,Bristol Myers Squibb,https://www.bms.com
+genetown,Novartis,https://www.novartis.com
+genetown,AbbVie,https://www.abbvie.com
+genetown,AbbVie,https://www.abbvie.com
+genetown,AstraZeneca,https://www.astrazeneca.com
+genetown,AstraZeneca (Alexion),https://alexion.com
+genetown,Eli Lilly and Company,https://www.lilly.com
+genetown,Merck & Co.,https://www.merck.com
+genetown,GSK,https://www.gsk.com
+genetown,Amgen,https://www.amgen.com
+genetown,EMD Serono (Merck KGaA),https://www.emdserono.com
+genetown,MilliporeSigma,https://www.emdgroup.com
+genetown,Moderna,https://www.modernatx.com
+genetown,Foundation Medicine (Roche),https://www.foundationmedicine.com
+genetown,Alkermes,https://www.alkermes.com
+genetown,Sumitomo Pharma America,https://www.us.sumitomo-pharma.com
+genetown,ITF Therapeutics,https://www.itftherapeutics.com
+genetown,CBSET,https://www.cbset.org
+genetown,Genezen,https://genezen.com
+genetown,Dana-Farber Cancer Institute,https://www.dana-farber.org
+genetown,MassBio,https://www.massbio.org
+genetown,Broad Institute of MIT and Harvard,https://www.broadinstitute.org
+genetown,LabCentral,https://www.labcentral.org
+genetown,Treeline Biosciences,https://www.treeline.bio
+genetown,Beeline Medicines,https://www.beelinemedicines.com
+genetown,Lila Sciences,https://www.lila.ai
+genetown,Souffle Therapeutics,https://www.souffletx.com
+genetown,Cardurion Pharmaceuticals,https://www.cardurion.com
+biocapital,Incyte,https://www.incyte.com
+biocapital,Danaher,https://www.danaher.com
+biocapital,Novavax,https://www.novavax.com
+biocapital,Emergent BioSolutions,https://www.emergentbiosolutions.com
+biocapital,Supernus Pharmaceuticals,https://www.supernus.com
+biocapital,MacroGenics,https://www.macrogenics.com
+biocapital,REGENXBIO,https://www.regenxbio.com
+biocapital,Cartesian Therapeutics,https://www.cartesiantherapeutics.com
+biocapital,NextCure,https://www.nextcure.com
+biocapital,Vanda Pharmaceuticals,https://www.vandapharma.com
+biocapital,United Therapeutics,https://www.unither.com
+biocapital,Precigen,https://precigen.com
+biocapital,Altimmune,https://altimmune.com
+biocapital,Senseonics,https://www.senseonics.com
+biocapital,MaxCyte,https://maxcyte.com
+biocapital,Prelude Therapeutics,https://preludetx.com
+biocapital,Indivior,https://www.indivior.com
+biocapital,Zymeworks,https://www.zymeworks.com
+biocapital,CEL-SCI,https://cel-sci.com
+biocapital,NovaBridge Biosciences,https://www.novabridgebio.com
+biocapital,Gain Therapeutics,https://www.gaintherapeutics.com
+biocapital,Theriva Biologics,https://therivabio.com
+biocapital,NRx Pharmaceuticals,https://www.nrxpharma.com
+biocapital,Inhibikase Therapeutics,https://www.inhibikase.com
+biocapital,IGC Pharma,https://igcpharma.com
+biocapital,Shuttle Pharmaceuticals,https://shuttlepharma.com
+biocapital,OS Therapies,https://ostherapies.com
+biocapital,BullFrog AI,https://bullfrogai.com
+biocapital,Elutia,https://elutia.com
+biocapital,20/20 Biolabs,https://2020gene.com
+biocapital,Adial Pharmaceuticals,https://www.adial.com
+biocapital,Quoin Pharmaceuticals,https://quoinpharma.com
+biocapital,60 Degrees Pharmaceuticals,https://60degreespharma.com
+biocapital,Retension Pharmaceuticals,https://retensionpharma.com
+biocapital,AstraZeneca,https://www.astrazeneca.com
+biocapital,AstraZeneca,https://www.astrazeneca.com
+biocapital,GSK,https://www.gsk.com
+biocapital,Eisai,https://www.eisai.com
+biocapital,Merck & Co.,https://www.merck.com
+biocapital,Eli Lilly,https://www.lilly.com
+biocapital,Kite Pharma (Gilead),https://www.kitepharma.com
+biocapital,Novo Nordisk,https://www.novonordisk.com
+biocapital,Haleon,https://www.haleon.com
+biocapital,Lonza,https://www.lonza.com
+biocapital,Thermo Fisher Scientific (Life Technologies),https://www.thermofisher.com
+biocapital,Thermo Fisher Scientific (PPD),https://www.ppd.com
+biocapital,Catalent,https://www.catalent.com
+biocapital,Catalent,https://www.catalent.com
+biocapital,MilliporeSigma (BioReliance),https://www.emdgroup.com
+biocapital,Bora Pharmaceuticals (Bora Biologics),https://www.borabiologics.com
+biocapital,Bora Pharmaceuticals (Injectables),https://bora-corp.com
+biocapital,Syngene International,https://www.syngeneintl.com
+biocapital,Pharmaceutics International (Pii),https://pharm-int.com
+biocapital,Afton Scientific,https://www.aftonscientific.com
+biocapital,Civica Rx,https://civicarx.org
+biocapital,Phlow,https://www.phlow-usa.com
+biocapital,Noramco,https://www.noramco.com
+biocapital,Wilmington PharmaTech,https://www.wilmingtonpharmatech.com
+biocapital,Fareva Richmond,https://www.fareva.com
+biocapital,Siemens Healthineers,https://www.siemens-healthineers.com
+biocapital,BD (Becton Dickinson),https://www.bd.com
+biocapital,Qiagen,https://www.qiagen.com
+biocapital,ATCC,https://www.atcc.org
+biocapital,ATCC,https://www.atcc.org
+biocapital,Glen Research (Maravai),https://www.glenresearch.com
+biocapital,Meso Scale Diagnostics,https://www.mesoscale.com
+biocapital,Kaleo,https://kaleo.com
+biocapital,TechLab,https://www.techlab.com
+biocapital,LifeNet Health,https://www.lifenethealth.org
+biocapital,Delfi Diagnostics,https://delfidiagnostics.com
+biocapital,Rivus Pharmaceuticals,https://www.rivuspharma.com
+biocapital,NiKang Therapeutics,https://www.nikangtx.com
+biocapital,Kolon TissueGene,https://www.tissuegene.com
+biocapital,Zephyr AI,https://www.zephyrai.bio
+biocapital,Synnovation Therapeutics,https://www.synnovationtx.com
+biocapital,Georgiamune,https://www.georgiamune.com
+biocapital,ReAlta Life Sciences,https://www.realtalifesciences.com
+biocapital,ManaT Bio,
+biocapital,Contraline,https://www.contraline.com
+biocapital,OncoC4,https://www.oncoc4.com
+biocapital,Frederick National Laboratory for Cancer Research,https://frederick.cancer.gov
+biocapital,National Institutes of Health,https://www.nih.gov
+biocapital,Johns Hopkins Science + Technology Park (Rangos Building),https://www.jhu.edu
+biocapital,University of Maryland BioPark,https://www.umbiopark.com
+biocapital,Delaware Innovation Space,https://www.delawareinnovationspace.org
+biocapital,"JLABS @ Washington, DC",https://jnjinnovation.com
+biocapital,University of Virginia,https://www.virginia.edu
+biocapital,Virginia Bio+Tech Park,
+biomidwest,Vanqua Bio,https://www.vanquabio.com
+biomidwest,Pathos AI,https://www.pathos.com
+biomidwest,COUR Pharmaceuticals,https://www.courpharma.com
+biomidwest,Emalex Biosciences,
+biomidwest,Wugen,https://wugen.com
+biomidwest,C2N Diagnostics,https://c2n.com
+biomidwest,Geneoscopy,https://www.geneoscopy.com
+biomidwest,Sling Therapeutics,https://slingtx.com
+biomidwest,Syndeio Biosciences,https://www.syndeio.bio
+biomidwest,Resilience (National Resilience),https://resilience.com
+biomidwest,Resilience (National Resilience),https://resilience.com
+biomidwest,Enable Injections,https://enableinjections.com
+biomidwest,Meridian Bioscience,https://www.meridianbioscience.com
+biomidwest,NorthStar Medical Radioisotopes,https://www.northstarnm.com
+biomidwest,Ferring Microbiome (Rebiotix),https://www.ferring.com
+biomidwest,Sagent Pharmaceuticals,https://www.sagentpharma.com
+biomidwest,Fresenius Kabi USA,https://www.fresenius-kabi.com
+biomidwest,Promega,https://www.promega.com
+biomidwest,Curium US,https://www.curiumpharma.com
+biomidwest,Curium US,https://www.curiumpharma.com
+biomidwest,Roche Diagnostics,https://diagnostics.roche.com
+biomidwest,Novo Nordisk,https://www.novonordisk.com
+biomidwest,Simtra BioPharma Solutions,https://simtra.com
+biomidwest,Evonik (Tippecanoe Laboratories),https://www.evonik.com
+biomidwest,CSL Behring,https://www.cslbehring.com
+biomidwest,Catalent,https://www.catalent.com
+biomidwest,Sterling Pharma Solutions,https://www.sterlingpharmasolutions.com
+biomidwest,Amgen,https://www.amgen.com
+biomidwest,MilliporeSigma (Merck KGaA),https://www.emdgroup.com
+biomidwest,Zoetis,https://www.zoetis.com
+biomidwest,Eli Lilly and Company,https://www.lilly.com
+biomidwest,Abbott Laboratories (Exact Sciences),https://www.exactsciences.com
+biomidwest,H. Lundbeck (Lundbeck US),https://www.lundbeck.com
+biomidwest,Astellas Pharma US,https://www.astellas.com
+biomidwest,Pfizer,https://www.pfizer.com
+biomidwest,Pfizer,https://www.pfizer.com
+biomidwest,Thermo Fisher Scientific (Patheon),https://www.patheon.com
+biomidwest,Thermo Fisher Scientific (Patheon),https://www.patheon.com
+biomidwest,Perrigo,https://www.perrigo.com
+biomidwest,Upsher-Smith Laboratories,https://www.upsher-smith.com
+biomidwest,Danaher (Aldevron),https://www.aldevron.com
+biomidwest,Danaher (Integrated DNA Technologies),https://www.idtdna.com
+biomidwest,Enable Injections,https://enableinjections.com
+biomidwest,Forge Biologics (Ajinomoto),https://forgebiologics.com
+biomidwest,SimBioSys,https://www.simbiosys.com
+biomidwest,Andelyn Biosciences,https://www.andelynbio.com
+biomidwest,Portal Innovations / Fulton Labs,https://www.portalinnovations.com
+biomidwest,Northwestern University (Feinberg School of Medicine),https://www.feinberg.northwestern.edu
+biomidwest,University of Chicago,https://www.uchicago.edu
+biomidwest,Cortex Innovation Community (with Washington University),https://www.cortexstl.org
+biomidwest,Cleveland Clinic (Lerner Research Institute),https://www.lerner.ccf.org
+biomidwest,Mayo Clinic,https://www.mayoclinic.org
+biomidwest,16 Tech Innovation District / Indiana Biosciences Research Institute,https://www.indianabiosciences.org
+biomidwest,University of Wisconsin-Madison / University Research Park,https://universityresearchpark.org
+biomidwest,SHINE Technologies,https://www.shinefusion.com
+biomidwest,Abbott Laboratories,https://www.abbott.com
+biomidwest,AbbVie,https://www.abbvie.com
+biomidwest,Baxter International,https://www.baxter.com
+biomidwest,Bright Minds Biosciences,https://brightmindsbio.com
+biomidwest,Exicure,
+biomidwest,Eton Pharmaceuticals,https://www.etonpharma.com
+biomidwest,MAIA Biotechnology,https://maiabiotech.com
+biomidwest,Monopar Therapeutics,https://www.monopartx.com
+biomidwest,Xeris Biopharma,https://www.xerispharma.com
+biomidwest,Cardio Diagnostics Holdings,https://cardiodiagnosticsinc.com
+biomidwest,Tempus AI,https://www.tempus.com
+biomidwest,Eli Lilly and Company,https://www.lilly.com
+biomidwest,Elanco Animal Health,https://www.elanco.com
+biomidwest,MBX Biosciences,https://www.mbxbio.com
+biomidwest,Neogen,https://www.neogen.com
+biomidwest,Rockwell Medical,https://www.rockwellmed.com
+biomidwest,Bio-Techne,
+biomidwest,Celcuity,https://www.celcuity.com
+biomidwest,DiaMedica Therapeutics,https://www.diamedica.com
+biomidwest,Lifecore Biomedical,https://www.lifecore.com
+biomidwest,Abeona Therapeutics,https://www.abeonatherapeutics.com
+biomidwest,Onconetix,https://onconetix.com
+biomidwest,Medpace Holdings,https://www.medpace.com
+biomidwest,Mettler-Toledo International,https://www.mt.com
+biomidwest,Sotera Health,https://soterahealth.com
+bio_nc,Tenax Therapeutics,https://www.tenaxthera.com
+bio_nc,BioCryst Pharmaceuticals,https://www.biocryst.com
+bio_nc,Labcorp,https://www.labcorp.com
+bio_nc,Fennec Pharmaceuticals,https://fennecpharma.com
+bio_nc,Opus Genetics,https://opusgtx.com
+bio_nc,Precision BioSciences,https://precisionbiosciences.com
+bio_nc,IQVIA,https://www.iqvia.com
+bio_nc,vTv Therapeutics,https://vtvtherapeutics.com
+bio_nc,Bioventus,https://www.bioventus.com
+bio_nc,Immunovant,https://www.immunovant.com
+bio_nc,Humacyte,https://humacyte.com
+bio_nc,Liquidia,https://www.liquidia.com
+bio_nc,ProKidney,https://prokidney.com
+bio_nc,Vogenx,https://www.vogenx.com
+bio_nc,Pelthos Therapeutics,https://pelthos.com
+bio_nc,Fortrea,https://www.fortrea.com
+bio_nc,United Therapeutics (RTP co-headquarters),https://www.unither.com
+bio_nc,Novo Nordisk (Clayton),https://www.novonordisk.com
+bio_nc,FUJIFILM Biotechnologies (Holly Springs),https://www.fujifilm.com
+bio_nc,Amgen (Holly Springs),https://www.amgen.com
+bio_nc,Genentech (Holly Springs),https://www.gene.com
+bio_nc,Eli Lilly (Research Triangle Park),https://www.lilly.com
+bio_nc,Eli Lilly (Concord),https://www.lilly.com
+bio_nc,Biogen (RTP),https://www.biogen.com
+bio_nc,Grifols (Clayton),https://www.grifols.com
+bio_nc,Pfizer (Sanford),https://www.pfizer.com
+bio_nc,Pfizer (Rocky Mount),https://www.pfizer.com
+bio_nc,Merck (Durham),https://www.merck.com
+bio_nc,Merck (Wilson),https://www.merck.com
+bio_nc,AbbVie (Durham County),https://www.abbvie.com
+bio_nc,"Novartis (Morrisville, Pathway Triangle)",https://www.novartis.com
+bio_nc,Novartis (Durham gene therapy),https://www.novartis.com
+bio_nc,Johnson & Johnson (Wilson),https://www.jnj.com
+bio_nc,CSL Seqirus (Holly Springs),https://www.cslseqirus.us
+bio_nc,Kyowa Kirin (Sanford),https://www.kyowakirin.com
+bio_nc,Astellas Gene Therapies (Sanford),https://www.astellas.com
+bio_nc,AskBio (Bayer),https://www.askbio.com
+bio_nc,Thermo Fisher Scientific (Greenville),https://www.thermofisher.com
+bio_nc,Chiesi USA,https://www.chiesiusa.com
+bio_nc,OXB (Oxford Biomedica US),https://www.oxb.com
+bio_nc,Ypsomed Manufacturing USA,https://www.ypsomed.com
+bio_nc,GRAIL (RTP laboratory),https://grail.com
+bio_nc,Charles River Laboratories,https://www.criver.com
+bio_nc,Cosette Pharmaceuticals (Lincolnton),https://cosettepharma.com
+bio_nc,Syneos Health,https://www.syneoshealth.com
+bio_nc,Parexel,https://www.parexel.com
+bio_nc,Allucent,https://www.allucent.com
+bio_nc,Rho,https://www.rhoworld.com
+bio_nc,Premier Research (North America),https://premier-research.com
+bio_nc,Metabolon,https://www.metabolon.com
+bio_nc,Sprout Pharmaceuticals,https://www.sproutpharma.com
+bio_nc,Marius Pharmaceuticals,https://mariuspharma.com
+bio_nc,Accord BioPharma,https://www.accordbiopharma.com
+bio_nc,Mycovia Pharmaceuticals,https://mycovia.com
+bio_nc,Kriya Therapeutics,https://www.kriyatx.com
+bio_nc,Tune Therapeutics,https://tunetx.com
+bio_nc,Atsena Therapeutics,https://atsenatx.com
+bio_nc,Pathalys Pharma,https://www.pathalys.com
+bio_nc,Slate Medicines,https://www.slatemedicines.com
+bio_nc,restor3d,https://www.restor3d.com
+bio_nc,North Carolina Life Sciences Organization (NCLifeSci),https://nclifesci.org
+bio_nc,North Carolina Biotechnology Center,https://www.ncbiotech.org
+bio_nc,Duke University,https://duke.edu
+bio_nc,University of North Carolina at Chapel Hill,https://www.unc.edu
+bio_nc,North Carolina State University (incl. BTEC),https://www.ncsu.edu
+bio_nc,RTI International,https://www.rti.org
+bio_nc,Wake Forest Innovation Quarter / WFIRM,https://www.innovationquarter.com
+biomidwest,Allotera Therapeutics (formerly Wugen),https://wugen.com

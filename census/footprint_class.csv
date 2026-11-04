@@ -1,0 +1,307 @@
+region_slug,company,dir,sf_change,event_month,label,reason
+bio_nc,Liquidia,1,70000,2025,"Leased 70,000 SF in Morrisville for new manufacturing",New lease adds manufacturing and lab space.
+bio_nc,Novo Nordisk (Clayton),-1,,2025-10,Job cuts at Clayton plant; $4.1B expansion announced 2024,Only 2025-26 event is job cuts; expansion predates window.
+bio_nc,FUJIFILM Biotechnologies (Holly Springs),1,,2025-04,Won $3B Regeneron deal; Holly Springs campus doubling,Campus doubling adds manufacturing capacity.
+bio_nc,Amgen (Holly Springs),1,,2025,$1B Holly Springs expansion adding 370 jobs,Expansion broke ground in 2025.
+bio_nc,Genentech (Holly Springs),1,700000,2026-01,"New 700,000 SF fill-finish plant, investment raised to $2B",New plant under construction.
+bio_nc,Eli Lilly (Research Triangle Park),0,,,Cumulative $1.7B RTP investment since 2020,"Cumulative investment figure, no dated space change."
+bio_nc,Eli Lilly (Concord),1,,2025,Concord site ramping up with 900+ jobs in 2025,New site ramping capacity and headcount.
+bio_nc,Biogen (RTP),1,,2025-07,$2B manufacturing expansion at RTP campuses,New factory and capacity expansion.
+bio_nc,Merck (Durham),1,225000,2025-03,"Opened 225,000 SF, $1B vaccine plant in Durham",New plant opened.
+bio_nc,AbbVie (Durham County),1,440000,2026-04,"New $1.4B Durham campus, 440,000 SF phase one",New campus commitment.
+bio_nc,"Novartis (Morrisville, Pathway Triangle)",1,56200,2026-05,"New 56,200 SF API facility plus 202,000 SF upfit",New facility adds capacity.
+bio_nc,Novartis (Durham gene therapy),1,174000,2025-11,"$400M biologics plant in acquired 174,000 SF Durham building",Acquired building to operate.
+bio_nc,Johnson & Johnson (Wilson),1,,2026-01,Second $2B biologics plant announced in Wilson,New plant commitment.
+bio_nc,Kyowa Kirin (Sanford),0,,2024-06,Up to $530M Sanford biologics plant under construction,Approved 2024; no new 2025-26 milestone stated.
+bio_nc,Astellas Gene Therapies (Sanford),1,,2025-03,Consolidated all gene therapy production into Sanford,Sanford gains production moved from California.
+bio_nc,OXB (Oxford Biomedica US),1,,2025,Acquired Durham gene therapy plant from Resilience for $4.5M,Buyer acquiring a plant to operate.
+bio_nc,Ypsomed Manufacturing USA,1,,2025,"$195.4M first North American plant, 62 jobs",New plant.
+bio_nc,Charles River Laboratories,-1,,,Closing Durham pathology facility,Site closure.
+bio_nc,restor3d,0,,2023,"Opened 50,000 SF RTP site in late 2023",Event predates 2025.
+biocapital,Incyte,-1,-517000,2025-12,"Wilmington office buildings, 517,000 SF, put up for sale",Owned space classified held for sale.
+biocapital,Novavax,-1,,2026-01,Moved HQ and assigned old Gaithersburg lease to another party,Old lease handed off; consolidated footprint.
+biocapital,Emergent BioSolutions,-1,,2025-03,Sold Baltimore-Bayview plant to Syngene for $36.5M,Seller of an operating site.
+biocapital,Supernus Pharmaceuticals,0,,,"Occupies 136,016 SF in Rockville through 2034",Statement of occupancy.
+biocapital,MacroGenics,-1,,2026-07,Sold Rockville manufacturing operations to Bora for $122.5M,Seller of an operating site.
+biocapital,Cartesian Therapeutics,0,,,"35,000 SF Frederick HQ; small Gaithersburg lease ends 2027",Statement of occupancy.
+biocapital,NextCure,-1,-39432,2026-07,"Terminated 39,432 SF, cutting Beltsville space to 29,864 SF","Lease terminated, premises shrunk."
+biocapital,Vanda Pharmaceuticals,0,,,"43,462 SF Washington HQ, leases expire 2026 to 2028",Statement of occupancy.
+biocapital,United Therapeutics,0,,,"Owns 415,000 SF Silver Spring campus",Statement of occupancy.
+biocapital,Precigen,0,,,"61,048 SF Germantown lab and manufacturing",Statement of occupancy.
+biocapital,CEL-SCI,0,,2025-10,Extended Vienna office lease to 2031,Extension of same space.
+biocapital,AstraZeneca,1,,2025-11,$2B Maryland plan adds Gaithersburg clinical supply facility,New facility and 300 jobs.
+biocapital,AstraZeneca,1,,2025-11,Expanding Frederick biologics plant under $2B Maryland plan,Plant expansion.
+biocapital,Eli Lilly,1,,2026-10,"Broke ground on $5B Goochland plant, 650 jobs",Groundbreaking on new plant.
+biocapital,Bora Pharmaceuticals (Bora Biologics),1,,2026-07,Acquired MacroGenics Rockville plant for $122.5M,Buyer acquiring a plant to operate.
+biocapital,Syngene International,1,,2025-03,Acquired Emergent Baltimore plant for $36.5M,Buyer acquiring a plant to operate.
+biocapital,Georgiamune,0,,2026,Raised about $92.7M Series B,"Financing news, no space content."
+biomidwest,C2N Diagnostics,1,,2025-09,"Moving HQ to 82,451 SF at Cortex, tripling footprint",Relocating into more space.
+biomidwest,Resilience (National Resilience),1,,2026-07,"HQ moved to Blue Ash; $750M Ohio expansion, 400 jobs",HQ relocation in and capacity expansion.
+biomidwest,Resilience (National Resilience),1,,2026,"New fill-finish line at 580,000 SF West Chester plant",New production line adds capacity.
+biomidwest,Roche Diagnostics,1,,2025-05,Up to $550M Indianapolis expansion with new CGM plant,New manufacturing facility.
+biomidwest,Novo Nordisk,-1,,2026-03,400 layoffs at Bloomington plant,Site layoffs.
+biomidwest,Simtra BioPharma Solutions,1,300000,2025-07,"$250M expansion plus new 300,000 SF Indiana site",Expansion and site purchase.
+biomidwest,Evonik (Tippecanoe Laboratories),0,,2026-07,$100M over five years to modernize Tippecanoe Labs,"Modernization, no space change."
+biomidwest,CSL Behring,1,,2026-03,"$1.5B Kankakee expansion, 300+ jobs, after 2025 job cuts",Expansion outweighs earlier job cuts.
+biomidwest,Catalent,1,,2025-07,"$45M Madison expansion, about 200 jobs",Expansion.
+biomidwest,Sterling Pharma Solutions,0,,2024-05,$3M Germantown ADC investment in 2024,Event predates 2025.
+biomidwest,Amgen,1,418000,2025-04,"$900M expansion with new 418,000 SF facility",New facility.
+biomidwest,MilliporeSigma (Merck KGaA),1,,,"$76M St. Louis expansion, 170 jobs",Expansion adds capacity and jobs.
+biomidwest,Zoetis,1,,,"$64.5M Kalamazoo and Portage investment, 45 jobs",Capacity investment adding jobs.
+biomidwest,Eli Lilly and Company,1,,2026-05,Opened Lebanon advanced therapies site; $4.5B more announced,New site opened and further expansion.
+biomidwest,Abbott Laboratories (Exact Sciences),-1,,2025-08,Exact Sciences cut about 200 Wisconsin jobs; Abbott acquired company,Site-linked job cuts; ownership change neutral.
+biomidwest,Pfizer,0,,2022,No 2025-26 event; expansion announced 2022,Event predates 2025.
+biomidwest,Portal Innovations / Fulton Labs,0,,,"Portal holds 58,000 SF at Fulton Labs campus",Portal's own space unchanged; activity is other tenants.
+biomidwest,SHINE Technologies,1,,2026-04,Up to $263M DOE loan to finish Janesville plant,Financing tied to completing a new plant.
+biomidwest,AbbVie,1,,2025-08,"$195M API expansion at North Chicago, 50+ jobs",Expansion.
+biomidwest,Eli Lilly and Company,0,,2026-05,Planned Indiana capital above $21B since 2020,"Cumulative investment figure, no specific space change."
+biomidwest,Piramal Pharma Solutions (Riverview),1,,2025,"New HPAPI suite in Riverview, $90M US investment",New production capacity.
+biomidwest,FUJIFILM Cellular Dynamics,1,175000,2026-05,"Opened 175,000 SF Madison HQ and manufacturing site",New facility opened.
+biotech_bay,Alumis,0,,,"Added 22,000 SF office; subleased out inherited 22,365 SF",Added and subleased space roughly offset.
+biotech_bay,Annexon,0,,,"Occupies 65,818 SF in Brisbane",Statement of occupancy.
+biotech_bay,Arcus Biosciences,0,,,"Subleased out 50,000 SF Brisbane in 2023 and 2024",Sublease predates 2025.
+biotech_bay,Bolt Biotherapeutics,-1,-26000,,"Subleasing out 26,000 SF of Redwood City space",Space subleased out to others.
+biotech_bay,Corcept Therapeutics,1,40884,2025-12,"Added 40,884 SF in Redwood City via expansion option",Expansion option exercised.
+biotech_bay,Cytokinetics,0,,,"234,892 SF at 350 Oyster Point through 2033",Statement of occupancy.
+biotech_bay,CytomX Therapeutics,-1,-40000,2025-11,"Moving HQ from 76,000 SF to 36,000 SF in Emeryville",Relocating into less space.
+biotech_bay,IDEAYA Biosciences,1,,2026-03,"Expanding 5000 Shoreline Ct to 80,196 SF",Lease expansion.
+biotech_bay,Lyell Immunopharma,0,,,"108,000 SF SSF HQ through 2031",Statement of occupancy.
+biotech_bay,Mirum Pharmaceuticals,1,19430,2026,"Added 19,430 SF to Foster City HQ",Lease expansion.
+biotech_bay,Nurix Therapeutics,0,,,"195,888 SF Brisbane lease through 2031",Statement of occupancy.
+biotech_bay,Olema Pharmaceuticals,1,38176,2026,"New 38,176 SF HQ lease in South San Francisco",New HQ lease; prior space size not stated.
+biotech_bay,Pliant Therapeutics,-1,,2025,"Evaluating sublease of part of 100,904 SF HQ",Signalling sublease after restructuring.
+biotech_bay,Protagonist Therapeutics,0,,,"60,600 SF Newark lease through 2029",Statement of occupancy.
+biotech_bay,Rani Therapeutics Holdings,0,,,"57,000 SF across Fremont and San Jose",Statement of occupancy.
+biotech_bay,Septerna,0,,,"44,819 SF at 250 East Grand Ave",Statement of occupancy.
+biotech_bay,4D Molecular Therapeutics,0,,,"91,000 SF Emeryville, leases expire 2026 to 2030",Statement of occupancy.
+biotech_bay,Alector,0,,,"105,000 SF SSF office and lab",Statement of occupancy.
+biotech_bay,Allogene Therapeutics,0,,,"130,000 SF SSF HQ through 2032",Statement of occupancy.
+biotech_bay,Caribou Biosciences,0,,,"71,735 SF Berkeley lab and office",Statement of occupancy.
+biotech_bay,Denali Therapeutics,0,,,"148,020 SF SSF HQ through 2029",Statement of occupancy.
+biotech_bay,Exelixis,0,,2025,"Holds 610,000 SF in Alameda; exited Philadelphia-area space",Reduction was outside this region.
+biotech_bay,Iovance Biotherapeutics,0,,2024-12,"Took 16,731 SF San Carlos sublease in Dec 2024",Event predates 2025.
+biotech_bay,Jasper Therapeutics,0,,,"25,900 SF Redwood City HQ, renewal option pending",Statement of occupancy.
+biotech_bay,Metagenomi Therapeutics,0,,,"Subleases 75,662 SF in Emeryville","Statement of occupancy, no date."
+biotech_bay,Revolution Medicines,0,,,"293,906 SF leased in Redwood City",Statement of occupancy.
+biotech_bay,Senti Biosciences Holdings,-1,-18400,,"Subleasing out 18,400 SF of SSF HQ; merger pending",Space subleased out to others.
+biotech_bay,Sutro Biopharma,0,,,"115,466 SF SSF HQ",Statement of occupancy.
+biotech_bay,Tenaya Therapeutics,0,,,"32,370 SF SSF HQ plus Union City plant",Statement of occupancy.
+biotech_bay,Vaxcyte,1,46217,2026,"Additional 46,217 SF commencing at San Carlos HQ",New space commencing.
+biotech_bay,Vir Biotechnology,0,,,"133,896 SF Mission Bay HQ through 2033",Statement of occupancy.
+biotech_bay,10x Genomics,0,,,"Owns 148,000 SF and leases 300,000 SF in Pleasanton",Statement of occupancy.
+biotech_bay,Cytek Biosciences,0,,,"99,000 SF Fremont HQ through 2029",Statement of occupancy.
+biotech_bay,Pacific Biosciences of California,0,,,"180,200 SF Menlo Park HQ through 2034",Statement of occupancy.
+biotech_bay,BillionToOne,0,,,"New 220,000 SF lab lease in Austin, not Bay Area",Expansion is outside this region.
+biotech_bay,CareDx,0,,,"88,000 SF across Brisbane HQ and lab",Statement of occupancy.
+biotech_bay,GRAIL,0,,2026-09,Relocating HQ from Menlo Park to Sunnyvale,Relocation within region; new size not stated.
+biotech_bay,Guardant Health,0,,,"249,500 SF Palo Alto HQ plus other sites",Statement of occupancy.
+biotech_bay,Personalis,0,,2026-10,"100,000 SF Fremont HQ; going-private deal pending","Corporate transaction, no space change."
+biotech_bay,Veracyte,0,,,"65,700 SF SSF office and lab",Statement of occupancy.
+biotech_bay,Codexis,0,,,"77,300 SF Redwood City office and lab",Statement of occupancy.
+biotech_bay,Genentech (Roche),1,,2025-07,"$3B to $5B SSF campus overhaul, 1M SF new labs",Major lab build outweighs 143 layoffs.
+biotech_bay,AbbVie Bay Area,-1,,2025-11,"Ended Calico collaboration, about 100 chemists affected",Program end cuts research staff.
+biotech_bay,Novartis (Emeryville),-1,,,Emeryville research moving to new San Diego center,Consolidating out of the Bay Area.
+biotech_bay,"Waters Biosciences (former BD Biosciences, San Jose)",0,,2026-02,Waters completed combination with BD Biosciences,"Ownership change, no space change."
+biotech_bay,Natera (San Carlos),1,40700,2025-01,"Leased 40,700 SF more in San Carlos",New lease for added space.
+biotech_bay,Calico Life Sciences,-1,,2025-11,"AbbVie ended collaboration, about 100 chemists affected",Loss of partner funding cuts staff.
+biotech_bay,GeneFab,1,7400,,"Subleases 7,400 SF of Senti's SSF space",Taking sublease space as subtenant.
+biotech_bay,Cellares,0,,2026-06,Series D reached $327M; plants in New Jersey and Netherlands,Financing; expansion outside region.
+biotech_bay,Xaira Therapeutics,0,,2024-12,HQ moved to Gateway of Pacific III in Dec 2024,Event predates 2025.
+biotech_bay,insitro,-1,,2025-05,"Cut about 65 roles, 22% of staff",Workforce cut above 20%.
+biotech_bay,Orca Bio,0,,2026-01,Adding East Coast manufacturing capacity,Expansion is outside this region.
+biotech_beach,Acadia Pharmaceuticals,0,,,"67,000 SF San Diego office through 2031",Statement of occupancy.
+biotech_beach,Arcturus Therapeutics,0,,,"43,234 SF leased through 2032",Statement of occupancy.
+biotech_beach,ARS Pharmaceuticals,0,,,"9,254 SF HQ office",Statement of occupancy.
+biotech_beach,Capricor Therapeutics,1,22000,2025,"Added 22,000 SF to San Diego HQ",Lease expansion.
+biotech_beach,Erasca,0,,,"78,000 SF HQ through 2032",Statement of occupancy.
+biotech_beach,Gossamer Bio,0,,,"18,421 SF HQ through 2029",Statement of occupancy.
+biotech_beach,Kura Oncology,0,,,"32,512 SF San Diego HQ through 2033",Statement of occupancy.
+biotech_beach,Travere Therapeutics,-1,-26455,2025-01,"Subleased out 26,455 SF of San Diego HQ",Space subleased out to others.
+biotech_beach,Viking Therapeutics,0,,,"7,940 SF HQ plus 6,307 SF subleased","Statement of occupancy, no date."
+biotech_beach,Zentalis Pharmaceuticals,-1,,2025,Completed strategic restructuring in 2025,Restructuring signals reduction; scale not stated.
+biotech_beach,QuidelOrtho,0,,,"316,531 SF HQ plus Carlsbad and Waples sites",Statement of occupancy.
+biotech_beach,Fate Therapeutics,0,,,"200,000 SF HQ through 2036",Statement of occupancy.
+biotech_beach,Halozyme Therapeutics,0,,,"196,000 SF leased across all sites",Statement of occupancy.
+biotech_beach,Neurocrine Biosciences,1,,,"535,000 SF HQ; marketing former HQ space for sublease",New HQ far exceeds space offered for sublease.
+biotech_beach,Cibus,-1,,2025-07,Cut about 34 jobs,Workforce reduction.
+biotech_beach,Ionis Pharmaceuticals,0,,,"Owns 26,800 SF Carlsbad plant plus 25,800 SF leased",Statement of occupancy.
+biotech_beach,Exagen,0,,,"27,000 SF Vista HQ plus 28,000 SF Carlsbad sublease",Statement of occupancy.
+biotech_beach,Tarsus Pharmaceuticals,1,59626,2024-12,"Signed 59,626 SF lease to relocate Irvine HQ",New larger HQ; move falls in window.
+biotech_beach,Evolus,1,,2025-10,"Added HQ expansion space; HQ now 30,716 SF",Expansion space commenced.
+biotech_beach,Arrowhead Pharmaceuticals,0,,,"49,000 SF Pasadena HQ",Statement of occupancy.
+biotech_beach,Atara Biotherapeutics,-1,,2025-10,Cut about 30% of staff,Workforce cut above 20%.
+biotech_beach,Arcutis Biotherapeutics,0,,,"22,643 SF HQ office",Statement of occupancy.
+biotech_beach,Arrowhead Pharmaceuticals,0,,,"144,000 SF San Diego lease through 2038",Statement of occupancy.
+biotech_beach,Eli Lilly and Company (Lilly Biotechnology Center / Gateway Labs San Diego),1,82514,2025-09,"Opened 82,514 SF Gateway Labs in Torrey Pines",New lab space opened.
+biotech_beach,Bristol Myers Squibb (San Diego R&D hub),1,427000,2026,"Consolidating San Diego R&D into 427,000 SF Campus Point lease",New large lease commitment.
+biotech_beach,Pfizer (Oncology R&D San Diego),-1,,2026,"Sold 500,000+ SF campus, moving to 230,000 SF lease",Relocating into less space plus layoffs.
+biotech_beach,Novartis (Biomedical Research San Diego),1,466000,2026-02,"Building 466,000 SF San Diego research hub",New research hub under construction.
+biotech_beach,Novartis (Carlsbad radioligand therapy plant),1,10000,,"Opened 10,000 SF Carlsbad radioligand plant",New plant opened.
+biotech_beach,Genentech (Roche) Oceanside,1,,2025,New Oceanside biologics facility operational early 2025,New production facility.
+biotech_beach,"Vertex Pharmaceuticals (ex-Crinetics, San Diego)",0,,2026-07,"Vertex acquired Crinetics; 94,000 SF HQ","Ownership change, no space change."
+biotech_beach,Merck & Co. (Merck Research Labs San Diego),0,,2025,Merck acquired Cidara,"Ownership change, no space change."
+biotech_beach,Avenzo Therapeutics,1,5999,2026-08,"Adding 5,999 SF to San Diego HQ",Lease expansion.
+biotech_beach,Actio Biosciences,1,,2026-01,Named tenant at Torrey Heights campus,New lease implied.
+biotech_beach,Thermo Fisher Scientific (Carlsbad),-1,,,85 layoffs at Carlsbad operations,Site layoffs.
+biotech_beach,"AbbVie (Irvine, ex-Allergan)",-1,,,85 layoffs in Allergan Aesthetics workforce,Site layoffs.
+colorado,Edgewise Therapeutics,-1,,2026,Sold program and transferred staff; headcount 146 to 127,Program sale cuts staff.
+colorado,OnKure Therapeutics,0,,2026-06,"Extended 14,790 SF Boulder HQ lease",Extension of same space.
+colorado,CordenPharma Colorado,0,,2024-07,Nearly $500M Boulder expansion announced 2024,Announcement predates 2025.
+colorado,CordenPharma Colorado (5505 Central lab),1,64000,2026-03,"15-year lease of 64,000 SF building in Boulder",New full-building lease.
+colorado,Agilent Technologies (Frederick NASD),1,275000,2026,"$725M expansion adding 275,000 SF in Frederick",Expansion adds space.
+colorado,"Illumina (SomaLogic, Boulder)",0,,2026-01,Illumina acquired SomaLogic,"Ownership change, no space change."
+colorado,Watchmaker Genomics,1,100000,2026-09,"Leased 100,000 SF in Boulder for manufacturing",New lease.
+colorado,VitriVax,1,31465,2026-03,"Leased 31,465 SF in Boulder",New lease.
+colorado,Enliven Therapeutics (Boulder R&D),-1,,2026-06,HQ moved to California; Boulder lease renewal undecided,HQ moved out of region.
+genetown,Agios Pharmaceuticals,1,7407,2025-07,"Subleased 7,407 SF in Cambridge",Taking sublease space as subtenant.
+genetown,"Akebia Therapeutics, Inc.",1,43474,2026-01,"Signed 43,474 SF Waltham lease to move HQ",New HQ lease; prior space size not stated.
+genetown,Biogen,-1,,2025-03,"New 580,000 SF Cambridge HQ; MA footprint cut 40%",Net plan cuts footprint about 40%.
+genetown,City Therapeutics,1,51726,2025,"Leased 51,726 SF of lab in Cambridge",New lease.
+genetown,Collegium Pharmaceutical,0,,,"50,678 SF Stoughton HQ",Statement of occupancy.
+genetown,"Corbus Pharmaceuticals Holdings, Inc.",0,,2026-05,"Renewed 36,000 SF Norwood lease",Renewal of same space.
+genetown,"Dyne Therapeutics, Inc.",0,,,"68,000 SF Waltham office and lab",Statement of occupancy.
+genetown,"Editas Medicine, Inc.",0,,,"59,783 SF Cambridge through 2028",Statement of occupancy.
+genetown,"Entrada Therapeutics, Inc.",0,,,"81,229 SF Boston HQ",Statement of occupancy.
+genetown,"EyePoint, Inc.",-1,,2026-10,Plans to cut workforce in half,Workforce cut above 20%.
+genetown,Foghorn Therapeutics Inc.,-1,,2026-10,Cut about 40% of staff after 2025 Watertown lease,Latest event is large workforce cut.
+genetown,"Generate Biomedicines, Inc.",1,74537,2025,"Leased 74,537 SF of lab in Andover",New lease.
+genetown,"Ginkgo Bioworks Holdings, Inc.",-1,-259000,2026-02,"196,000 SF offered for sublease; 63,000 SF Cambridge leases ended",Sublease listing and lease exits.
+genetown,"Intellia Therapeutics, Inc.",1,147000,2025,"Leased 147,000 SF in Cambridge; old HQ lease expiring",New lease far exceeds space given up.
+genetown,"Moderna, Inc.",-1,,2026,"Massachusetts headcount fell from 4,434 to 3,042",Headcount down about 31%.
+genetown,Ocular Therapeutix,1,24000,2026-01,"Subleased 24,000 SF in Bedford as future HQ",Taking sublease space as subtenant.
+genetown,"Praxis Precision Medicines, Inc.",0,,2026-02,Sublease expired; same space under license to 2027,Same space held on new terms.
+genetown,"Prime Medicine, Inc.",0,,,"149,000 SF Cambridge plus 48,500 SF Watertown",Statement of occupancy.
+genetown,Quanterix Corp,-1,,,Subleasing out unused Bedford and Marlborough space,Space vacated and subleased out.
+genetown,Rapid Micro Biosystems,0,,,"33,339 SF Lexington sublease plus 67,663 SF Lowell",Statement of occupancy.
+genetown,"Replimune Group, Inc.",0,,,"18,712 SF Woburn HQ plus 63,000 SF Framingham",Statement of occupancy.
+genetown,Scholar Rock Holding Corp,0,,2025-08,HQ lease extended about two years,Extension of same space.
+genetown,"TScan Therapeutics, Inc.",0,,,"164,587 SF across two Waltham buildings",Statement of occupancy.
+genetown,Vertex Pharmaceuticals,0,,,Boston HQ leases extended to 2044; Leiden II under construction,Extension predates 2025; build has no dated milestone.
+genetown,"Viridian Therapeutics, Inc.",1,,2025-09,Added expansion space in Waltham building,Lease expansion.
+genetown,"Wave Life Sciences, Inc.",0,,,"44,000 SF Cambridge plus 90,000 SF Lexington",Statement of occupancy.
+genetown,"Zenas BioPharma, Inc.",0,,,"30,305 SF Waltham HQ",Statement of occupancy.
+genetown,Takeda,-1,-630153,2026-02,"Put 630,153 SF on sublease market in Cambridge",Net Cambridge footprint shrinking despite new building.
+genetown,Takeda,-1,,2026,Repurposing Lexington cell therapy plant after exit,Exited program at site with layoffs.
+genetown,Sanofi,0,,2026-07,"Extended 900,000 SF Cambridge Crossing lease early",Extension of same space.
+genetown,AbbVie,1,171224,2025,"Leased 171,224 SF of lab across two Waltham leases",New leases; headcount rising.
+genetown,AstraZeneca,1,570000,2026-10,"Opened 570,000 SF R&D centre in Cambridge",New building opened.
+genetown,Eli Lilly and Company,1,75000,2025-10,"Added 75,000 SF at 645 Summer St, Boston",Expansion into more space.
+genetown,Moderna,0,,,"722,000 SF Norwood campus",Statement of occupancy.
+genetown,CBSET,1,23000,2026-05,"Building 110,000 SF Waltham facility, up from 87,000 SF",Moving into more space.
+genetown,Genezen,1,103800,2025,"Leased 103,800 SF of manufacturing in Lexington",New lease.
+genetown,Lila Sciences,1,235000,2025-10,"Leased 235,000 SF at Alewife Park, Cambridge",New lease.
+pharm_country,Arvinas,1,11200,2025-01,"Added 11,200 SF in New Haven",Expansion; termination was 2024.
+pharm_country,Biohaven,-1,-2858,2026,"Cut 2,858 SF in lease amendment",Lease shrunk.
+pharm_country,MannKind,0,,2025-10,"Owns 328,000 SF Danbury campus; acquired scPharmaceuticals","Acquisition, no space change in region."
+pharm_country,Invivyd,1,33000,2026-01,"Leased 33,000 SF in New Haven for HQ move",HQ relocating into region.
+pharm_country,Quantum-Si,-1,-67000,2025,"Ended 67,000 SF New Haven lease; new lease in San Diego",Exited regional lease; growth is elsewhere.
+pharm_country,Bristol Myers Squibb,-1,,2026,718 job cuts in Lawrence Twp and Princeton,Site layoffs.
+pharm_country,Insmed,1,,,"Expanded Bridgewater lab lease to 46,671 SF",Lease expansion.
+pharm_country,Johnson & Johnson,-1,,2026-12,88 layoffs in New Brunswick,Site layoffs.
+pharm_country,PMV Pharmaceuticals,0,,2024-09,"Subleases 17,406 SF in Princeton and Hopewell",Statement of occupancy; started 2024.
+pharm_country,PTC Therapeutics,0,,,"103,000 SF Bridgewater lab and office",Statement of occupancy.
+pharm_country,Celldex Therapeutics,1,73000,2026-06,"Doubled Hampton space; new 40,400 SF New Haven lease",Expansion and new lease in region.
+pharm_country,Dianthus Therapeutics,0,,2026-07,"New 11,232 SF lease in Waltham, Massachusetts",Expansion is outside this region.
+pharm_country,LB Pharmaceuticals,1,4600,2025-11,"Added 4,600 SF to NYC office",Lease expansion.
+pharm_country,Neurogene,-1,-33300,2025,"Seeking subtenant for 33,300 SF lab and office",Space put on sublease market.
+pharm_country,Nuvation Bio,1,10663,2026,"Moving NYC HQ to 18,563 SF from 7,900 SF",Relocating into more space.
+pharm_country,Regeneron Pharmaceuticals,0,,,Developing 1M SF Saratoga site; Tarrytown expansion ongoing,Projects predate 2025; no new milestone.
+pharm_country,Schrodinger,0,,,"136,047 SF NYC office through 2037",Statement of occupancy.
+pharm_country,Syndax Pharmaceuticals,-1,-4000,2025-08,"Gave up 4,000 SF NYC office at expiry",Space exited.
+pharm_country,Lexeo Therapeutics,1,11588,2026-03,"Added 11,588 SF in NYC, now 27,400 SF",Lease expansion.
+pharm_country,Protara Therapeutics,0,,,"10,000 SF NYC HQ through 2028",Statement of occupancy.
+pharm_country,Delcath Systems,0,,,"18,000 SF Queensbury site; new Ireland space",Regional lease from 2024; new space abroad.
+pharm_country,Inovio Pharmaceuticals,-1,-25000,2026,"Subleased out 25,000 SF of Plymouth Meeting HQ",Space subleased out to others.
+pharm_country,Viatris,0,,2026-10,Moving to acquire Pacira BioSciences,"Corporate transaction, no space change."
+pharm_country,Cabaletta Bio,0,,,Philadelphia leases expire 2026; decision pending,Statement of occupancy.
+pharm_country,Century Therapeutics,-1,-31734,2026-06,"Surrendered 31,734 SF floor in Philadelphia",Lease shrunk.
+pharm_country,Krystal Biotech,0,,,"67,000 SF Pittsburgh lab and office",Statement of occupancy.
+pharm_country,Certara,0,,,"19,370 SF Radnor lease through 2034",Statement of occupancy.
+pharm_country,Merck & Co. (West Point),1,,2026-10,$2.9B Montgomery County expansion incl. new R&D facility,New facility and expansion.
+pharm_country,"Bristol Myers Squibb (Lawrenceville, Princeton Pike)",-1,,2026,"806 NJ layoffs in 2025, 718 more in 2026",Large site layoffs.
+pharm_country,Pfizer (Pearl River),1,260000,2026,"260,000 SF Pearl River R&D facility due early 2026",New facility completing in window.
+pharm_country,Regeneron (Rensselaer manufacturing),0,,,Developing 1M SF Saratoga Springs site acquired 2024,Acquisition predates 2025; no new milestone.
+pharm_country,Novartis US (East Hanover HQ campus),-1,,2026-07,Multiple 2026 layoff rounds at East Hanover HQ,Site layoffs.
+pharm_country,GSK (Upper Merion / King of Prussia),1,,2025-09,New biologics factory at Upper Merion,New plant.
+pharm_country,Sanofi US (Morristown HQ),0,,2025,"Opened 260,000 SF Morristown office; exited Bridgewater campus",Relocation within NJ; net size change not stated.
+pharm_country,Novo Nordisk Inc. (US HQ),-1,,2025-12,263 layoffs at Plainsboro HQ,Site layoffs.
+pharm_country,Spark Therapeutics (Roche),-1,,2025,Laid off 337 of 647 Spark staff,Workforce cut above 20%.
+pharm_country,Hovione (East Windsor),1,,,Opened $100M New Jersey manufacturing expansion,Expansion opened.
+seattle,Sana Biotechnology,-1,,2025-08,"$44.6M impairment on 79,565 SF Bothell plant","Shifting to outsourcing, idling plant."
+seattle,Omeros Corporation,0,,,"106,949 SF Seattle lease through 2027",Statement of occupancy.
+seattle,Immunome,0,,,"53,000 SF Bothell lease through 2033",Statement of occupancy.
+seattle,BrainChild Bio,0,,2026-09,Raised $116M Series A; no lease yet,"Financing news, no space content."
+seattle,"Pfizer (Bothell, former Seagen HQ)",-1,,2025-08,About 100 layoffs at Bothell campus,Site layoffs.
+seattle,AGC Biologics,1,37575,2026-03,"Added 37,575 SF in Bothell",Expansion.
+seattle,"Repligen (BioLife Solutions, Bothell)",0,,2026-10,"Repligen acquired BioLife; 75,241 SF Bothell site","Ownership change, no space change."
+seattle,QIAGEN (Parse Biosciences),0,,2025-11,QIAGEN acquiring Parse Biosciences,"Ownership change, no space change."
+seattle,Jubilant HollisterStier,1,160000,2026-01,"160,000 SF fill-finish line due 2026; new allergens building",Capacity expansion.
+seattle,Seattle Children's Research Institute,1,124000,2025,"Preleased 124,000 SF at 1916 Boren",New lease.
+uk,AstraZeneca,0,,2026-04,£300M UK package; £450M Speke vaccine plan dropped,Mixed: Macclesfield investment offsets Speke cancellation
+uk,AstraZeneca (Macclesfield),1,,2026-04,£100M investment into Macclesfield site,Capacity investment at an operating site
+uk,"AstraZeneca (Speke, Liverpool)",-1,,2025-01,£450M Speke vaccine expansion scrapped,Planned capacity cancelled
+uk,GSK (Stevenage R&D),-1,,2026-07,"Closing Stevenage R&D; moving to 300,000 SF Cambridge centre",Site closure announced; space moves to Cambridge
+uk,GSK (Barnard Castle),-1,,2025-10,About 200 roles cut as antibiotics work wound down,Workforce reduction at site
+uk,GSK (Ware),1,,2026-07,Ware upgraded to take some Stevenage R&D staff,Site gains staff and upgrade
+uk,Immunocore,0,,,"Leases 123,000 SF in Oxfordshire to 2037 to 2043",Statement of occupancy
+uk,Bicycle Therapeutics,0,,,"Leases 45,000 SF in Cambridge to 2031",Statement of occupancy
+uk,Autolus Therapeutics,0,,2026-01,"Extended 32,673 SF HQ lease to 2035",Extension of same space
+uk,"Autolus Therapeutics (The Nucleus, Stevenage)",0,,,"Runs 70,000 SF commercial plant in Stevenage",Statement of occupancy
+uk,Mereo BioPharma,0,,,"Leases 7,400 SF London office",Statement of occupancy
+uk,Silence Therapeutics,0,,,"Leases 4,000 SF London office to 2027",Statement of occupancy
+uk,"Moderna (Innovation and Technology Centre, Harwell)",1,,2025-09,Opened Harwell innovation and technology centre,New facility opened
+uk,CMR Surgical,0,,2026-10,Stryker investing $400M with option to buy,"Financing news, no space change"
+uk,Maxion Therapeutics,1,,2025-06,Doubled R&D space at Unity Campus,Expansion of space
+pharm_country,Hikma Pharmaceuticals (Cherry Hill injectables plant),1,,2025-06,Cherry Hill plant in $1B US expansion program,Capacity investment at operating plant
+pharm_country,Thermo Fisher Scientific (Ridgefield NJ sterile fill-finish),1,,2025-09,"Acquired Ridgefield fill-finish plant from Sanofi, 200+ staff",Buyer acquiring a plant to operate
+pharm_country,"Regeneron (Saratoga Springs manufacturing, in development)",1,1000000,2025-11,"$2B fit-out of 1,000,000 SF Saratoga Springs plant, 1,000 jobs",New plant under development
+uk,"GSK (Cambridge Biomedical Campus R&D centre, planned)",1,300000,2026-07,"New 300,000 SF Cambridge R&D centre, move by 2029",New campus commitment
+basel,Novartis AG,-1,,2026-09,Kleinbasel biologics wind-down; up to 130 jobs; leases expire by end 2027,Labs move onto Novartis Campus as Kleinbasel leases lapse; net local footprint shrinks.
+basel,Novartis Pharma Stein AG,-1,,2025-11,550 jobs cut at Stein by end 2027; site refocused on sterile and cell therapy,Job cuts and ended production lines outweigh the USD 26M sterile investment.
+basel,Novartis Pharma Schweizerhalle AG,1,,2025-11,USD 80M siRNA capacity expansion; about 80 new roles by 2028,New manufacturing capacity.
+basel,Roche Holding AG,1,346600,2025-10,"Building 12 R&D tower, 32,200 m2, CHF 500M, 2029; Building 51, CHF 790M",Two new buildings under construction on the Basel site.
+basel,Lonza Group AG,0,,2024-10,"6,000 m2 Stücki Park lab expansion completed Oct 2024 (before window)",Event predates the 2025 to 2026 window.
+basel,Lonza (Stein site),1,,2026-07,New aseptic ADC and drug-product facilities under construction at Stein,Capacity under construction.
+basel,Sandoz Group AG,0,,2026-06,"Consolidating global and Swiss HQs into Helvetia Campus, Basel, from Jan 2028",Relocation without job cuts; net space change not disclosed.
+basel,Bachem (Sisslerfeld site),1,,2026-07,"Greenfield peptide plant at Sisslerfeld, over CHF 500M, production 2030",New greenfield manufacturing site.
+basel,Idorsia Pharmaceuticals Ltd,-1,-376700,2025-12,"Vacated about 35,000 m2 (H89 labs, G06 offices) in Allschwil; space marketed as SONUVO",Space returned to market.
+basel,Straumann Holding AG,0,,,"Named anchor of planned Medtech Innovation Hub Baselland, Arlesheim (undated)",Plan without a dated commitment.
+basel,BeOne Medicines,0,,2025-05,Redomiciled to Switzerland with Basel HQ,"Corporate domicile change, no disclosed space change."
+basel,Johnson & Johnson Innovative Medicine (Actelion Pharmaceuticals Ltd),0,,2025-11,Opened J&J Innovation Hub within existing Main Campus space,Use of existing space.
+basel,Bayer (Basel hub: Bayer Consumer Care AG),-1,,2025,"About 150 Basel positions cut by 2025, about 40 added",Net headcount reduction.
+basel,CARBOGEN AMCIS AG,0,,2025-06,CHF 25.5M ADC capacity at Aarau and Neuland (outside region),Investment sits outside the region.
+basel,Viatris Innovation GmbH,1,,2025-06,"Occupant of new HORTUS building, Main Campus (opened Jun 2025)",Moved into new space.
+basel,Becton Dickinson AG,1,,2025-06,"Occupant of new HORTUS building, Main Campus (opened Jun 2025)",Moved into new space.
+basel,Switzerland Innovation Park Basel Area (Main Campus),1,430600,2025-06,"Main Campus growing from 80,000 to 120,000 m2: HORTUS 2025, ALL lab 2027, HOPE 2028, SCALE 2030","Supply pipeline of 40,000 m2."
+basel,Swiss Tropical and Public Health Institute (Swiss TPH),1,,,"Anchor tenant of HOPE office building, Main Campus, opening end 2028",New lease commitment.
+basel,Rosental Mitte,1,,2026-05,"University of Basel Chemistry fit-out of new lab building Haus 6, occupancy 2029",New lab building under fit-out.
+basel,Stücki Park,0,,2024-12,"Stücki Park II, 28,000 m2 lab and office, completed Dec 2024 (before window)",Event predates the window.
+basel,Novartis Pharma SAS (Huningue Biotechnology Centre),0,,,Reported cut of 100+ posts by 2027 alongside EUR 38M biologics investment (dates not verified),"Mixed signals, dates unverified."
+biotech_beach,Amgen,1,,2025-09,$600M+ Center for Science and Innovation at Thousand Oaks HQ,New R&D building under construction.
+biotech_beach,Artiva Biotherapeutics,-1,,2026-10,Lead program stopped; workforce cut about 94%; strategic alternatives,Wind-down puts the San Diego space at risk of sublease or exit.
+biotech_bay,Gilead Sciences,1,,2025-09,Broke ground on five-story development and manufacturing center at Foster City HQ,New building under construction.
+basel,Boehringer Ingelheim / NBE-Therapeutics AG,1,19655,2025-04,"Opened 1,826 m2 ADC R&D center in Basel (CHF 27M)",New space opened.
+biocapital,Samsung Biologics (Rockville),1,,2026-03,"Acquired former GSK Rockville biologics plant (60,000 L); further capacity investment planned",New operator with stated plans to add capacity.
+biocapital,Bora Biologics (Rockville),1,,2026-07,Acquired MacroGenics Rockville GMP manufacturing and Frederick warehouse ($122.5M),Buyer takes on an operating plant.
+pharm_country,Ardena (Somerset),1,,2025-02,"Acquired Catalent Somerset drug-product plant (50,000+ SF cGMP)",New operator of an operating plant.
+pharm_country,PCI Pharma Services,1,,2026-04,Autoinjector and combination-product assembly buildouts at Philadelphia campus,Capacity buildout.
+bio_nc,Glenmark Pharmaceuticals (Monroe),0,,2025-11,FDA clearance to resume commercial manufacturing at Monroe,"Restart of existing capacity, no space change."
+genetown,"Sarepta Therapeutics, Inc.",-1,,2025-07,36% workforce reduction (about 500 roles) and pipeline cuts,Headcount and program cuts reduce space need.
+basel_city,Novartis AG,-1,,2026-09,Kleinbasel biologics wind-down; up to 130 jobs; leases expire by end 2027,Labs move onto Novartis Campus as Kleinbasel leases lapse; net local footprint shrinks.
+basel_city,Roche Holding AG,1,346600,2025-10,"Building 12 R&D tower, 32,200 m2, CHF 500M, 2029; Building 51, CHF 790M",Two new buildings under construction on the Basel site.
+basel_city,Lonza Group AG,0,,2024-10,"6,000 m2 Stücki Park lab expansion completed Oct 2024 (before window)",Event predates the 2025 to 2026 window.
+basel_city,Sandoz Group AG,0,,2026-06,"Consolidating global and Swiss HQs into Helvetia Campus, Basel, from Jan 2028",Relocation without job cuts; net space change not disclosed.
+basel_city,Straumann Holding AG,0,,,"Named anchor of planned Medtech Innovation Hub Baselland, Arlesheim (undated)",Plan without a dated commitment.
+basel_city,BeOne Medicines,0,,2025-05,Redomiciled to Switzerland with Basel HQ,"Corporate domicile change, no disclosed space change."
+basel_city,Bayer (Basel hub: Bayer Consumer Care AG),-1,,2025,"About 150 Basel positions cut by 2025, about 40 added",Net headcount reduction.
+basel_city,Rosental Mitte,1,,2026-05,"University of Basel Chemistry fit-out of new lab building Haus 6, occupancy 2029",New lab building under fit-out.
+basel_city,Stücki Park,0,,2024-12,"Stücki Park II, 28,000 m2 lab and office, completed Dec 2024 (before window)",Event predates the window.
+basel_city,Boehringer Ingelheim / NBE-Therapeutics AG,1,19655,2025-04,"Opened 1,826 m2 ADC R&D center in Basel (CHF 27M)",New space opened.
+basel_land,Novartis Pharma Schweizerhalle AG,1,,2025-11,USD 80M siRNA capacity expansion; about 80 new roles by 2028,New manufacturing capacity.
+basel_land,Idorsia Pharmaceuticals Ltd,-1,-376700,2025-12,"Vacated about 35,000 m2 (H89 labs, G06 offices) in Allschwil; space marketed as SONUVO",Space returned to market.
+basel_land,Johnson & Johnson Innovative Medicine (Actelion Pharmaceuticals Ltd),0,,2025-11,Opened J&J Innovation Hub within existing Main Campus space,Use of existing space.
+basel_land,CARBOGEN AMCIS AG,0,,2025-06,CHF 25.5M ADC capacity at Aarau and Neuland (outside region),Investment sits outside the region.
+basel_land,Viatris Innovation GmbH,1,,2025-06,"Occupant of new HORTUS building, Main Campus (opened Jun 2025)",Moved into new space.
+basel_land,Becton Dickinson AG,1,,2025-06,"Occupant of new HORTUS building, Main Campus (opened Jun 2025)",Moved into new space.
+basel_land,Switzerland Innovation Park Basel Area (Main Campus),1,430600,2025-06,"Main Campus growing from 80,000 to 120,000 m2: HORTUS 2025, ALL lab 2027, HOPE 2028, SCALE 2030","Supply pipeline of 40,000 m2."
+basel_land,Swiss Tropical and Public Health Institute (Swiss TPH),1,,,"Anchor tenant of HOPE office building, Main Campus, opening end 2028",New lease commitment.

@@ -1,0 +1,11 @@
+build/apicache/
+build/tilecache/
+build/tilecache_aerial/
+build/tenk/
+build/bulk/
+build/enriched/
+build/site/
+build/print/
+build/shots/
+census/work/
+__pycache__/
