@@ -10,7 +10,7 @@ bio_nc,Biogen (RTP),1,,2025-07,$2B manufacturing expansion at RTP campuses,New f
 bio_nc,Merck (Durham),1,225000,2025-03,"Opened 225,000 SF, $1B vaccine plant in Durham",New plant opened.
 bio_nc,AbbVie (Durham County),1,440000,2026-04,"New $1.4B Durham campus, 440,000 SF phase one",New campus commitment.
 bio_nc,"Novartis (Morrisville, Pathway Triangle)",1,56200,2026-05,"New 56,200 SF API facility plus 202,000 SF upfit",New facility adds capacity.
-bio_nc,Novartis (Durham gene therapy),1,174000,2025-11,"$400M biologics plant in acquired 174,000 SF Durham building",Acquired building to operate.
+bio_nc,Novartis (Durham gene therapy),1,174000,2025-11,"$400M biologics plant in acquired 174,000 SF Durham building; broke ground Dec 11 2025 on 14TW site (about 270,000 SF, opening 2028)",Acquired building to operate.
 bio_nc,Johnson & Johnson (Wilson),1,,2026-01,Second $2B biologics plant announced in Wilson,New plant commitment.
 bio_nc,Kyowa Kirin (Sanford),0,,2024-06,Up to $530M Sanford biologics plant under construction,Approved 2024; no new 2025-26 milestone stated.
 bio_nc,Astellas Gene Therapies (Sanford),1,,2025-03,Consolidated all gene therapy production into Sanford,Sanford gains production moved from California.
@@ -32,7 +32,7 @@ biocapital,CEL-SCI,0,,2025-10,Extended Vienna office lease to 2031,Extension of 
 biocapital,AstraZeneca,1,,2025-11,$2B Maryland plan adds Gaithersburg clinical supply facility,New facility and 300 jobs.
 biocapital,AstraZeneca,1,,2025-11,Expanding Frederick biologics plant under $2B Maryland plan,Plant expansion.
 biocapital,Eli Lilly,1,,2026-10,"Broke ground on $5B Goochland plant, 650 jobs",Groundbreaking on new plant.
-biocapital,Bora Pharmaceuticals (Bora Biologics),1,,2026-07,Acquired MacroGenics Rockville plant for $122.5M,Buyer acquiring a plant to operate.
+biocapital,Bora Pharmaceuticals (Bora Biologics),0,,2026-07,Acquired MacroGenics Rockville plant for $122.5M,Operator change at an existing plant; no net new space in the market.
 biocapital,Syngene International,1,,2025-03,Acquired Emergent Baltimore plant for $36.5M,Buyer acquiring a plant to operate.
 biocapital,Georgiamune,0,,2026,Raised about $92.7M Series B,"Financing news, no space content."
 biomidwest,C2N Diagnostics,1,,2025-09,"Moving HQ to 82,451 SF at Cortex, tripling footprint",Relocating into more space.
@@ -229,7 +229,7 @@ pharm_country,Spark Therapeutics (Roche),-1,,2025,Laid off 337 of 647 Spark staf
 pharm_country,Hovione (East Windsor),1,,,Opened $100M New Jersey manufacturing expansion,Expansion opened.
 seattle,Sana Biotechnology,-1,,2025-08,"$44.6M impairment on 79,565 SF Bothell plant","Shifting to outsourcing, idling plant."
 seattle,Omeros Corporation,0,,,"106,949 SF Seattle lease through 2027",Statement of occupancy.
-seattle,Immunome,0,,,"53,000 SF Bothell lease through 2033",Statement of occupancy.
+seattle,Immunome,1,13346,2026-07,"Took all of Building 3 at Alloy Innovation Center, Bothell: +13,346 RSF to 23,346 RSF from Jul 1 2026",Lease expansion.
 seattle,BrainChild Bio,0,,2026-09,Raised $116M Series A; no lease yet,"Financing news, no space content."
 seattle,"Pfizer (Bothell, former Seagen HQ)",-1,,2025-08,About 100 layoffs at Bothell campus,Site layoffs.
 seattle,AGC Biologics,1,37575,2026-03,"Added 37,575 SF in Bothell",Expansion.
@@ -281,9 +281,9 @@ biotech_beach,Amgen,1,,2025-09,$600M+ Center for Science and Innovation at Thous
 biotech_beach,Artiva Biotherapeutics,-1,,2026-10,Lead program stopped; workforce cut about 94%; strategic alternatives,Wind-down puts the San Diego space at risk of sublease or exit.
 biotech_bay,Gilead Sciences,1,,2025-09,Broke ground on five-story development and manufacturing center at Foster City HQ,New building under construction.
 basel,Boehringer Ingelheim / NBE-Therapeutics AG,1,19655,2025-04,"Opened 1,826 m2 ADC R&D center in Basel (CHF 27M)",New space opened.
-biocapital,Samsung Biologics (Rockville),1,,2026-03,"Acquired former GSK Rockville biologics plant (60,000 L); further capacity investment planned",New operator with stated plans to add capacity.
-biocapital,Bora Biologics (Rockville),1,,2026-07,Acquired MacroGenics Rockville GMP manufacturing and Frederick warehouse ($122.5M),Buyer takes on an operating plant.
-pharm_country,Ardena (Somerset),1,,2025-02,"Acquired Catalent Somerset drug-product plant (50,000+ SF cGMP)",New operator of an operating plant.
+biocapital,Samsung Biologics (Rockville),0,,2026-03,"Acquired former GSK Rockville biologics plant (60,000 L); further capacity investment planned",Operator change at an existing plant; no net new space in the market.
+biocapital,Bora Biologics (Rockville),0,,2026-07,Acquired MacroGenics Rockville GMP manufacturing and Frederick warehouse ($122.5M),Operator change at an existing plant; no net new space in the market.
+pharm_country,Ardena (Somerset),0,,2025-02,"Acquired Catalent Somerset drug-product plant (50,000+ SF cGMP)",Operator change at an existing plant; no net new space in the market.
 pharm_country,PCI Pharma Services,1,,2026-04,Autoinjector and combination-product assembly buildouts at Philadelphia campus,Capacity buildout.
 bio_nc,Glenmark Pharmaceuticals (Monroe),0,,2025-11,FDA clearance to resume commercial manufacturing at Monroe,"Restart of existing capacity, no space change."
 genetown,"Sarepta Therapeutics, Inc.",-1,,2025-07,36% workforce reduction (about 500 roles) and pipeline cuts,Headcount and program cuts reduce space need.
@@ -305,3 +305,6 @@ basel_land,Viatris Innovation GmbH,1,,2025-06,"Occupant of new HORTUS building, 
 basel_land,Becton Dickinson AG,1,,2025-06,"Occupant of new HORTUS building, Main Campus (opened Jun 2025)",Moved into new space.
 basel_land,Switzerland Innovation Park Basel Area (Main Campus),1,430600,2025-06,"Main Campus growing from 80,000 to 120,000 m2: HORTUS 2025, ALL lab 2027, HOPE 2028, SCALE 2030","Supply pipeline of 40,000 m2."
 basel_land,Swiss Tropical and Public Health Institute (Swiss TPH),1,,,"Anchor tenant of HOPE office building, Main Campus, opening end 2028",New lease commitment.
+biotech_beach,Calidi Biotherapeutics,-1,-6159,2026-07,"Moving from 15,197 SF to 9,038 SF at 5580 Morehouse Dr from Oct 1 2026",Smaller space; old lease terminated early.
+uk,FUJIFILM Biotechnologies (Billingham),1,212200,2026-02,"Opened 110,000 SF plant and 102,200 SF process development centre (GBP 400M)",New buildings opened.
+biocapital,University of Maryland BioPark,1,250000,2025-01,"Opened 4MLK, 250,000 SF multi-tenant lab and office building; phase II of 250,000 SF planned",New multi-tenant lab supply.
