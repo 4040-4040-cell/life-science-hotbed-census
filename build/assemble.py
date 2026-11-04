@@ -57,7 +57,7 @@ def read_rule(r,o):
     if o['tier']=='Site':
         if o['footprint_dir']>0: return ('Expansion candidate','Expansion event 2025 to 2026 at this site')
         if o['footprint_dir']<0: return ('Contraction risk','Contraction event 2025 to 2026 at this site')
-        return ('No trigger','No footprint event found at this site in 2025 to 2026; absence of a signal, not confirmed stability')
+        return ('No signal','No footprint event found at this site in 2025 to 2026. That is an absence of a signal, not confirmed stability')
     rw=r.get('runway_months'); rwn=None if rw in (None,'','CF+') else float(rw)
     emp_chg=o.get('emp_chg')
     fin12=(o.get('last_fin_months') is not None and o['last_fin_months']<=12) or (r.get('k_offerings_12m') or 0)>0
@@ -76,7 +76,7 @@ def read_rule(r,o):
         return ('Expansion candidate','; '.join(why))
     nr=months_to(r.get('next_readout') or '')
     if nr is not None and 0<=nr<=12: return ('Watch',f"Phase 2/3 readout expected {r.get('next_readout')}")
-    return ('No trigger','No footprint, capital, headcount or readout trigger found in the data; absence of a signal, not confirmed stability')
+    return ('No signal','No footprint, capital, headcount or readout signal found in the data. That is an absence of a signal, not confirmed stability')
 sys.path.insert(0,'/home/claude/build')
 from build import REG, short, DETAIL
 from score import score, num, W
@@ -114,11 +114,25 @@ def build(max_tiles_region=900):
             near=[sm for dd,sm in d if dd<=1.5]
             if near: r['submarket']=collections.Counter(near).most_common(1)[0][0]; r['submarket_inferred']=True
         seen=set()
+        # a second site of a company headquartered in this hub is a Site, not a separately scored company
+        def _base(n): return re.sub(r'\s*\(.*?\)\s*','',n).split(' / ')[0].strip().lower()
+        def _first(n): w=_base(n).split(); return w[0] if w and len(w[0])>5 else None
+        hq_names={_base(r['company']) for r in rows if r.get('site_type')=='HQ'}
+        hq_first={_first(r['company']) for r in rows if r.get('site_type')=='HQ' and _first(r['company'])}
+        hq_tk={(r.get('ticker') or '').strip() for r in rows if r.get('site_type')=='HQ' and (r.get('ticker') or '').strip()}
+        hq_label={}
+        for r in rows:
+            if r.get('site_type')=='HQ':
+                for k in (_base(r['company']),_first(r['company']),(r.get('ticker') or '').strip()):
+                    if k: hq_label[k]=re.sub(r'\s*\(.*?\)\s*','',r['company']).strip()
         for i,r in enumerate(rows):
             k=(r['company'].lower(),r.get('street','').lower()[:20],r.get('city','').lower())
             if k in seen: continue
             seen.add(k)
             par=SUBSIDIARY.get(r['company'].strip().lower())
+            if not par and r.get('site_type')!='HQ' and r.get('category')!='Institution':
+                m=next((x for x in (_base(r['company']),_first(r['company']),(r.get('ticker') or '').strip()) if x and (x in hq_names or x in hq_first or x in hq_tk)),None)
+                if m: par=hq_label.get(m)+' (headquartered in this hub)'
             if par:
                 r['subsidiary_of']=par; r['ticker_is_local']=False
                 for k_ in [k_ for k_ in list(r) if k_.startswith('k_')]+['liquidity_usd_m','op_cash_flow_fy_usd_m','revenue_fy_usd_m','runway_months','public_float_usd_m']: r.pop(k_,None)
@@ -144,7 +158,7 @@ def build(max_tiles_region=900):
               'site_type':r['site_type'],'street':r.get('street',''),'city':r.get('city',''),'state':r.get('state',''),'submarket':r.get('submarket','') or 'Unassigned',
               'modality':r.get('modality',''),'emp':emp,'cap':cap,'cap_kind':ck,'runway_disp':('Cash-flow positive' if rw=='CF+' else ('120+' if (num(rw) or 0)>120 else (f'{num(rw):.0f}' if num(rw) is not None else ''))),
               'runway_sort':999 if rw=='CF+' else num(rw),'stage_label':s.get('stage_label',''),'fda':int(num(r.get('fda_nda_bla')) or 0) or None,'fda_brands':r.get('fda_brands',''),
-              'footprint':r.get('fp_label') or r.get('footprint_event_2025_26',''),'footprint_full':r.get('footprint_event_2025_26',''),'footprint_dir':s.get('footprint_dir',0),'tests_met':r.get('tests_met',''),
+              'footprint':r.get('fp_label') or r.get('footprint_event_2025_26',''),'footprint_full':r.get('footprint_event_2025_26',''),'footprint_dir':s.get('footprint_dir',0),'fp_sf':num(r.get('fp_sf')),'tests_met':r.get('tests_met',''),
               'tier':s['tier'],'tier_rank':{'A':0,'B':1,'C':2,'Site':3,'Anchor':4}[s['tier']],'score':s.get('score'),'low_cov':(s.get('score_coverage') or 1)<0.6,
               'lat':r.get('lat'),'lon':r.get('lon'),'geo_precision':r.get('geo_precision'),'source_url':r.get('source_url',''),
               '_slug':slug,'web':'' if r['company'].lower().startswith('indupro') else r.get('website',''),'logo':key_of(r['company'])})
@@ -196,7 +210,7 @@ def build(max_tiles_region=900):
         cnt=collections.Counter(o['tier'] for o in out)
         topA=sorted([o for o in sc if o['tier']=='A'],key=lambda o:-(o['score'] or 0))
         sub1,n1=subs.most_common(1)[0]
-        headline=f"{name}: {len(sc)} headquartered companies scored, {cnt['A']} in Tier A, plus {cnt['Site']} major sites of outside companies; {sub1} has the most company headquarters, {n1}"
+        headline=f"{name}: {len(sc)} headquartered companies, {cnt['A']} in Tier A, plus {cnt['Site']} sites of companies based elsewhere or second sites of hub companies; {sub1} has the most company headquarters, {n1}"
         regions.append({'slug':slug,'name':name,'geo':geo,'headline':headline,'rows':out})
         regions[-1]['campuses']=load_campuses(key) if key in DETAIL else []
         if key in DETAIL: continue

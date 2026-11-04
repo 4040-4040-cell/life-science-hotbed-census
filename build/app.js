@@ -17,9 +17,9 @@ function compareView(){
   v.innerHTML=`<div class="pmast"><span class="kick">Life science hotbed census</span><b>All markets</b><span class="pno">${DATA.compare.length} hubs plus 2 Basel canton views · US and UK company data as of October 28, 2026; Basel as of November 2, 2026</span></div><h2>${esc(DATA.compare_headline)}</h2>
   <p class="hsub">${esc(DATA.subtitle)}</p>
   <div class="tablewrap" style="max-height:none"><table class="compare"><thead><tr>
-  <th>Region</th><th class="num">Companies scored</th><th class="num">Tier A</th><th class="num">Tier B</th><th class="num">Tier C</th>
-  <th class="num">Public HQs</th><th class="num">Public liquidity, $M</th><th class="num">Private capital raised, $M</th><th class="num">Commercial-stage</th>
-  <th class="num">Major outside sites</th><th class="num">Expansion events</th><th class="num">Contraction events</th><th>Most company HQs</th></tr></thead><tbody>
+  <th>Region</th><th class="num">Companies headquartered</th><th class="num">Tier A</th><th class="num">Tier B</th><th class="num">Tier C</th>
+  <th class="num">Publicly listed</th><th class="num">Public cash, $M</th><th class="num">Private capital raised, $M</th><th class="num">Commercial-stage</th>
+  <th class="num">Sites of outside companies</th><th class="num">Expansion events</th><th class="num">Contraction events</th><th>Most company HQs</th></tr></thead><tbody>
   ${rows.map(r=>`<tr data-go="${r.slug}"><td class="co">${esc(r.name)}<small>${esc(r.geo)}</small></td>
   <td class="num">${r.n}</td><td class="num"><b>${r.A}</b></td><td class="num">${r.B}</td><td class="num">${r.C}</td>
   <td class="num">${r.pub}</td><td class="num">${r.liq==null?'n/a':fmt(r.liq)}</td><td class="num">${fmt(r.raised)}</td><td class="num">${r.comm}</td>
@@ -49,16 +49,20 @@ function regionShell(meta){
   v.innerHTML=`<h2>${esc(meta.name)}</h2><p class="note">Loading ${esc(meta.name)}…</p>`;
   $('#main').appendChild(v); views[meta.slug]={el:v,init:false,shell:true};
 }
-function finding(R){
-  const sc=R.rows.filter(r=>r.tier!=='Anchor'&&r.tier!=='Site'), A=R.rows.filter(r=>r.tier==='A').length;
-  const S=(R.snaps||[]).filter(s=>s.core);
-  const top=k=>{const a=S.map(s=>[s.zone,(s[k]||[]).length]).sort((x,y)=>y[1]-x[1]); return a.length&&a[0][1]>=2&&(a.length<2||a[0][1]>a[1][1])?a[0]:null;};
-  const e=top('exp'), c=top('con'); const ne=R.rows.filter(r=>r.footprint_dir>0).length, nc=R.rows.filter(r=>r.footprint_dir<0).length;
-  let t=`${R.name}: ${A} of ${sc.length} headquartered companies are Tier A; ${ne} expansion and ${nc} contraction events in 2025 to 2026`;
-  const bits=[]; if(e&&e[1]) bits.push(`${e[0]} has the most expansion events (${e[1]})`); if(c&&c[1]) bits.push(`${c[0]} has the most contraction events (${c[1]})`);
-  return t+(bits.length?'. '+bits.join('; '):'');
-}
 function trimEv(t){t=String(t||''); if(t.length<=115) return t; const i=t.lastIndexOf('; ',115); return i>40?t.slice(0,i):t.slice(0,t.lastIndexOf(' ',112))+' …';}
+function finding(R){
+  const ne=R.rows.filter(r=>r.footprint_dir>0).length, nc=R.rows.filter(r=>r.footprint_dir<0).length;
+  const ab=r=>Math.abs(+r.fp_sf||0);
+  const big=d=>R.rows.filter(r=>r.footprint_dir===d&&r.footprint).sort((a,b)=>ab(b)-ab(a))[0];
+  const e=big(1), c=big(-1); const parts=[`${R.name}: ${ne} expansion and ${nc} contraction events in 2025 to 2026`];
+  const cut=t=>{t=String(t||'').replace(/\s*\(.*?\)\s*/g,' ').trim(); if(t.length<=64) return t; const m=Math.max(t.lastIndexOf(': ',62),t.lastIndexOf('; ',62),t.lastIndexOf(', ',62)); return m>24?t.slice(0,m):t.slice(0,t.lastIndexOf(' ',60));};
+  const nm=r=>String(r.short||r.company).replace(/\s*\(.*?\)\s*$/,'');
+  if(e) parts.push(`Largest expansion: ${nm(e)}, ${cut(e.footprint)}`);
+  if(c) parts.push(`Largest give-back: ${nm(c)}, ${cut(c.footprint)}`);
+  return parts.join('. ')+'.';
+}
+const TESTS={T1:'exchange-listed and headquartered here',T2:'private with $100M+ raised, or $50M+ since October 2023',T3:'100+ staff in the region',T4:'has an approved product',T5:'major site of a pharma, tools or CDMO company',T6:'anchor institution',T7:'$10M+ raised in SEC Form D offerings since 2023',T8:'verified life-science operating address in the canton'};
+function whyListed(t){const k=String(t||'').split(/[;,\s]+/).filter(Boolean); const out=k.map(x=>TESTS[x.trim()]).filter(Boolean); return out.length?out.join('; '):'see method';}
 function campusPop(c){return `<b>${esc(c.campus)}${c.building?' · '+esc(c.building):''}</b><br>${esc(c.street||'')} ${esc(c.city||'')}<br>${esc(c.status||'')}${c.year_delivered_or_due?' · '+esc(c.year_delivered_or_due):''}${c.size_m2?' · '+fmt(+c.size_m2)+' m2 '+esc(c.size_basis||''):''}${c.available_m2?'<br>Available: '+fmt(+c.available_m2)+' m2':''}${c.anchor_tenants?'<br>Anchors: '+esc(c.anchor_tenants):''}${c.source_url?`<br><a href="${esc(c.source_url)}" target="_blank" rel="noopener">source</a>`:''}`;}
 function campusHTML(R){
   const C=(R.campuses||[]); if(!C.length) return '';
@@ -88,13 +92,13 @@ function printSheet(R,scored,cnt){
   const ev=[...up.slice(0,Math.max(3,6-Math.min(3,dn.length))),...dn.slice(0,Math.max(3,6-Math.min(3,up.length)))].slice(0,6);
   const rd=k=>R.rows.filter(r=>r.tier!=='Anchor'&&(r.read||'')===k).length;
   return `<section class="psheet" aria-hidden="true">
-  <div class="pkpis"><div><b>${scored.length}</b><span>companies scored</span></div><div class="hot"><b>${cnt('A')}</b><span>Tier A</span></div><div><b>${cnt('B')} / ${cnt('C')}</b><span>Tier B / C</span></div><div><b>${cnt('Site')}</b><span>sites of outside companies</span></div><div><b>${scored.filter(r=>r.ticker).length}</b><span>public</span></div><div><b>${R.rows.filter(r=>r.footprint_dir>0).length} / ${R.rows.filter(r=>r.footprint_dir<0).length}</b><span>expansion / contraction events</span></div></div>
-  <div class="preads"><div><b>${rd('Expansion candidate')}</b><span>expansion candidates</span></div><div class="hot"><b>${rd('Contraction risk')}</b><span>contraction risks</span></div><div><b>${rd('Watch')}</b><span>watch: readout in 12 months</span></div><div><b>${rd('No trigger')}</b><span>no trigger found</span></div></div>
-  <div class="pgrid"><table class="ptab"><thead><tr><th>Submarket</th><th class="num">HQ cos</th><th class="num">Tier A / B / C</th><th class="num">Outside sites</th><th class="num">Public cash, $M</th><th class="num">Private raised, $M</th><th class="num">Exp / con events</th><th class="num">Exp cand. / con risk</th><th>Highest-scored companies</th></tr></thead><tbody>${core.map(row).join('')}${restRow}</tbody></table>
+  <div class="pkpis"><div><b>${scored.length}</b><span>companies headquartered here</span></div><div class="hot"><b>${cnt('A')}</b><span>Tier A, the strongest</span></div><div><b>${cnt('B')} / ${cnt('C')}</b><span>Tier B / Tier C</span></div><div><b>${cnt('Site')}</b><span>sites of outside companies</span></div><div><b>${scored.filter(r=>r.ticker).length}</b><span>publicly listed</span></div><div><b>${R.rows.filter(r=>r.footprint_dir>0).length} / ${R.rows.filter(r=>r.footprint_dir<0).length}</b><span>expansions / contractions, 2025 to 2026</span></div></div>
+  <div class="preads"><div><b>${rd('Expansion candidate')}</b><span>likely to need more space</span></div><div class="hot"><b>${rd('Contraction risk')}</b><span>at risk of giving space back</span></div>${(()=>{const up=R.rows.filter(r=>r.footprint_dir>0).reduce((t,r)=>t+Math.abs(+r.fp_sf||0),0), dn=R.rows.filter(r=>r.footprint_dir<0).reduce((t,r)=>t+Math.abs(+r.fp_sf||0),0); const m=/^basel/.test(R.slug); const f=v=>m?fmt(Math.round(v/10.764))+' m2':fmt(v)+' SF'; return `<div><b>${f(up)}</b><span>space added where a size is stated</span></div><div class="hot"><b>${f(dn)}</b><span>space given back where a size is stated</span></div>`;})()}</div>
+  <div class="pgrid"><table class="ptab"><thead><tr><th>Submarket</th><th class="num">HQs</th><th class="num">Tier A / B / C</th><th class="num">Outside sites</th><th class="num">Public cash, $M</th><th class="num">Private raised, $M</th><th class="num">Expansions / contractions</th><th class="num">Exp cand. / con risk</th><th>Highest-scored companies</th></tr></thead><tbody>${core.map(row).join('')}${restRow}</tbody></table>
   ${(R.campuses||[]).length?`<div class="pev ppipe"><h4>Space pipeline and availability <span class="lg">size basis as published</span></h4><p class="pmk">${(()=>{const av=(R.campuses||[]).reduce((t,c)=>t+(+c.available_m2||0),0); return av?`${fmt(av)} m2 of lab and office stated as available, ${(av/15000).toFixed(1)} to ${(av/10000).toFixed(1)} years of Basel lab take-up at JLL's modeled 10,000 to 15,000 m2 a year (JLL Research, EMEA 2026).`:'';})()}</p><ul>${(R.campuses||[]).filter(c=>(/construction|planned|vacat|for lease/i.test(c.status)||+c.available_m2>0)&&!/site area/i.test(c.size_basis||'')).sort((a,b)=>(+b.size_m2||0)-(+a.size_m2||0)).slice(0,6).map(c=>`<li class="pp"><b>${esc(c.campus)}${c.building?' · '+esc(c.building):''}</b> ${esc(c.status)}${c.year_delivered_or_due?' '+esc(c.year_delivered_or_due):''}${c.size_m2?', '+fmt(+c.size_m2)+' m2 '+esc(c.size_basis||''):''}${c.available_m2?', '+fmt(+c.available_m2)+' m2 available':''}${c.anchor_tenants?'; '+esc(c.anchor_tenants):''}</li>`).join('')}</ul></div>`:''}
   <div class="pev${(R.campuses||[]).length?' nosig':''}"><h4>Footprint signals, 2025 to 2026 <span class="lg"><i class="up"></i>expansion <i class="dn"></i>contraction</span></h4><ul>${ev.map(r=>`<li class="${r.footprint_dir>0?'up':'dn'}"><b>${esc(r.short||r.company)}</b> ${esc(trimEv(r.footprint))}</li>`).join('')||'<li>None in the data.</li>'}</ul></div></div>
-  <div class="plegend"><b>How to read</b><span><i class="dot" style="background:${TCH.A}"></i>Tier A</span><span><i class="dot" style="background:${TCH.B}"></i>Tier B</span><span><i class="dot" style="background:${TCH.C}"></i>Tier C</span><span><i class="dot" style="background:${TCH.Site}"></i>site of an outside company</span><span>Zone numbers match the callouts. Logos run in score order (analyst weighting: scale 25%, capital 20%, cash durability 20%, stage 20%, momentum 15%; Tier A 3.80+).</span></div>
-  <p class="pfoot">Counts follow a fixed inclusion rule and are floors. Public cash: latest SEC filing (n/a for non-SEC filers). Private raised: releases and Form D, a floor. Events: 2025 to 2026 filings and releases. Zones surround mapped sites, not formal submarket lines. Imagery: Esri, Maxar, Earthstar Geographics. ${esc(asOf(R.slug))}.</p>
+  <div class="plegend"><b>How to read</b><span><i class="dot" style="background:${TCH.A}"></i>Tier A</span><span><i class="dot" style="background:${TCH.B}"></i>Tier B</span><span><i class="dot" style="background:${TCH.C}"></i>Tier C</span><span><i class="dot" style="background:${TCH.Site}"></i>site of an outside company</span><span>Tier A: large, well funded, durable cash, late-stage or commercial. Tier C: small or early. Zone numbers match the callouts; logos run from strongest down.</span></div>
+  <p class="pfoot">Counts follow a fixed inclusion rule and are floors, not a full census. Public cash: latest SEC filing (n/a for non-SEC filers). Private raised: releases and Form D, a floor. Events and SF: 2025 to 2026 filings and releases; many events state no size. Zones surround mapped sites, not formal submarket lines. Tier weighting on the method page. Imagery: Esri, Maxar, Earthstar Geographics. ${esc(asOf(R.slug))}.</p>
   </section>`;
 }
 function preparePrint(slug){
@@ -102,10 +106,16 @@ function preparePrint(slug){
   return new Promise(res=>{requestAnimationFrame(()=>{ if(V.ex){V.ex.invalidateSize(); if(V.R.ex_bounds) V.ex.fitBounds(V.R.ex_bounds);} if(V.im){V.im.invalidateSize(); if(V.R.inset) V.im.fitBounds(V.R.inset.bounds);}
     setTimeout(()=>{ // keep the sheet on one page: trim the lowest-ranked footprint signals first
       const box=document.getElementById('v-'+slug); const lis=[...box.querySelectorAll('.ppipe li'),...box.querySelectorAll('.pev:not(.ppipe) li')];
-      while(box.getBoundingClientRect().height>975&&lis.length>3){lis.pop().remove();}
+      const H=()=>box.getBoundingClientRect().height;
+      while(H()>975&&lis.length>4){lis.pop().remove();}
+      const em=box.querySelector('.emap'); let hh=parseInt(getComputedStyle(em).height);
+      while(H()>975&&hh>700){hh-=30; em.style.setProperty('height',hh+'px','important'); if(V.ex){V.ex.invalidateSize(); if(V.R.ex_bounds) V.ex.fitBounds(V.R.ex_bounds);}}
+      if(H()>975) box.classList.add('tight');
+      while(H()>975&&lis.length>2){lis.pop().remove();}
+      if(box.getBoundingClientRect().height>975) box.classList.add('tighter');
       V.drawLeaders&&V.drawLeaders(); setTimeout(res,400);},500);});});
 }
-function endPrint(){const slug=document.body.dataset.print; document.body.classList.remove('printing'); delete document.body.dataset.print; const V=views[slug]; if(V){V.ex&&V.ex.invalidateSize(); if(V.ex&&V.R.ex_bounds) V.ex.fitBounds(V.R.ex_bounds); if(V.im){V.im.invalidateSize(); if(V.R.inset) V.im.fitBounds(V.R.inset.bounds);} setTimeout(()=>V.drawLeaders&&V.drawLeaders(),200);}}
+function endPrint(){const slug=document.body.dataset.print; const bx=document.getElementById('v-'+slug); if(bx){bx.classList.remove('tight','tighter'); const em=bx.querySelector('.emap'); if(em) em.style.removeProperty('height');} document.body.classList.remove('printing'); delete document.body.dataset.print; const V=views[slug]; if(V){V.ex&&V.ex.invalidateSize(); if(V.ex&&V.R.ex_bounds) V.ex.fitBounds(V.R.ex_bounds); if(V.im){V.im.invalidateSize(); if(V.R.inset) V.im.fitBounds(V.R.inset.bounds);} setTimeout(()=>V.drawLeaders&&V.drawLeaders(),200);}}
 function preparePrintCompare(){document.body.classList.add('printing'); document.body.dataset.print='compare'; return new Promise(r=>setTimeout(r,300));}
 window.preparePrintCompare=preparePrintCompare;
 function printMarket(slug){preparePrint(slug).then(()=>{window.print();});}
@@ -152,12 +162,12 @@ function regionView(R){
   ${campusHTML(R)}
   ${snapHTML(R)}
   <div class="kpis">
-   <div class="kpi"><b>${scored.length}</b><span>companies scored</span></div>
+   <div class="kpi"><b>${scored.length}</b><span>companies headquartered here</span></div>
    <div class="kpi hot"><b>${cnt('A')}</b><span>Tier A</span></div>
    <div class="kpi"><b>${cnt('B')}</b><span>Tier B</span></div>
    <div class="kpi"><b>${cnt('C')}</b><span>Tier C</span></div>
-   <div class="kpi"><b>${cnt('Site')}</b><span>major sites of outside companies</span></div>
-   <div class="kpi"><b>${scored.filter(r=>r.ticker).length}</b><span>public</span></div>
+   <div class="kpi"><b>${cnt('Site')}</b><span>sites of companies based elsewhere</span></div>
+   <div class="kpi"><b>${scored.filter(r=>r.ticker).length}</b><span>publicly listed</span></div>
    <div class="kpi"><b>${R.rows.filter(r=>r.footprint_dir>0).length} / ${R.rows.filter(r=>r.footprint_dir<0).length}</b><span>expansion / contraction events, 2025 to 2026</span></div>
   </div>
   <div class="split">
@@ -290,7 +300,7 @@ function initExhibit(V,slug){
   let left=pts.filter(o=>o.p.x<cx).sort((a,b)=>a.p.y-b.p.y), right=pts.filter(o=>o.p.x>=cx).sort((a,b)=>a.p.y-b.p.y);
   while(left.length>right.length+1){const o=left.sort((a,b)=>b.p.x-a.p.x).shift(); right.push(o);} while(right.length>left.length+1){const o=right.sort((a,b)=>a.p.x-b.p.x).shift(); left.push(o);}
   left.sort((a,b)=>a.p.y-b.p.y); right.sort((a,b)=>a.p.y-b.p.y);
-  const box=o=>`<div class="call" data-i="${o.i}" style="--zc:${o.z.color}"><h4>${o.i+1}. ${esc(o.z.name)}<span>${o.z.n}</span></h4><div class="lgrid">${o.z.cos.map(c=>{const r=R.rows.find(x=>x.id===c.id); const img=logoImg(r,'clogo'); return `<button class="lcell" data-pid="${r.id}" title="${esc(r.company)}: Tier ${r.tier}. Open profile"><i style="background:${TCH[r.tier]}"></i>${img||`<em>${esc(r.short)}</em>`}</button>`;}).join('')}</div>${o.z.more?`<div class="more">+${o.z.more} more in the table below</div>`:''}${o.z.anchors.length?`<div class="anc">Anchors: ${o.z.anchors.map(esc).join(', ')}</div>`:''}</div>`;
+  const box=o=>`<div class="call" data-i="${o.i}" style="--zc:${o.z.color}"><h4>${o.i+1}. ${esc(o.z.name)}<span>${o.z.n} HQs</span></h4><div class="lgrid">${o.z.cos.map(c=>{const r=R.rows.find(x=>x.id===c.id); const img=logoImg(r,'clogo'); return `<button class="lcell" data-pid="${r.id}" title="${esc(r.company)}: Tier ${r.tier}. Open profile"><i style="background:${TCH[r.tier]}"></i>${img||`<em>${esc(r.short)}</em>`}</button>`;}).join('')}</div>${o.z.more?`<div class="more">+${o.z.more} more in the table below</div>`:''}${o.z.anchors.length?`<div class="anc">Anchors: ${o.z.anchors.map(esc).join(', ')}</div>`:''}</div>`;
   wrap.querySelector('.col.L').innerHTML=left.map(box).join(''); wrap.querySelector('.col.R').innerHTML=right.map(box).join('');
   V.drawLeaders=()=>{
     const svg=wrap.querySelector('svg.leaders'), W=wrap.getBoundingClientRect(), M=document.getElementById('ex-'+slug).getBoundingClientRect();
@@ -326,10 +336,10 @@ function openProfile(r,R){
    <div class="dlinks">${r.web?`<a href="${esc(r.web)}" target="_blank" rel="noopener">Company website</a>`:''}${p.tenk?`<a href="${esc(p.tenk)}" target="_blank" rel="noopener">Latest 10-K</a>`:''}${r.source_url?`<a href="${esc(r.source_url)}" target="_blank" rel="noopener">Address source</a>`:''}</div></div>
   <section><h4>Footprint</h4>
    ${sites.map(x=>`<div class="site"><b>${esc(x.site_type)}</b> ${esc(x.street?x.street+', ':'')}${esc(x.city)}${x.state?', '+esc(x.state):''}<span>${esc(x.submarket)}${x.geo_precision!=='street'?' · city-level location':''}</span></div>`).join('')}
-   ${kv('Largest site in 10-K',p.sf_max?fmt(p.sf_max)+' SF <em class="flag">may sit outside this hub</em>':'')}${kv('Total SF in 10-K table',p.sf_sum?fmt(p.sf_sum)+' SF <em class="flag">upper bound; check filing</em>':'')}
+   ${kv('Largest site in 10-K',p.sf_max?fmt(p.sf_max)+' SF <em class="flag">may sit outside this hub</em>':'')}${kv('Total SF in 10-K table',p.sf_sum?fmt(p.sf_sum)+' SF <em class="flag">upper bound from the property table in the filing</em>':'')}
    ${kv('Lease expirations named',exp.length?exp.join(', ')+(near&&near<=2028?' <em class="warn">(near-term)</em>':''):'')}
    ${kv('Owns property',p.owns?'Yes, per 10-K':'')}${kv('Landlords named in 10-K',(p.landlords||[]).join(', '))}${kv('Sublease mentioned in 10-K',p.sublease?'Yes':'')}
-   ${kv('SF per employee',sfe&&sfe<5000?fmt(sfe)+' (company-wide; parsed)':'')}${kv('Implied space type',p.space?esc(p.space)+' <em class="flag">analyst mapping</em>':'')}
+   ${kv('SF per employee',sfe&&sfe<5000?fmt(sfe)+' (company-wide, from the filing)':'')}${kv('Implied space type',p.space?esc(p.space)+' <em class="flag">analyst mapping</em>':'')}
    ${r.footprint?`<div class="fpx ${r.footprint_dir>0?'up':r.footprint_dir<0?'dn':''}">2025 to 2026: ${esc(r.footprint)}${p.fp_src?` <a href="${esc(p.fp_src)}" target="_blank" rel="noopener">source</a>`:''}</div>`:''}
    ${p.props?`<details><summary>10-K property disclosure (excerpt)</summary><p class="flag">${esc(p.props)}…</p></details>`:''}</section>
   <section><h4>People</h4>${kv('Employees',(p.emp_now||r.emp)?fmt(p.emp_now||r.emp)+(p.emp_period?` <em class="flag">as of ${esc(p.emp_period)}, company-wide</em>`:` <em class="flag">scope as stated in the cited source</em>`):'Not disclosed')}
@@ -343,7 +353,7 @@ function openProfile(r,R){
   <section><h4>Science and catalysts</h4>${kv('Stage',esc(r.stage_label))}${kv('Highest active trial phase',ph)}${kv('Active trials as lead sponsor',p.n_trials||'')}
    ${kv('FDA-approved products',p.brands?esc(p.brands):'')}${kv('Latest FDA approval',p.latest_appr?esc(p.latest_appr):'')}
    ${kv('Next Phase 2/3 primary completion',p.next?`${mon(p.next)} · ${esc(p.next_ph)} · ${esc(p.next_cond)} <a href="https://clinicaltrials.gov/study/${esc(p.next_nct)}" target="_blank" rel="noopener">${esc(p.next_nct)}</a> <em class="flag">sponsor estimate</em>`:'')}</section>
-  <section class="flag"><h4>Data quality</h4><p>Inclusion tests met: ${esc(r.tests_met||'n/a')}. Address ${p.verified==='Y'?'verified from a primary source':'not verified to street level'}. ${r.score!=null?`Score built on ${Math.round((p.cov||0)*100)}% of the weight.`:''} ${p.notes?esc(p.notes):''}</p></section>`;
+  <section class="flag"><h4>Data quality</h4><p>Why it is listed: ${esc(whyListed(r.tests_met))}. Address ${p.verified==='Y'?'verified from a primary source':'not verified to street level'}. ${r.score!=null?`Score built on ${Math.round((p.cov||0)*100)}% of the weight.`:''} ${p.notes?esc(p.notes):''}</p></section>`;
   d.classList.add('open'); d.setAttribute('aria-hidden','false'); d.querySelector('.dx').onclick=closeProfile; d.querySelector('.dx').focus();
   if(location.hash.slice(1)!==R.slug) return;
 }

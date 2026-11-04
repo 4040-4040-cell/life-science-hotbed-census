@@ -1,5 +1,8 @@
 import json,glob,csv
-out='/home/claude/build/hotbed_census_2026-10-28.csv'
+import sys
+out=sys.argv[1] if len(sys.argv)>1 else '/home/claude/build/hotbed_census_hubs.csv'
+ONLY=set(sys.argv[2].split(',')) if len(sys.argv)>2 else None
+SKIP={'basel-city','basel-land'} if ONLY is None else set()
 cols=['region','company','ticker','tier','score','read','read_why','category','site_type','street','city','state','submarket','zone','modality','tests_met',
  'employees','employees_prior','emp_change_pct','emp_asof','cash_and_investments_usd_m','cash_asof','op_cash_flow_fy_usd_m','runway_months','revenue_fy_usd_m','public_float_usd_m','float_asof',
  'private_raised_usd_m','last_round_usd_m','last_round_date','last_round_type','offerings_12m','stage','fda_products','latest_fda_approval','next_ph2_3_completion','next_trial',
@@ -8,6 +11,8 @@ n=0
 with open(out,'w',newline='') as f:
     w=csv.writer(f); w.writerow(cols)
     for fn in sorted(glob.glob('/home/claude/build/site/data/*.js')):
+        slug=fn.split('/')[-1][:-3]
+        if slug in SKIP or (ONLY and slug not in ONLY): continue
         s=open(fn).read(); R=json.loads(s[s.index('=')+1:-1])
         for o in R['rows']:
             p=o.get('p',{})

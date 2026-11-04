@@ -27,6 +27,8 @@ python3 logo_items.py && python3 logos_pw.py logo_items_new.json; python3 logos_
 python3 render.py           # site/index.html and site/data/*.js (about 20 minutes)
 python3 export.py           # census CSV
 python3 print_pdfs.py compare,biotech-beach,biotech-bay,genetown,pharm-country,biocapital,bio-nc,biomidwest,seattle,colorado,uk,basel,basel-city,basel-land
+python3 audit.py             # ten checks per page; every page must show 10/10
+python3 export.py /path/HotbedCensus_Hubs_V{n}_{date}.csv; python3 export.py /path/HotbedCensus_BaselCantons_V{n}_{date}.csv basel-city,basel-land
 ```
 
 ## 3. Check (all must pass)
@@ -43,6 +45,8 @@ Write CHANGELOG.md for this week: date, companies added and removed (with reason
 Publish with publish_files to the slug above, base_version from get_artifact, shared_live "public", artifact_title "Life Science Hotbed Maps". Publish `index.html` plus only the `data/*.js` files that changed. Merge the branch to main. Update the project doc claude/hotbed-census-summary.md.
 
 ## Standing rules
+- A second site of a company headquartered in the same hub is a Site, not a scored company (assemble.py rule). An operator change at an existing plant is a neutral event, not an expansion.
+- Market names are geographies, never the BioSpace nicknames.
 - Each site counts in its own canton or hub. Fricktal, Alsace and South Baden stay in the Basel hub only.
 - Major sites of outside companies get the Site tier and are not scored.
 - "No trigger" means no signal was found, not that a company is stable.

@@ -6,17 +6,17 @@ from enrich import fda_profile, ct_profile
 from tenk import profile as tenk_profile
 from score import score, num, W
 from tiles import fit_zoom, tile_set, fetch, stylize
-REG=[('biotech_beach','biotech-beach','Biotech Beach','San Diego, Orange County, Los Angeles, Thousand Oaks'),
-     ('biotech_bay','biotech-bay','Biotech Bay','San Francisco Bay Area'),
-     ('genetown','genetown','Genetown','Greater Boston and Massachusetts'),
-     ('pharm_country','pharm-country','Pharm Country','New Jersey, New York, Pennsylvania and neighbors'),
-     ('biocapital','biocapital','BioCapital','Maryland, Washington DC, Virginia'),
-     ('bio_nc','bio-nc','Bio NC','North Carolina'),
-     ('biomidwest','biomidwest','BioMidwest','Midwest states'),
-     ('seattle','seattle','Seattle','Puget Sound, Washington'),
-     ('colorado','colorado','Colorado','Boulder, Denver and the Front Range'),
-     ('uk','uk','United Kingdom','Cambridge, Oxford, London and major UK sites'),
-     ('basel','basel','Basel','Basel trinational area: Switzerland, Alsace and South Baden'),
+REG=[('biotech_beach','biotech-beach','San Diego and Southern California','San Diego, Orange County, Los Angeles and Thousand Oaks'),
+     ('biotech_bay','biotech-bay','San Francisco Bay Area','South San Francisco, the Peninsula, East Bay and South Bay'),
+     ('genetown','genetown','Greater Boston','Boston, Cambridge, Route 128 and the rest of Massachusetts'),
+     ('pharm_country','pharm-country','New Jersey, New York and Pennsylvania','New Jersey, New York City and state, Philadelphia and neighbors'),
+     ('biocapital','biocapital','Maryland and Washington DC','Montgomery County, Frederick, Baltimore, DC and Virginia'),
+     ('bio_nc','bio-nc','North Carolina','Research Triangle and the statewide manufacturing corridor'),
+     ('biomidwest','biomidwest','Midwest','Chicago, Indianapolis, Madison, Minneapolis, Ohio and neighbors'),
+     ('seattle','seattle','Seattle and Puget Sound','South Lake Union, Bothell and the Eastside'),
+     ('colorado','colorado','Colorado Front Range','Boulder, Denver and the Front Range'),
+     ('uk','uk','United Kingdom','Cambridge, Oxford, London and the major UK manufacturing sites'),
+     ('basel','basel','Basel region','Basel trinational area: both Basel cantons, the Fricktal, Alsace and South Baden'),
      ('basel_city','basel-city','Basel-Stadt','Canton Basel-Stadt, building level: city of Basel and Riehen'),
      ('basel_land','basel-land','Basel-Landschaft','Canton Basel-Landschaft, building level: Allschwil, Schweizerhalle, Birs valley, upper Baselbiet')]
 DETAIL={'basel_city','basel_land'}
