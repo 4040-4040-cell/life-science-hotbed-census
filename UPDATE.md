@@ -7,7 +7,7 @@ Mode: approve before publish. A weekly run builds and checks everything, then st
 - Clone this repo to /home/claude/hotbed. Then: `ln -sfn /home/claude/hotbed/build /home/claude/build; ln -sfn /home/claude/hotbed/census /home/claude/census`. The scripts use those absolute paths.
 - `pip install --break-system-packages pillow pypdf pytesseract cairosvg python-pptx` if missing. Playwright and Chromium are preinstalled.
 - `sh build/fetch_bulk.sh` gets the openFDA Drugs@FDA bulk file.
-- SEC EDGAR needs a declared User-Agent. Set `WCLS_UA` to an approved contact string before running. The scripts fall back to a generic name, which SEC may throttle.
+- SEC EDGAR needs a declared User-Agent. The scripts default to `WCLS research chad.urie@urieinvestments.com` (approved by the user, Nov 4, 2026). Override with `WCLS_UA` if needed.
 - Rebuild the caches the first time (they are not in git): `cd build && python3 build.py` (all regions, about 60 to 90 minutes cold), then `python3 prefetch_aerial.py` after the first render.
 
 ## 1. Collect the week's changes (research)

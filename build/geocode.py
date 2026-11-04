@@ -1,7 +1,7 @@
 import csv, json, os, re, sys, time, urllib.parse, urllib.request
 CACHE='/home/claude/build/geocache.json'
 cache=json.load(open(CACHE)) if os.path.exists(CACHE) else {}
-UA={'User-Agent':os.environ.get('WCLS_UA','WCLS hotbed census research build')}
+UA={'User-Agent':os.environ.get('WCLS_UA','WCLS research chad.urie@urieinvestments.com')}
 def q(params,cc='us'):
     key=json.dumps(params,sort_keys=True)+('' if cc=='us' else cc)
     if key in cache: return cache[key]

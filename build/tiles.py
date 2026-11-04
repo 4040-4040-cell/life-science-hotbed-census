@@ -1,7 +1,7 @@
 import math, os, io, time, base64, urllib.request
 from PIL import Image, ImageEnhance, ImageOps
 TD='/home/claude/build/tilecache'; os.makedirs(TD,exist_ok=True)
-UA={'User-Agent':os.environ.get('WCLS_UA','WCLS hotbed census research build')}
+UA={'User-Agent':os.environ.get('WCLS_UA','WCLS research chad.urie@urieinvestments.com')}
 def deg2num(lat,lon,z):
     n=2**z; x=(lon+180)/360*n; y=(1-math.asinh(math.tan(math.radians(lat)))/math.pi)/2*n
     return x,y

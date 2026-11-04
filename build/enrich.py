@@ -1,5 +1,5 @@
 import json, os, re, time, urllib.parse, urllib.request, datetime as dt
-UA={'User-Agent':os.environ.get('WCLS_UA','WCLS hotbed census research build')}
+UA={'User-Agent':os.environ.get('WCLS_UA','WCLS research chad.urie@urieinvestments.com')}
 CD='/home/claude/build/apicache'; os.makedirs(CD,exist_ok=True)
 def get(url, pause=0.15):
     import hashlib; fn=os.path.join(CD,('sec_' if 'sec.gov' in url else 'x_')+hashlib.md5(url.encode()).hexdigest()+'.json')
