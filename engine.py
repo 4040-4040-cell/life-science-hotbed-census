@@ -118,7 +118,7 @@ def save(s):
     json.dump(s, open(LEDGER, "w"), indent=1)
 
 
-NAV_COLS = ["date", "nav", "cash", "invested", "xbi_nav", "basket_nav", "five_nav", "ret", "xbi_ret", "basket_ret", "five_ret", "positions"]
+NAV_COLS = ["date", "nav", "cash", "invested", "xbi_nav", "basket_nav", "five_nav", "top10_nav", "tilt_nav", "ret", "xbi_ret", "basket_ret", "five_ret", "top10_ret", "tilt_ret", "positions"]
 
 
 def nav_rows():
@@ -197,7 +197,8 @@ def cmd_run():
     s = load()
     basket = s["basket"]["tickers"]
     five = s["five"]["tickers"]
-    px, src = prices(list(s["positions"]) + [o["ticker"] for o in s["pending_orders"]] + basket + five + ["XBI"])
+    top10 = s["top10"]["tickers"]
+    px, src = prices(list(s["positions"]) + [o["ticker"] for o in s["pending_orders"]] + basket + five + top10 + ["XBI"])
     if not px.get("XBI"):
         sys.exit("FATAL: no benchmark prices from Yahoo or Nasdaq")
     d = max(px["XBI"])
@@ -241,6 +242,8 @@ def cmd_run():
             s["basket"]["missing_at_start"] = sorted(set(basket) - set(have))
             have5 = [t for t in five if (px.get(t) or {}).get(d)]
             s["five"]["shares"] = {t: (s["start_capital"] / len(have5)) / (px[t][d] * (1 + slip)) for t in have5}
+            have10 = [t for t in top10 if (px.get(t) or {}).get(d)]
+            s["top10"]["shares"] = {t: (s["start_capital"] / len(have10)) / (px[t][d] * (1 + slip)) for t in have10}
         invested, marks = 0.0, {}
         for t, pos in s["positions"].items():
             c, used = mark(px.get(t), d)
@@ -253,14 +256,18 @@ def cmd_run():
         xnav = s["xbi"]["shares"] * px["XBI"][d]
         bnav = sum(sh * (mark(px.get(t), d)[0] or 0) for t, sh in s["basket"]["shares"].items())
         fnav = sum(sh * (mark(px.get(t), d)[0] or 0) for t, sh in s["five"]["shares"].items())
+        tnav = sum(sh * (mark(px.get(t), d)[0] or 0) for t, sh in s["top10"]["shares"].items())
         prev = rows[-1] if rows else None
         cap = s["start_capital"]
         rows.append({"date": d, "nav": round(nav, 2), "cash": round(s["cash"], 2), "invested": round(invested, 2),
-                     "xbi_nav": round(xnav, 2), "basket_nav": round(bnav, 2), "five_nav": round(fnav, 2),
+                     "xbi_nav": round(xnav, 2), "basket_nav": round(bnav, 2), "five_nav": round(fnav, 2), "top10_nav": round(tnav, 2),
+                     "tilt_nav": round((float(prev["tilt_nav"]) if prev else cap) * (1 + (xnav / (float(prev["xbi_nav"]) if prev else cap) - 1) + (fnav / (float(prev["five_nav"]) if prev else cap) - 1) - (bnav / (float(prev["basket_nav"]) if prev else cap) - 1)), 2),
                      "ret": round(nav / (float(prev["nav"]) if prev else cap) - 1, 6),
                      "xbi_ret": round(xnav / (float(prev["xbi_nav"]) if prev else cap) - 1, 6),
                      "basket_ret": round(bnav / (float(prev["basket_nav"]) if prev else cap) - 1, 6),
                      "five_ret": round(fnav / (float(prev["five_nav"]) if prev else cap) - 1, 6),
+                     "top10_ret": round(tnav / (float(prev["top10_nav"]) if prev else cap) - 1, 6),
+                     "tilt_ret": round((xnav / (float(prev["xbi_nav"]) if prev else cap) - 1) + (fnav / (float(prev["five_nav"]) if prev else cap) - 1) - (bnav / (float(prev["basket_nav"]) if prev else cap) - 1), 6),
                      "positions": len(s["positions"])})
         write_nav(rows)
         s["last_marks"] = {t: round(v, 4) for t, v in marks.items()}
@@ -292,15 +299,15 @@ def report(s, rows, d, new_day, trades_today, warnings, today, src):
         hp.append(f"<p>{html.escape(p1)}</p><p><b>Queued:</b> {html.escape(q)}</p>")
     else:
         last = rows[-1]
-        nav, xnav, bnav, fnav = float(last["nav"]), float(last["xbi_nav"]), float(last["basket_nav"]), float(last["five_nav"])
-        ltd, xltd, bltd, fltd = nav / cap - 1, xnav / cap - 1, bnav / cap - 1, fnav / cap - 1
+        nav, xnav, bnav, fnav, tnav, gnav = (float(last[k]) for k in ("nav", "xbi_nav", "basket_nav", "five_nav", "top10_nav", "tilt_nav"))
+        ltd, xltd, bltd, fltd, tltd, gltd = (v / cap - 1 for v in (nav, xnav, bnav, fnav, tnav, gnav))
         head = f"{pct(float(last['ret']))} today" if new_day else "market closed"
         subject = f"Takeover paper portfolio, {day_label}: {head}, {pct(ltd)} since start (XBI {pct(xltd)})"
-        K = ("nav", "xbi_nav", "basket_nav", "five_nav")
-        T = [("", "Portfolio", "XBI", "Pool basket", "5+ holders")]
-        T.append(("Value", money(nav), money(xnav), money(bnav), money(fnav)))
+        K = ("nav", "xbi_nav", "basket_nav", "five_nav", "top10_nav", "tilt_nav")
+        T = [("", "Portfolio", "XBI", "Pool basket", "5+ holders", "Top 10", "XBI + tilt")]
+        T.append(("Value", money(nav), money(xnav), money(bnav), money(fnav), money(tnav), money(gnav)))
         if new_day:
-            T.append((f"Day ({d})", pct(float(last["ret"])), pct(float(last["xbi_ret"])), pct(float(last["basket_ret"])), pct(float(last["five_ret"]))))
+            T.append((f"Day ({d})", *[pct(float(last[k])) for k in ("ret", "xbi_ret", "basket_ret", "five_ret", "top10_ret", "tilt_ret")]))
         if wd == 5:
             mon = (today - dt.timedelta(days=5)).isoformat()
             T.append(("Week", *[pct(ret_between(rows, mon, cap, k)) for k in K]))
@@ -311,8 +318,8 @@ def report(s, rows, d, new_day, trades_today, warnings, today, src):
             sub = [r for r in rows if r["date"] <= pe.isoformat()]
             if sub:
                 T.append((pe.strftime("%B %Y"), *[pct(ret_between(sub, pe.replace(day=1).isoformat(), cap, k)) for k in K]))
-        T.append((f"Since start ({s['inception']})", pct(ltd), pct(xltd), pct(bltd), pct(fltd)))
-        T.append(("Portfolio ahead by", "", pct(ltd - xltd), pct(ltd - bltd), pct(ltd - fltd)))
+        T.append((f"Since start ({s['inception']})", pct(ltd), pct(xltd), pct(bltd), pct(fltd), pct(tltd), pct(gltd)))
+        T.append(("Portfolio ahead by", "", pct(ltd - xltd), pct(ltd - bltd), pct(ltd - fltd), pct(ltd - tltd), pct(ltd - gltd)))
         if not new_day:
             lines.append(f"No trading today ({'weekend' if wd >= 5 else 'market holiday'}). Figures are as of the {last['date']} close.")
             hp.append(f"<p>{html.escape(lines[-1])}</p>")
@@ -346,7 +353,7 @@ def report(s, rows, d, new_day, trades_today, warnings, today, src):
         hp.append(f"<p style='color:#5F6368'>Data notes: {html.escape('; '.join(warnings))}</p>")
     foot = ("Pretend money only; no real orders. Rules: equal weight across the 34 top-quarter names of the Nov 8, 2026 takeover scores; "
             "every order fills at the first close after it is queued, plus 10 bps slippage; deal targets sold once an agreement is confirmed, "
-            "cash held until the quarterly rebalance. Pool basket = all 128 scored names; 5+ holders = the pool names with five or more specialist holders; both equal weight. Prices: Yahoo Finance closes, "
+            "cash held until the quarterly rebalance. Pool basket = all 128 scored names; 5+ holders = the pool names with five or more specialist holders; Top 10 = the ten highest scores; all equal weight. XBI + tilt = XBI plus the daily return of 5+ holders minus the pool basket (shadow challengers, not traded). Prices: Yahoo Finance closes, "
             "Nasdaq fallback; unofficial.")
     lines += ["", foot]
     hp.append(f"<p style='color:#5F6368;font-size:12px'>{html.escape(foot)}</p>")
