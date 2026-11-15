@@ -19,3 +19,10 @@ C5. Stage weights from the current deal mix. Stifel reports approved assets fell
 C6. Target crowding. Companies whose lead program sits on one of the 43 most crowded targets (Convoke) may be less likely to be bought. Test: crowded-target flag as a multiplier. Metric and pass as in C2.
 
 Context, not a rule: Stifel describes hedge-fund degrossing as a mechanical seller in 2026, and sub-$100M companies up 30% YTD against a flat middle. Both bear on why the specialist pool trailed XBI from September; C1 (hedge against the pool) is the test.
+
+Two-year quarterly backtest, Nov 15, 2024 to Nov 13, 2026 (backtest_2y.py, eight periods, 10 bps each way). Exploratory: these quarters overlap the data the factors were set on, so nothing here is a pass.
+XBI +62.7%. Pool basket +55.6%. 5+ holders +56.6%. System (holders x size x stage) +54.8%. C2 flat size +63.2%. C4 holder change +42.7%. C1 hedge (system minus pool) -2.2%. XBI + tilt (5+ minus pool) +65.6%. Top 10 by score +85.8% (beat XBI in 5 of 8 quarters, t = 0.57).
+Pool against XBI, quarterly: beta 1.41, alpha -2.5% a quarter. Top quarter held 9 of the 25 pool deals (36% against 25% by chance).
+Added to shadow on the live paper portfolio Nov 15, 2026: Top 10 and XBI + tilt.
+C7. Concentration: top 10 instead of top quarter. Judge on the 2018 to 2023 retest; pass = beats XBI after costs in at least 60% of quarters with t above 2.
+C8. Event layer on XBI: buy a pool name only on a hard pre-deal filing (strategic 13D, 8-K 5.02 change-in-control or retention plan), hold 60 trading days. Build the 2019 to 2026 event history from EDGAR first; pass = mean 60-day excess return over XBI above 5% with t above 2.
