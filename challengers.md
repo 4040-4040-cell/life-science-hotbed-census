@@ -11,3 +11,11 @@ C3. Exit before binary readouts (Phase 3 topline or FDA action within 10 trading
 C4. Change in specialist holders (added in the latest quarter) instead of the level. Metric: AUC as in C2. Pass: as in C2.
 
 Pre-registered tests from the 100 questions, to run this week on the 201-company sample: insider buying (Form 4) and short interest (FINRA). Pass for adding either as a factor: improves AUC by 0.02 with p below 0.005 after counting every test run so far.
+
+Added Nov 15, 2026, from the team's week-of-Nov-9 note (Stifel State of Biotech, Nov 13; Convoke pipeline snapshot, Nov 11). Not yet tested.
+
+C5. Stage weights from the current deal mix. Stifel reports approved assets fell from 55% to 30% of 2026 deal value and Phase II targets rose from 14% to 32%; our stage factor (selling 1.5, Phase 3 1.2, Phase 2 1.0) was set on 2024 to 2026 deal counts. Test: re-weight stage on a trailing 24-month deal mix at each rebalance. Metric and pass as in C2.
+
+C6. Target crowding. Companies whose lead program sits on one of the 43 most crowded targets (Convoke) may be less likely to be bought. Test: crowded-target flag as a multiplier. Metric and pass as in C2.
+
+Context, not a rule: Stifel describes hedge-fund degrossing as a mechanical seller in 2026, and sub-$100M companies up 30% YTD against a flat middle. Both bear on why the specialist pool trailed XBI from September; C1 (hedge against the pool) is the test.
