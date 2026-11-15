@@ -1,0 +1,98 @@
+{
+ "tune | Base | all": {
+  "total": 0.5506,
+  "maxdd": -0.3542,
+  "ret_per_dd": 1.555,
+  "worst_month": -0.135,
+  "months_beat_xbi": 12,
+  "months": 25
+ },
+ "tune | Package | all": {
+  "total": 0.8497,
+  "maxdd": -0.2497,
+  "ret_per_dd": 3.404,
+  "worst_month": -0.1339,
+  "months_beat_xbi": 14,
+  "months": 25
+ },
+ "tune | R11 monthly only | all": {
+  "total": 0.75,
+  "maxdd": -0.3854,
+  "ret_per_dd": 1.946,
+  "worst_month": -0.1351,
+  "months_beat_xbi": 12,
+  "months": 25
+ },
+ "hold | Base | all": {
+  "total": 0.2634,
+  "maxdd": -0.222,
+  "ret_per_dd": 1.186,
+  "worst_month": -0.1027,
+  "months_beat_xbi": 9,
+  "months": 16
+ },
+ "hold | Package | all": {
+  "total": 0.3564,
+  "maxdd": -0.1741,
+  "ret_per_dd": 2.047,
+  "worst_month": -0.1023,
+  "months_beat_xbi": 12,
+  "months": 16
+ },
+ "hold | R11 monthly only | all": {
+  "total": 0.3918,
+  "maxdd": -0.2218,
+  "ret_per_dd": 1.766,
+  "worst_month": -0.0902,
+  "months_beat_xbi": 13,
+  "months": 16
+ },
+ "tune | Base | ex PRAX": {
+  "total": 0.5267,
+  "maxdd": -0.3588,
+  "ret_per_dd": 1.468,
+  "worst_month": -0.135,
+  "months_beat_xbi": 12,
+  "months": 25
+ },
+ "tune | Package | ex PRAX": {
+  "total": 0.7162,
+  "maxdd": -0.2497,
+  "ret_per_dd": 2.869,
+  "worst_month": -0.1339,
+  "months_beat_xbi": 13,
+  "months": 25
+ },
+ "tune | R11 monthly only | ex PRAX": {
+  "total": 0.6041,
+  "maxdd": -0.3902,
+  "ret_per_dd": 1.548,
+  "worst_month": -0.1351,
+  "months_beat_xbi": 12,
+  "months": 25
+ },
+ "hold | Base | ex PRAX": {
+  "total": 0.2245,
+  "maxdd": -0.222,
+  "ret_per_dd": 1.011,
+  "worst_month": -0.1027,
+  "months_beat_xbi": 9,
+  "months": 16
+ },
+ "hold | Package | ex PRAX": {
+  "total": 0.3048,
+  "maxdd": -0.175,
+  "ret_per_dd": 1.742,
+  "worst_month": -0.1023,
+  "months_beat_xbi": 12,
+  "months": 16
+ },
+ "hold | R11 monthly only | ex PRAX": {
+  "total": 0.3388,
+  "maxdd": -0.2218,
+  "ret_per_dd": 1.528,
+  "worst_month": -0.0902,
+  "months_beat_xbi": 13,
+  "months": 16
+ }
+}

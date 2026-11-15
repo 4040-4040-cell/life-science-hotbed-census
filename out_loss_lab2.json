@@ -1,0 +1,320 @@
+{
+ "verdict": {
+  "R1": {
+   "setting": "R1 stop 20%",
+   "tune": "pass",
+   "hold": "rejected",
+   "fired_in_holdout": true
+  },
+  "R2": {
+   "setting": null,
+   "tune": "fail",
+   "hold": null
+  },
+  "R3": {
+   "setting": null,
+   "tune": "fail",
+   "hold": null
+  },
+  "R4": {
+   "setting": "R4 RS switch 8",
+   "tune": "pass",
+   "hold": "confirmed",
+   "fired_in_holdout": false
+  },
+  "R5": {
+   "setting": "R5 trend 200d",
+   "tune": "pass",
+   "hold": "confirmed",
+   "fired_in_holdout": true
+  },
+  "R6": {
+   "setting": "R6 vol screen 33%",
+   "tune": "pass",
+   "hold": "rejected",
+   "fired_in_holdout": true
+  },
+  "R7": {
+   "setting": null,
+   "tune": "fail",
+   "hold": null
+  },
+  "R8": {
+   "setting": null,
+   "tune": "fail",
+   "hold": null
+  },
+  "R9": {
+   "setting": null,
+   "tune": "fail",
+   "hold": null
+  },
+  "R10": {
+   "setting": "R10 core 70/30",
+   "tune": "pass",
+   "hold": "rejected",
+   "fired_in_holdout": true
+  },
+  "R11": {
+   "setting": "R11 monthly",
+   "tune": "pass",
+   "hold": "confirmed",
+   "fired_in_holdout": true
+  },
+  "R12": {
+   "setting": "R12 top 10",
+   "tune": "pass",
+   "hold": "rejected",
+   "fired_in_holdout": true
+  }
+ },
+ "package": {
+  "tune": {
+   "XBI": {
+    "total": 0.6394,
+    "maxdd": -0.302,
+    "ret_per_dd": 2.117,
+    "worst_month": -0.096,
+    "months_beat_xbi": 0,
+    "months": 25
+   },
+   "IBB": {
+    "total": 0.5932,
+    "maxdd": -0.213,
+    "ret_per_dd": 2.786,
+    "worst_month": -0.0666,
+    "months_beat_xbi": 11,
+    "months": 25
+   },
+   "S&P 500": {
+    "total": 0.2879,
+    "maxdd": -0.19,
+    "ret_per_dd": 1.515,
+    "worst_month": -0.0586,
+    "months_beat_xbi": 12,
+    "months": 25
+   },
+   "Base system": {
+    "total": 0.5506,
+    "maxdd": -0.3542,
+    "ret_per_dd": 1.555,
+    "worst_month": -0.135,
+    "months_beat_xbi": 12,
+    "months": 25,
+    "avg_exposure": 1.0
+   },
+   "Package": {
+    "total": 0.8497,
+    "maxdd": -0.2497,
+    "ret_per_dd": 3.404,
+    "worst_month": -0.1339,
+    "months_beat_xbi": 14,
+    "months": 25,
+    "avg_exposure": 0.674
+   },
+   "R4 + R5 only": {
+    "total": 0.5929,
+    "maxdd": -0.2487,
+    "ret_per_dd": 2.384,
+    "worst_month": -0.1329,
+    "months_beat_xbi": 9,
+    "months": 25,
+    "avg_exposure": 0.673
+   },
+   "Package, 1% switch cost": {
+    "total": 0.7908,
+    "maxdd": -0.2534,
+    "ret_per_dd": 3.121,
+    "worst_month": -0.1383,
+    "months_beat_xbi": 13,
+    "months": 25
+   }
+  },
+  "hold": {
+   "XBI": {
+    "total": 0.1505,
+    "maxdd": -0.2097,
+    "ret_per_dd": 0.718,
+    "worst_month": -0.1082,
+    "months_beat_xbi": 0,
+    "months": 16
+   },
+   "IBB": {
+    "total": 0.0419,
+    "maxdd": -0.1354,
+    "ret_per_dd": 0.31,
+    "worst_month": -0.0751,
+    "months_beat_xbi": 10,
+    "months": 16
+   },
+   "S&P 500": {
+    "total": 0.3226,
+    "maxdd": -0.0898,
+    "ret_per_dd": 3.593,
+    "worst_month": -0.0508,
+    "months_beat_xbi": 10,
+    "months": 16
+   },
+   "Base system": {
+    "total": 0.2634,
+    "maxdd": -0.222,
+    "ret_per_dd": 1.186,
+    "worst_month": -0.1027,
+    "months_beat_xbi": 9,
+    "months": 16,
+    "avg_exposure": 1.0
+   },
+   "Package": {
+    "total": 0.3564,
+    "maxdd": -0.1741,
+    "ret_per_dd": 2.047,
+    "worst_month": -0.1023,
+    "months_beat_xbi": 12,
+    "months": 16,
+    "avg_exposure": 0.874
+   },
+   "R4 + R5 only": {
+    "total": 0.2648,
+    "maxdd": -0.1795,
+    "ret_per_dd": 1.475,
+    "worst_month": -0.104,
+    "months_beat_xbi": 11,
+    "months": 16,
+    "avg_exposure": 0.874
+   }
+  },
+  "full": {
+   "XBI": {
+    "total": 0.8861,
+    "maxdd": -0.33,
+    "ret_per_dd": 2.685,
+    "worst_month": -0.1082,
+    "months_beat_xbi": 0,
+    "months": 40
+   },
+   "IBB": {
+    "total": 0.66,
+    "maxdd": -0.2506,
+    "ret_per_dd": 2.634,
+    "worst_month": -0.0751,
+    "months_beat_xbi": 20,
+    "months": 40
+   },
+   "S&P 500": {
+    "total": 0.7033,
+    "maxdd": -0.19,
+    "ret_per_dd": 3.702,
+    "worst_month": -0.0586,
+    "months_beat_xbi": 22,
+    "months": 40
+   },
+   "Base system": {
+    "total": 0.9551,
+    "maxdd": -0.4033,
+    "ret_per_dd": 2.368,
+    "worst_month": -0.135,
+    "months_beat_xbi": 21,
+    "months": 40,
+    "avg_exposure": 1.0
+   },
+   "Package": {
+    "total": 1.5039,
+    "maxdd": -0.2999,
+    "ret_per_dd": 5.014,
+    "worst_month": -0.1339,
+    "months_beat_xbi": 25,
+    "months": 40,
+    "avg_exposure": 0.751
+   },
+   "R4 + R5 only": {
+    "total": 1.0107,
+    "maxdd": -0.2931,
+    "ret_per_dd": 3.449,
+    "worst_month": -0.1329,
+    "months_beat_xbi": 20,
+    "months": 40,
+    "avg_exposure": 0.751
+   }
+  }
+ },
+ "diagnostics": {
+  "Q4 beta, share of daily variance explained by XBI": [
+   1.08,
+   0.81
+  ],
+  "Q38 September base vs XBI": {
+   "2023": [
+    -0.0791,
+    -0.078
+   ],
+   "2024": [
+    0.0072,
+    -0.0243
+   ],
+   "2025": [
+    0.0857,
+    0.1152
+   ],
+   "2026": [
+    -0.135,
+    -0.0297
+   ]
+  },
+  "Q3 picks: mean quarterly excess over XBI by volatility third (low, mid, high)": [
+   -0.0173,
+   0.0481,
+   -0.0146
+  ],
+  "Q3 pool: same, all pool names": [
+   0.0064,
+   0.0362,
+   -0.0237
+  ],
+  "Q39 picks: share of picks and mean excess by size": {
+   "1-5B": [
+    359,
+    0.0086
+   ]
+  },
+  "Q40 picks: mean excess by stage multiplier": {
+   "1.2": [
+    216,
+    0.0009
+   ],
+   "1.5": [
+    143,
+    0.0203
+   ]
+  },
+  "Q7 pool: mean excess, 2+ funds cut vs fewer": [
+   0.0152,
+   544,
+   0.0007
+  ],
+  "Q2 Sep-Oct 2026: basket loss, worst 5 names' share of it": [
+   -0.1975,
+   0.28,
+   {
+    "AVBP": -0.505,
+    "NKTR": -0.455,
+    "ANRO": -0.361,
+    "SLDB": -0.353,
+    "DYN": -0.344
+   }
+  ],
+  "Q10 deal targets picked; how many fell 20%+ before the premium (with price history)": [
+   11,
+   0
+  ],
+  "Q33 corr(change in specialist positions, next-quarter pool excess), n": [
+   -0.37,
+   12
+  ],
+  "Q44 kill rule 35% below peak first fired (base, full span)": "2025-04-04",
+  "Q44 kill rule 10 points behind pool first fired": "2024-02-09",
+  "Q1 base minus XBI: at Aug 31, 2026 and at Nov 13, 2026 (two-year window)": [
+   0.1613,
+   -0.0888
+  ]
+ }
+}

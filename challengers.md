@@ -26,3 +26,8 @@ Pool against XBI, quarterly: beta 1.41, alpha -2.5% a quarter. Top quarter held 
 Added to shadow on the live paper portfolio Nov 15, 2026: Top 10 and XBI + tilt.
 C7. Concentration: top 10 instead of top quarter. Judge on the 2018 to 2023 retest; pass = beats XBI after costs in at least 60% of quarters with t above 2.
 C8. Event layer on XBI: buy a pool name only on a hard pre-deal filing (strategic 13D, 8-K 5.02 change-in-control or retention plan), hold 60 trading days. Build the 2019 to 2026 event history from EDGAR first; pass = mean 60-day excess return over XBI above 5% with t above 2.
+
+Loss-control test, Nov 15, 2026 (loss_control_prereg.md committed first as 830f672; results in loss_control_results.md).
+C7 top 10: failed the Aug 2023 to Nov 2024 holdout (14.5% against the base system's 26.3%; worst drop -22.7% against -22.2%). Kept in shadow for the 2018 to 2023 retest; the holdout is evidence against it.
+C9 loss-control package, in shadow from the first fill: top quarter rescored monthly at current value (R11); hold XBI when the candidate basket trails XBI by 8+ points over 21 trading days, back when the gap is above zero (R4); half cash when XBI is below its 200-day average (R5). Tuning window 85.0% (worst drop -25.0%) against XBI 63.9% (-30.2%); holdout 35.6% (-17.4%) against XBI 15.0% (-21.0%). Without Praxis: 71.6% and 30.5%. R4 never fired in the holdout. Replaces the live rules only after two live quarters ahead of both the live rules and XBI.
+Rejected in the holdout: R1 20% stop, R6 volatility screen, R10 70/30 core, R12 top 10. Failed the tuning window: R2, R3, R7, R8, R9.

@@ -1,0 +1,514 @@
+{
+ "tune": {
+  "XBI": {
+   "total": 0.6394,
+   "maxdd": -0.302,
+   "ret_per_dd": 2.117,
+   "worst_month": -0.096,
+   "months_beat_xbi": 0,
+   "months": 25
+  },
+  "IBB": {
+   "total": 0.5932,
+   "maxdd": -0.213,
+   "ret_per_dd": 2.786,
+   "worst_month": -0.0666,
+   "months_beat_xbi": 11,
+   "months": 25
+  },
+  "S&P 500": {
+   "total": 0.2879,
+   "maxdd": -0.19,
+   "ret_per_dd": 1.515,
+   "worst_month": -0.0586,
+   "months_beat_xbi": 12,
+   "months": 25
+  },
+  "Base system": {
+   "total": 0.5506,
+   "maxdd": -0.3542,
+   "ret_per_dd": 1.555,
+   "worst_month": -0.135,
+   "months_beat_xbi": 12,
+   "months": 25,
+   "avg_exposure": 1.0,
+   "y2025": 0.395,
+   "sep_oct_2026": -0.1966
+  },
+  "R1 stop 20%": {
+   "total": 0.5555,
+   "maxdd": -0.3235,
+   "ret_per_dd": 1.717,
+   "worst_month": -0.128,
+   "months_beat_xbi": 12,
+   "months": 25,
+   "avg_exposure": 1.0,
+   "y2025": 0.4031,
+   "sep_oct_2026": -0.1619
+  },
+  "R1 stop 30%": {
+   "total": 0.4655,
+   "maxdd": -0.3421,
+   "ret_per_dd": 1.361,
+   "worst_month": -0.1302,
+   "months_beat_xbi": 11,
+   "months": 25,
+   "avg_exposure": 1.0,
+   "y2025": 0.3581,
+   "sep_oct_2026": -0.1907
+  },
+  "R2 rel stop 20": {
+   "total": 0.4618,
+   "maxdd": -0.3366,
+   "ret_per_dd": 1.372,
+   "worst_month": -0.1214,
+   "months_beat_xbi": 11,
+   "months": 25,
+   "avg_exposure": 1.0,
+   "y2025": 0.3551,
+   "sep_oct_2026": -0.1635
+  },
+  "R2 rel stop 30": {
+   "total": 0.503,
+   "maxdd": -0.3542,
+   "ret_per_dd": 1.42,
+   "worst_month": -0.1299,
+   "months_beat_xbi": 12,
+   "months": 25,
+   "avg_exposure": 1.0,
+   "y2025": 0.3907,
+   "sep_oct_2026": -0.1916
+  },
+  "R3 brake 15%": {
+   "total": 0.3716,
+   "maxdd": -0.27,
+   "ret_per_dd": 1.376,
+   "worst_month": -0.133,
+   "months_beat_xbi": 10,
+   "months": 25,
+   "avg_exposure": 0.765,
+   "y2025": 0.1821,
+   "sep_oct_2026": -0.1623
+  },
+  "R3 brake 20%": {
+   "total": 0.2686,
+   "maxdd": -0.311,
+   "ret_per_dd": 0.864,
+   "worst_month": -0.135,
+   "months_beat_xbi": 9,
+   "months": 25,
+   "avg_exposure": 0.821,
+   "y2025": 0.1255,
+   "sep_oct_2026": -0.1862
+  },
+  "R4 RS switch 5": {
+   "total": 0.6377,
+   "maxdd": -0.3103,
+   "ret_per_dd": 2.055,
+   "worst_month": -0.096,
+   "months_beat_xbi": 9,
+   "months": 25,
+   "avg_exposure": 0.7,
+   "y2025": 0.4594,
+   "sep_oct_2026": -0.0702
+  },
+  "R4 RS switch 8": {
+   "total": 0.6517,
+   "maxdd": -0.3103,
+   "ret_per_dd": 2.1,
+   "worst_month": -0.1329,
+   "months_beat_xbi": 9,
+   "months": 25,
+   "avg_exposure": 0.776,
+   "y2025": 0.4815,
+   "sep_oct_2026": -0.1422
+  },
+  "R5 trend 100d": {
+   "total": 0.4092,
+   "maxdd": -0.3076,
+   "ret_per_dd": 1.331,
+   "worst_month": -0.135,
+   "months_beat_xbi": 12,
+   "months": 25,
+   "avg_exposure": 0.827,
+   "y2025": 0.4674,
+   "sep_oct_2026": -0.241
+  },
+  "R5 trend 200d": {
+   "total": 0.5786,
+   "maxdd": -0.3017,
+   "ret_per_dd": 1.918,
+   "worst_month": -0.135,
+   "months_beat_xbi": 11,
+   "months": 25,
+   "avg_exposure": 0.829,
+   "y2025": 0.4472,
+   "sep_oct_2026": -0.1966
+  },
+  "R6 vol screen 25%": {
+   "total": 0.7688,
+   "maxdd": -0.3176,
+   "ret_per_dd": 2.421,
+   "worst_month": -0.1301,
+   "months_beat_xbi": 13,
+   "months": 25,
+   "avg_exposure": 1.0,
+   "y2025": 0.4895,
+   "sep_oct_2026": -0.1836
+  },
+  "R6 vol screen 33%": {
+   "total": 0.9047,
+   "maxdd": -0.306,
+   "ret_per_dd": 2.957,
+   "worst_month": -0.1281,
+   "months_beat_xbi": 15,
+   "months": 25,
+   "avg_exposure": 1.0,
+   "y2025": 0.5175,
+   "sep_oct_2026": -0.1769
+  },
+  "R7 inverse vol": {
+   "total": 0.5771,
+   "maxdd": -0.327,
+   "ret_per_dd": 1.765,
+   "worst_month": -0.1352,
+   "months_beat_xbi": 13,
+   "months": 25,
+   "avg_exposure": 1.0,
+   "y2025": 0.4201,
+   "sep_oct_2026": -0.1916
+  },
+  "R8 cut screen 2": {
+   "total": 0.3062,
+   "maxdd": -0.3807,
+   "ret_per_dd": 0.804,
+   "worst_month": -0.1199,
+   "months_beat_xbi": 12,
+   "months": 25,
+   "avg_exposure": 1.0,
+   "y2025": 0.3401,
+   "sep_oct_2026": -0.2122
+  },
+  "R8 cut screen 3": {
+   "total": 0.5622,
+   "maxdd": -0.3415,
+   "ret_per_dd": 1.646,
+   "worst_month": -0.1396,
+   "months_beat_xbi": 11,
+   "months": 25,
+   "avg_exposure": 1.0,
+   "y2025": 0.4733,
+   "sep_oct_2026": -0.2147
+  },
+  "R9 VIX 25/20": {
+   "total": 0.3203,
+   "maxdd": -0.3431,
+   "ret_per_dd": 0.934,
+   "worst_month": -0.135,
+   "months_beat_xbi": 10,
+   "months": 25,
+   "avg_exposure": 0.936,
+   "y2025": 0.2885,
+   "sep_oct_2026": -0.1966
+  },
+  "R9 VIX 30/25": {
+   "total": 0.3551,
+   "maxdd": -0.3334,
+   "ret_per_dd": 1.065,
+   "worst_month": -0.135,
+   "months_beat_xbi": 10,
+   "months": 25,
+   "avg_exposure": 0.982,
+   "y2025": 0.2938,
+   "sep_oct_2026": -0.1966
+  },
+  "R10 core 50/50": {
+   "total": 0.5943,
+   "maxdd": -0.3288,
+   "ret_per_dd": 1.807,
+   "worst_month": -0.0885,
+   "months_beat_xbi": 12,
+   "months": 25,
+   "avg_exposure": 0.498,
+   "y2025": 0.3702,
+   "sep_oct_2026": -0.1173
+  },
+  "R10 core 70/30": {
+   "total": 0.6058,
+   "maxdd": -0.3187,
+   "ret_per_dd": 1.901,
+   "worst_month": -0.0915,
+   "months_beat_xbi": 12,
+   "months": 25,
+   "avg_exposure": 0.298,
+   "y2025": 0.3596,
+   "sep_oct_2026": -0.0862
+  },
+  "R11 monthly": {
+   "total": 0.75,
+   "maxdd": -0.3854,
+   "ret_per_dd": 1.946,
+   "worst_month": -0.1351,
+   "months_beat_xbi": 12,
+   "months": 25,
+   "avg_exposure": 1.0,
+   "y2025": 0.5066,
+   "sep_oct_2026": -0.202
+  },
+  "R12 top 20": {
+   "total": 0.8283,
+   "maxdd": -0.3245,
+   "ret_per_dd": 2.553,
+   "worst_month": -0.1457,
+   "months_beat_xbi": 13,
+   "months": 25,
+   "avg_exposure": 1.0,
+   "y2025": 0.3838,
+   "sep_oct_2026": -0.1722
+  },
+  "R12 top 10": {
+   "total": 0.9209,
+   "maxdd": -0.2976,
+   "ret_per_dd": 3.095,
+   "worst_month": -0.1254,
+   "months_beat_xbi": 12,
+   "months": 25,
+   "avg_exposure": 1.0,
+   "y2025": 0.4547,
+   "sep_oct_2026": -0.1658
+  }
+ },
+ "hold": {
+  "XBI": {
+   "total": 0.1505,
+   "maxdd": -0.2097,
+   "ret_per_dd": 0.718,
+   "worst_month": -0.1082,
+   "months_beat_xbi": 0,
+   "months": 16
+  },
+  "IBB": {
+   "total": 0.0419,
+   "maxdd": -0.1354,
+   "ret_per_dd": 0.31,
+   "worst_month": -0.0751,
+   "months_beat_xbi": 10,
+   "months": 16
+  },
+  "S&P 500": {
+   "total": 0.3226,
+   "maxdd": -0.0898,
+   "ret_per_dd": 3.593,
+   "worst_month": -0.0508,
+   "months_beat_xbi": 10,
+   "months": 16
+  },
+  "Base system": {
+   "total": 0.2634,
+   "maxdd": -0.222,
+   "ret_per_dd": 1.186,
+   "worst_month": -0.1027,
+   "months_beat_xbi": 9,
+   "months": 16,
+   "avg_exposure": 1.0
+  },
+  "R1 stop 20%": {
+   "total": 0.2414,
+   "maxdd": -0.2132,
+   "ret_per_dd": 1.132,
+   "worst_month": -0.1021,
+   "months_beat_xbi": 9,
+   "months": 16,
+   "avg_exposure": 1.0
+  },
+  "R1 stop 30%": {
+   "total": 0.247,
+   "maxdd": -0.2214,
+   "ret_per_dd": 1.116,
+   "worst_month": -0.1012,
+   "months_beat_xbi": 8,
+   "months": 16,
+   "avg_exposure": 1.0
+  },
+  "R2 rel stop 20": {
+   "total": 0.2285,
+   "maxdd": -0.2251,
+   "ret_per_dd": 1.015,
+   "worst_month": -0.1037,
+   "months_beat_xbi": 9,
+   "months": 16,
+   "avg_exposure": 1.0
+  },
+  "R2 rel stop 30": {
+   "total": 0.2343,
+   "maxdd": -0.2219,
+   "ret_per_dd": 1.056,
+   "worst_month": -0.0974,
+   "months_beat_xbi": 8,
+   "months": 16,
+   "avg_exposure": 1.0
+  },
+  "R3 brake 15%": {
+   "total": -0.0201,
+   "maxdd": -0.1985,
+   "ret_per_dd": -0.101,
+   "worst_month": -0.0974,
+   "months_beat_xbi": 8,
+   "months": 16,
+   "avg_exposure": 0.755
+  },
+  "R3 brake 20%": {
+   "total": 0.2372,
+   "maxdd": -0.2065,
+   "ret_per_dd": 1.149,
+   "worst_month": -0.0995,
+   "months_beat_xbi": 9,
+   "months": 16,
+   "avg_exposure": 0.975
+  },
+  "R4 RS switch 5": {
+   "total": 0.08,
+   "maxdd": -0.222,
+   "ret_per_dd": 0.36,
+   "worst_month": -0.1027,
+   "months_beat_xbi": 7,
+   "months": 16,
+   "avg_exposure": 0.874
+  },
+  "R4 RS switch 8": {
+   "total": 0.2634,
+   "maxdd": -0.222,
+   "ret_per_dd": 1.186,
+   "worst_month": -0.1027,
+   "months_beat_xbi": 9,
+   "months": 16,
+   "avg_exposure": 1.0
+  },
+  "R5 trend 100d": {
+   "total": 0.1308,
+   "maxdd": -0.1891,
+   "ret_per_dd": 0.691,
+   "worst_month": -0.0774,
+   "months_beat_xbi": 9,
+   "months": 16,
+   "avg_exposure": 0.817
+  },
+  "R5 trend 200d": {
+   "total": 0.2648,
+   "maxdd": -0.1795,
+   "ret_per_dd": 1.475,
+   "worst_month": -0.104,
+   "months_beat_xbi": 11,
+   "months": 16,
+   "avg_exposure": 0.874
+  },
+  "R6 vol screen 25%": {
+   "total": 0.2301,
+   "maxdd": -0.2373,
+   "ret_per_dd": 0.969,
+   "worst_month": -0.1008,
+   "months_beat_xbi": 8,
+   "months": 16,
+   "avg_exposure": 1.0
+  },
+  "R6 vol screen 33%": {
+   "total": 0.1857,
+   "maxdd": -0.2353,
+   "ret_per_dd": 0.789,
+   "worst_month": -0.0962,
+   "months_beat_xbi": 10,
+   "months": 16,
+   "avg_exposure": 1.0
+  },
+  "R7 inverse vol": {
+   "total": 0.2575,
+   "maxdd": -0.2153,
+   "ret_per_dd": 1.196,
+   "worst_month": -0.0949,
+   "months_beat_xbi": 9,
+   "months": 16,
+   "avg_exposure": 1.0
+  },
+  "R8 cut screen 2": {
+   "total": 0.1222,
+   "maxdd": -0.222,
+   "ret_per_dd": 0.55,
+   "worst_month": -0.1046,
+   "months_beat_xbi": 7,
+   "months": 16,
+   "avg_exposure": 1.0
+  },
+  "R8 cut screen 3": {
+   "total": 0.2224,
+   "maxdd": -0.222,
+   "ret_per_dd": 1.001,
+   "worst_month": -0.1027,
+   "months_beat_xbi": 10,
+   "months": 16,
+   "avg_exposure": 1.0
+  },
+  "R9 VIX 25/20": {
+   "total": 0.2617,
+   "maxdd": -0.222,
+   "ret_per_dd": 1.178,
+   "worst_month": -0.1027,
+   "months_beat_xbi": 9,
+   "months": 16,
+   "avg_exposure": 0.991
+  },
+  "R9 VIX 30/25": {
+   "total": 0.2627,
+   "maxdd": -0.222,
+   "ret_per_dd": 1.183,
+   "worst_month": -0.1027,
+   "months_beat_xbi": 9,
+   "months": 16,
+   "avg_exposure": 0.995
+  },
+  "R10 core 50/50": {
+   "total": 0.2028,
+   "maxdd": -0.2159,
+   "ret_per_dd": 0.939,
+   "worst_month": -0.1,
+   "months_beat_xbi": 9,
+   "months": 16,
+   "avg_exposure": 0.503
+  },
+  "R10 core 70/30": {
+   "total": 0.1783,
+   "maxdd": -0.2134,
+   "ret_per_dd": 0.836,
+   "worst_month": -0.1033,
+   "months_beat_xbi": 9,
+   "months": 16,
+   "avg_exposure": 0.303
+  },
+  "R11 monthly": {
+   "total": 0.3918,
+   "maxdd": -0.2218,
+   "ret_per_dd": 1.766,
+   "worst_month": -0.0902,
+   "months_beat_xbi": 13,
+   "months": 16,
+   "avg_exposure": 1.0
+  },
+  "R12 top 20": {
+   "total": 0.3492,
+   "maxdd": -0.2149,
+   "ret_per_dd": 1.625,
+   "worst_month": -0.1029,
+   "months_beat_xbi": 10,
+   "months": 16,
+   "avg_exposure": 1.0
+  },
+  "R12 top 10": {
+   "total": 0.1454,
+   "maxdd": -0.2273,
+   "ret_per_dd": 0.64,
+   "worst_month": -0.1156,
+   "months_beat_xbi": 8,
+   "months": 16,
+   "avg_exposure": 1.0
+  }
+ }
+}

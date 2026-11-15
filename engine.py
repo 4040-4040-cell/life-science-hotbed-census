@@ -1,4 +1,4 @@
-"""Takeover paper portfolio engine, v1.1 (2026-11-15).
+"""Takeover paper portfolio engine, v1.2 (2026-11-15): adds the loss-control package as a shadow line.
 
 State lives next to this script: ledger.json (positions, orders, trades, benchmarks) and nav_history.csv
 (one row per market close). Commands:
@@ -118,7 +118,7 @@ def save(s):
     json.dump(s, open(LEDGER, "w"), indent=1)
 
 
-NAV_COLS = ["date", "nav", "cash", "invested", "xbi_nav", "basket_nav", "five_nav", "top10_nav", "tilt_nav", "ret", "xbi_ret", "basket_ret", "five_ret", "top10_ret", "tilt_ret", "positions"]
+NAV_COLS = ["date", "nav", "cash", "invested", "xbi_nav", "basket_nav", "five_nav", "top10_nav", "tilt_nav", "pkg_nav", "ret", "xbi_ret", "basket_ret", "five_ret", "top10_ret", "tilt_ret", "pkg_ret", "pkg_expo", "positions"]
 
 
 def nav_rows():
@@ -133,7 +133,7 @@ def write_nav(rows):
         w = csv.DictWriter(f, fieldnames=NAV_COLS)
         w.writeheader()
         for r in rows:
-            w.writerow({k: r[k] for k in NAV_COLS})
+            w.writerow({k: r.get(k, "") for k in NAV_COLS})
 
 
 def cmd_flags():
@@ -193,12 +193,136 @@ def ret_between(rows, start_date, cap, key):
     return float(rows[-1][key]) / b - 1
 
 
+# ---- shadow package (loss-control rules R4 + R5 + R11, pre-registered in loss_control_prereg.md) --------------
+P_SWITCH, P_QCOST, P_CASH = 0.005, 0.002, 0.04 / 252
+
+
+def _size_m(m):
+    return 1.0 if m < 1e9 else 1.3 if m < 5e9 else 0.9 if m < 10e9 else 0.55
+
+
+def pkg_select(cands, px, d):
+    """Top quarter of candidates by holders x size x stage at the d close; ties broken by holders, then ticker."""
+    rows = []
+    for t, c in cands.items():
+        p = mark(px.get(t), d)[0]
+        if p is None or t in RESTRICTED:
+            continue
+        m = p * c["sh"]
+        if 0.5e9 <= m <= 25e9:
+            rows.append((-(1.0 if c["n"] >= 5 else 0.4) * _size_m(m) * c["st"], -c["n"], t))
+    rows.sort()
+    return [r[2] for r in rows[:max(1, round(len(rows) / 4))]]
+
+
+def pkg_signal(P, px, xh, d):
+    """Target exposure decided at the d close: (fraction in stocks, where the rest waits)."""
+    cl = sorted(x for x in xh if x <= d)
+    st = P["state"]
+    if len(cl) < 22:
+        return [1.0, "cash"]
+    d21 = cl[-22]
+    rets = [b / a - 1 for a, b in ((mark(px.get(t), d21)[0], mark(px.get(t), d)[0]) for t in P["cands"]) if a and b]
+    gap = (sum(rets) / len(rets) if rets else 0.0) - (xh[d] / xh[d21] - 1)
+    if gap <= -0.08:
+        st["rs_on"] = True
+    elif gap > 0:
+        st["rs_on"] = False
+    ma = sum(xh[x] for x in cl[-200:]) / 200 if len(cl) >= 200 else None
+    c = [(1.0, "cash")]
+    if st.get("rs_on"):
+        c.append((0.0, "xbi"))
+    if ma and xh[d] < ma:
+        c.append((0.5, "cash"))
+    st["signal"] = {"date": d, "pool_minus_xbi_21d": round(gap, 4), "xbi_vs_200d": round(xh[d] / ma - 1, 4) if ma else None}
+    return list(min(c, key=lambda z: z[0]))
+
+
+def pkg_values(st, px, xp, d):
+    hv = sum(sh * (mark(px.get(t), d)[0] or 0) for t, sh in st["hold"].items())
+    return hv, st["pocket_sh"] * xp, st["alt_xbi_sh"] * xp + st["cash"]
+
+
+def pkg_buy(st, names, px, d, dollars):
+    st["hold"] = {t: (dollars / len(names)) / px[t][d] for t in names if (px.get(t) or {}).get(d)} if names else {}
+
+
+def pkg_step(s, px, xh, d, new_inception):
+    """Advance the shadow package to the d close. Returns (nav, exposure)."""
+    P = s.get("package")
+    if not P:
+        return None, None
+    xp = xh[d]
+    cl = sorted(x for x in xh if x <= d)
+    if new_inception or P.get("state") is None:
+        P["state"] = st = {"hold": {}, "pocket_sh": 0.0, "alt_xbi_sh": 0.0, "cash": 0.0, "rs_on": False, "last": d, "month": d[:7], "pending": None}
+        e, alt = pkg_signal(P, px, xh, cl[-2]) if len(cl) > 1 else [1.0, "cash"]
+        total = s["start_capital"] * (1 - P_QCOST)
+        pkg_buy(st, pkg_select(P["cands"], px, d), px, d, total * e)
+        if alt == "xbi":
+            st["alt_xbi_sh"] = total * (1 - e) / xp
+        else:
+            st["cash"] = total * (1 - e)
+        st["e"], st["alt"] = e, alt
+    else:
+        st = P["state"]
+        if d <= st["last"]:
+            hv, pv, av = pkg_values(st, px, xp, d); return hv + pv + av, (hv + pv) / (hv + pv + av)
+        st["cash"] *= (1 + P_CASH) ** len([x for x in cl if x > st["last"]])
+        # monthly rescore or post-13F rebuild
+        if d[:7] != st["month"] or P.get("rebalance_due"):
+            hv, pv, av = pkg_values(st, px, xp, d)
+            sleeve = hv + pv
+            new = pkg_select(P["cands"], px, d)
+            old = {t: sh * (mark(px.get(t), d)[0] or 0) / hv for t, sh in st["hold"].items()} if hv > 0 else {}
+            w = {t: 1 / len(new) for t in new}
+            turn = sum(abs(w.get(t, 0) - old.get(t, 0)) for t in set(w) | set(old))
+            cost = P_QCOST if P.get("rebalance_due") else P_QCOST * 0.5 * turn
+            pkg_buy(st, new, px, d, sleeve * (1 - cost)); st["pocket_sh"] = 0.0
+            st["month"] = d[:7]; P["rebalance_due"] = False
+        # execute the target decided at the previous close
+        if st.get("pending"):
+            want, walt = st["pending"]
+            hv, pv, av = pkg_values(st, px, xp, d)
+            if abs(want - st["e"]) > 1e-9 or (walt != st["alt"] and av > 0):
+                if walt != st["alt"] and av > 0:
+                    av *= 1 - P_SWITCH
+                    st["alt_xbi_sh"], st["cash"] = (av / xp, 0.0) if walt == "xbi" else (0.0, av)
+                st["alt"] = walt
+                sleeve = hv + pv; move = (sleeve + av) * want - sleeve
+                if move < -1e-9:
+                    f = -move / sleeve
+                    st["hold"] = {t: sh * (1 - f) for t, sh in st["hold"].items()}; st["pocket_sh"] *= 1 - f
+                    got = -move * (1 - P_SWITCH)
+                    if walt == "xbi": st["alt_xbi_sh"] += got / xp
+                    else: st["cash"] += got
+                elif move > 1e-9:
+                    move = min(move, av); add = move * (1 - P_SWITCH)
+                    if walt == "xbi": st["alt_xbi_sh"] -= move / xp
+                    else: st["cash"] -= move
+                    if hv > 0:
+                        st["hold"] = {t: sh * (1 + add / hv) for t, sh in st["hold"].items()}
+                    else:
+                        st["pocket_sh"] += add / xp   # waits in XBI until the next monthly rescore, as tested
+                st["e"] = want
+            st["pending"] = None
+        st["last"] = d
+    tgt = pkg_signal(P, px, xh, d)
+    if abs(tgt[0] - st["e"]) > 1e-9 or tgt[1] != st["alt"]:
+        st["pending"] = tgt
+    hv, pv, av = pkg_values(st, px, xp, d)
+    nav = hv + pv + av
+    return nav, (hv + pv) / nav
+
+
 def cmd_run():
     s = load()
     basket = s["basket"]["tickers"]
     five = s["five"]["tickers"]
     top10 = s["top10"]["tickers"]
-    px, src = prices(list(s["positions"]) + [o["ticker"] for o in s["pending_orders"]] + basket + five + top10 + ["XBI"])
+    pc = list(s.get("package", {}).get("cands", {}))
+    px, src = prices(list(s["positions"]) + [o["ticker"] for o in s["pending_orders"]] + basket + five + top10 + pc + ["XBI"])
+    xh = prices(["XBI"], "1y")[0].get("XBI") or px.get("XBI")
     if not px.get("XBI"):
         sys.exit("FATAL: no benchmark prices from Yahoo or Nasdaq")
     d = max(px["XBI"])
@@ -258,6 +382,7 @@ def cmd_run():
         fnav = sum(sh * (mark(px.get(t), d)[0] or 0) for t, sh in s["five"]["shares"].items())
         tnav = sum(sh * (mark(px.get(t), d)[0] or 0) for t, sh in s["top10"]["shares"].items())
         prev = rows[-1] if rows else None
+        pnav, pexp = pkg_step(s, px, xh, d, new_inception=not rows)
         cap = s["start_capital"]
         rows.append({"date": d, "nav": round(nav, 2), "cash": round(s["cash"], 2), "invested": round(invested, 2),
                      "xbi_nav": round(xnav, 2), "basket_nav": round(bnav, 2), "five_nav": round(fnav, 2), "top10_nav": round(tnav, 2),
@@ -268,6 +393,8 @@ def cmd_run():
                      "five_ret": round(fnav / (float(prev["five_nav"]) if prev else cap) - 1, 6),
                      "top10_ret": round(tnav / (float(prev["top10_nav"]) if prev else cap) - 1, 6),
                      "tilt_ret": round((xnav / (float(prev["xbi_nav"]) if prev else cap) - 1) + (fnav / (float(prev["five_nav"]) if prev else cap) - 1) - (bnav / (float(prev["basket_nav"]) if prev else cap) - 1), 6),
+                     "pkg_nav": round(pnav, 2) if pnav else "", "pkg_ret": round(pnav / (float(prev["pkg_nav"]) if prev and prev.get("pkg_nav") else cap) - 1, 6) if pnav else "",
+                     "pkg_expo": round(pexp, 3) if pexp is not None else "",
                      "positions": len(s["positions"])})
         write_nav(rows)
         s["last_marks"] = {t: round(v, 4) for t, v in marks.items()}
@@ -300,14 +427,15 @@ def report(s, rows, d, new_day, trades_today, warnings, today, src):
     else:
         last = rows[-1]
         nav, xnav, bnav, fnav, tnav, gnav = (float(last[k]) for k in ("nav", "xbi_nav", "basket_nav", "five_nav", "top10_nav", "tilt_nav"))
-        ltd, xltd, bltd, fltd, tltd, gltd = (v / cap - 1 for v in (nav, xnav, bnav, fnav, tnav, gnav))
+        pk = float(last.get("pkg_nav") or cap)
+        ltd, xltd, bltd, fltd, tltd, gltd, pltd = (v / cap - 1 for v in (nav, xnav, bnav, fnav, tnav, gnav, pk))
         head = f"{pct(float(last['ret']))} today" if new_day else "market closed"
         subject = f"Takeover paper portfolio, {day_label}: {head}, {pct(ltd)} since start (XBI {pct(xltd)})"
-        K = ("nav", "xbi_nav", "basket_nav", "five_nav", "top10_nav", "tilt_nav")
-        T = [("", "Portfolio", "XBI", "Pool basket", "5+ holders", "Top 10", "XBI + tilt")]
-        T.append(("Value", money(nav), money(xnav), money(bnav), money(fnav), money(tnav), money(gnav)))
+        K = ("nav", "xbi_nav", "basket_nav", "five_nav", "top10_nav", "tilt_nav", "pkg_nav")
+        T = [("", "Portfolio", "XBI", "Pool basket", "5+ holders", "Top 10", "XBI + tilt", "Loss-control package")]
+        T.append(("Value", money(nav), money(xnav), money(bnav), money(fnav), money(tnav), money(gnav), money(pk)))
         if new_day:
-            T.append((f"Day ({d})", *[pct(float(last[k])) for k in ("ret", "xbi_ret", "basket_ret", "five_ret", "top10_ret", "tilt_ret")]))
+            T.append((f"Day ({d})", *[pct(float(last[k] or 0)) for k in ("ret", "xbi_ret", "basket_ret", "five_ret", "top10_ret", "tilt_ret", "pkg_ret")]))
         if wd == 5:
             mon = (today - dt.timedelta(days=5)).isoformat()
             T.append(("Week", *[pct(ret_between(rows, mon, cap, k)) for k in K]))
@@ -318,8 +446,8 @@ def report(s, rows, d, new_day, trades_today, warnings, today, src):
             sub = [r for r in rows if r["date"] <= pe.isoformat()]
             if sub:
                 T.append((pe.strftime("%B %Y"), *[pct(ret_between(sub, pe.replace(day=1).isoformat(), cap, k)) for k in K]))
-        T.append((f"Since start ({s['inception']})", pct(ltd), pct(xltd), pct(bltd), pct(fltd), pct(tltd), pct(gltd)))
-        T.append(("Portfolio ahead by", "", pct(ltd - xltd), pct(ltd - bltd), pct(ltd - fltd), pct(ltd - tltd), pct(ltd - gltd)))
+        T.append((f"Since start ({s['inception']})", pct(ltd), pct(xltd), pct(bltd), pct(fltd), pct(tltd), pct(gltd), pct(pltd)))
+        T.append(("Portfolio ahead by", "", pct(ltd - xltd), pct(ltd - bltd), pct(ltd - fltd), pct(ltd - tltd), pct(ltd - gltd), pct(ltd - pltd)))
         if not new_day:
             lines.append(f"No trading today ({'weekend' if wd >= 5 else 'market holiday'}). Figures are as of the {last['date']} close.")
             hp.append(f"<p>{html.escape(lines[-1])}</p>")
@@ -328,6 +456,13 @@ def report(s, rows, d, new_day, trades_today, warnings, today, src):
         hp.append("<table style='border-collapse:collapse;font-family:Arial,sans-serif;font-size:14px'>" + "".join(
             "<tr>" + "".join(f"<td style='padding:5px 18px 5px 0;{'text-align:right;' if i else ''}{'font-weight:bold;' if i == 1 else ''}{'color:#5F6368;' if j == 0 else ''}'>{html.escape(c)}</td>" for i, c in enumerate(r)) + "</tr>"
             for j, r in enumerate(T)) + "</table>")
+        pst = (s.get("package") or {}).get("state") or {}
+        if pst:
+            sg = pst.get("signal", {})
+            pl = (f"Loss-control package (shadow): {float(last.get('pkg_expo') or 1)*100:.0f}% in stocks, rest in {pst.get('alt', 'cash').upper() if pst.get('alt') == 'xbi' else 'cash'}; "
+                  f"candidate basket minus XBI over 21 days {pct(sg.get('pool_minus_xbi_21d'))} (switch to XBI at -8.00%), XBI vs its 200-day average {pct(sg.get('xbi_vs_200d'))}"
+                  + (f"; change queued for the next close: {pst['pending'][0]*100:.0f}% in stocks" if pst.get("pending") else ""))
+            lines.append(pl); hp.append(f"<p>{html.escape(pl)}</p>")
         lines.append(f"Holdings: {last['positions']}; cash {money(float(last['cash']))}")
         hp.append(f"<p>Holdings: {last['positions']}; cash {html.escape(money(float(last['cash'])))}</p>")
         if trades_today:
@@ -353,7 +488,7 @@ def report(s, rows, d, new_day, trades_today, warnings, today, src):
         hp.append(f"<p style='color:#5F6368'>Data notes: {html.escape('; '.join(warnings))}</p>")
     foot = ("Pretend money only; no real orders. Rules: equal weight across the 34 top-quarter names of the Nov 8, 2026 takeover scores; "
             "every order fills at the first close after it is queued, plus 10 bps slippage; deal targets sold once an agreement is confirmed, "
-            "cash held until the quarterly rebalance. Pool basket = all 128 scored names; 5+ holders = the pool names with five or more specialist holders; Top 10 = the ten highest scores; all equal weight. XBI + tilt = XBI plus the daily return of 5+ holders minus the pool basket (shadow challengers, not traded). Prices: Yahoo Finance closes, "
+            "cash held until the quarterly rebalance. Pool basket = all 128 scored names; 5+ holders = the pool names with five or more specialist holders; Top 10 = the ten highest scores; all equal weight. XBI + tilt = XBI plus the daily return of 5+ holders minus the pool basket. Loss-control package = top quarter rescored monthly, switches to XBI when specialist-held names trail XBI by 8 points over a month, half cash when XBI is below its 200-day average (shadow challengers, not traded). Prices: Yahoo Finance closes, "
             "Nasdaq fallback; unofficial.")
     lines += ["", foot]
     hp.append(f"<p style='color:#5F6368;font-size:12px'>{html.escape(foot)}</p>")
