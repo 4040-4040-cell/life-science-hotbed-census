@@ -11,10 +11,249 @@
   "challengers_in_shadow": "Top 10 (concentrated) and XBI + tilt (XBI plus 5+ holders minus pool); added Nov 15, 2026 after the two-year backtest; not traded"
  },
  "start_capital": 5000.0,
- "cash": 5000.0,
+ "cash": 1.5916157281026244e-12,
  "slippage_bps": 10,
- "inception": null,
- "positions": {},
+ "inception": "2026-11-16",
+ "positions": {
+  "URGN": {
+   "shares": 5.2281819081065475,
+   "cost": 147.05882352941177,
+   "entry_date": "2026-11-16",
+   "entry_px": 28.1281,
+   "cik": 1668243
+  },
+  "ZLAB": {
+   "shares": 6.259561636889391,
+   "cost": 147.05882352941177,
+   "entry_date": "2026-11-16",
+   "entry_px": 23.4935,
+   "cik": 1704292
+  },
+  "IMCR": {
+   "shares": 5.08697754909259,
+   "cost": 147.05882352941177,
+   "entry_date": "2026-11-16",
+   "entry_px": 28.9089,
+   "cik": 1671927
+  },
+  "MIRM": {
+   "shares": 1.6041920901702773,
+   "cost": 147.05882352941177,
+   "entry_date": "2026-11-16",
+   "entry_px": 91.6716,
+   "cik": 1759425
+  },
+  "CYTK": {
+   "shares": 2.7630602147412824,
+   "cost": 147.05882352941177,
+   "entry_date": "2026-11-16",
+   "entry_px": 53.2232,
+   "cik": 1061983
+  },
+  "MDGL": {
+   "shares": 0.34652304844276344,
+   "cost": 147.05882352941177,
+   "entry_date": "2026-11-16",
+   "entry_px": 424.384,
+   "cik": 1157601
+  },
+  "DBVT": {
+   "shares": 14.304957314293477,
+   "cost": 147.05882352941177,
+   "entry_date": "2026-11-16",
+   "entry_px": 10.2803,
+   "cik": 1613780
+  },
+  "VERA": {
+   "shares": 5.447234394430626,
+   "cost": 147.05882352941177,
+   "entry_date": "2026-11-16",
+   "entry_px": 26.997,
+   "cik": 1831828
+  },
+  "RYTM": {
+   "shares": 1.366876736302512,
+   "cost": 147.05882352941177,
+   "entry_date": "2026-11-16",
+   "entry_px": 107.5875,
+   "cik": 1649904
+  },
+  "ACAD": {
+   "shares": 7.8688758231276905,
+   "cost": 147.05882352941177,
+   "entry_date": "2026-11-16",
+   "entry_px": 18.6887,
+   "cik": 1070494
+  },
+  "VOR": {
+   "shares": 7.744433928191565,
+   "cost": 147.05882352941177,
+   "entry_date": "2026-11-16",
+   "entry_px": 18.989,
+   "cik": 1817229
+  },
+  "GPCR": {
+   "shares": 7.911249952492946,
+   "cost": 147.05882352941177,
+   "entry_date": "2026-11-16",
+   "entry_px": 18.5886,
+   "cik": 1888886
+  },
+  "IRON": {
+   "shares": 1.918160485935422,
+   "cost": 147.05882352941177,
+   "entry_date": "2026-11-16",
+   "entry_px": 76.6666,
+   "cik": 1816736
+  },
+  "RLAY": {
+   "shares": 8.506769636235902,
+   "cost": 147.05882352941177,
+   "entry_date": "2026-11-16",
+   "entry_px": 17.2873,
+   "cik": 1812364
+  },
+  "DYN": {
+   "shares": 8.79712045615533,
+   "cost": 147.05882352941177,
+   "entry_date": "2026-11-16",
+   "entry_px": 16.7167,
+   "cik": 1818794
+  },
+  "VRDN": {
+   "shares": 4.929929920060201,
+   "cost": 147.05882352941177,
+   "entry_date": "2026-11-16",
+   "entry_px": 29.8298,
+   "cik": 1590750
+  },
+  "MLYS": {
+   "shares": 10.110936794067033,
+   "cost": 147.05882352941177,
+   "entry_date": "2026-11-16",
+   "entry_px": 14.5445,
+   "cik": 1933414
+  },
+  "NAMS": {
+   "shares": 7.549430196186741,
+   "cost": 147.05882352941177,
+   "entry_date": "2026-11-16",
+   "entry_px": 19.4795,
+   "cik": 1936258
+  },
+  "CLDX": {
+   "shares": 5.1385768316821965,
+   "cost": 147.05882352941177,
+   "entry_date": "2026-11-16",
+   "entry_px": 28.6186,
+   "cik": 744218
+  },
+  "IDYA": {
+   "shares": 4.838995771337088,
+   "cost": 147.05882352941177,
+   "entry_date": "2026-11-16",
+   "entry_px": 30.3904,
+   "cik": 1676725
+  },
+  "PHVS": {
+   "shares": 4.528727238526326,
+   "cost": 147.05882352941177,
+   "entry_date": "2026-11-16",
+   "entry_px": 32.4724,
+   "cik": 1830487
+  },
+  "DNTH": {
+   "shares": 1.640557360332708,
+   "cost": 147.05882352941177,
+   "entry_date": "2026-11-16",
+   "entry_px": 89.6395,
+   "cik": 1690585
+  },
+  "BCRX": {
+   "shares": 19.719719680240804,
+   "cost": 147.05882352941177,
+   "entry_date": "2026-11-16",
+   "entry_px": 7.4574,
+   "cik": 882796
+  },
+  "XENE": {
+   "shares": 3.7420252577125317,
+   "cost": 147.05882352941177,
+   "entry_date": "2026-11-16",
+   "entry_px": 39.2993,
+   "cik": 1582313
+  },
+  "MBX": {
+   "shares": 2.7656609867807607,
+   "cost": 147.05882352941177,
+   "entry_date": "2026-11-16",
+   "entry_px": 53.1731,
+   "cik": 1776111
+  },
+  "TSHA": {
+   "shares": 36.185199905860586,
+   "cost": 147.05882352941177,
+   "entry_date": "2026-11-16",
+   "entry_px": 4.0641,
+   "cik": 1806310
+  },
+  "LBRX": {
+   "shares": 3.417350816882856,
+   "cost": 147.05882352941177,
+   "entry_date": "2026-11-16",
+   "entry_px": 43.033,
+   "cik": 1691082
+  },
+  "AMLX": {
+   "shares": 5.28460113733072,
+   "cost": 147.05882352941177,
+   "entry_date": "2026-11-16",
+   "entry_px": 27.8278,
+   "cik": 1658551
+  },
+  "TYRA": {
+   "shares": 7.4423460799287735,
+   "cost": 147.05882352941177,
+   "entry_date": "2026-11-16",
+   "entry_px": 19.7597,
+   "cik": 1863127
+  },
+  "KRYS": {
+   "shares": 0.49315848142931856,
+   "cost": 147.05882352941177,
+   "entry_date": "2026-11-16",
+   "entry_px": 298.1979,
+   "cik": 1711279
+  },
+  "OCUL": {
+   "shares": 24.444577640231948,
+   "cost": 147.05882352941177,
+   "entry_date": "2026-11-16",
+   "entry_px": 6.016,
+   "cik": 1393434
+  },
+  "AVBP": {
+   "shares": 12.70864287351159,
+   "cost": 147.05882352941177,
+   "entry_date": "2026-11-16",
+   "entry_px": 11.5716,
+   "cik": 1868279
+  },
+  "RAPP": {
+   "shares": 5.91909394108759,
+   "cost": 147.05882352941177,
+   "entry_date": "2026-11-16",
+   "entry_px": 24.8448,
+   "cik": 2012593
+  },
+  "NKTR": {
+   "shares": 4.031611185998737,
+   "cost": 147.05882352941177,
+   "entry_date": "2026-11-16",
+   "entry_px": 36.4764,
+   "cik": 906709
+  }
+ },
  "ciks": {
   "URGN": 1668243,
   "ZLAB": 1704292,
@@ -275,215 +514,449 @@
    "TRAX",
    "LEGN",
    "OVID"
+  ],
+  "shares": {
+   "URGN": 1.3996707470521466,
+   "ZLAB": 1.6757881547577897,
+   "IMCR": 1.3618680052688823,
+   "MIRM": 0.42946874854952305,
+   "CYTK": 0.739716907883493,
+   "MDGL": 0.09276994997680281,
+   "DBVT": 3.8296736117006156,
+   "VERA": 1.458314719768829,
+   "RYTM": 0.36593550420697174,
+   "ACAD": 2.106628173120799,
+   "VOR": 2.0733130201457732,
+   "GPCR": 2.117972428226458,
+   "IRON": 0.5135232796992468,
+   "RLAY": 2.27740289474032,
+   "DYN": 2.355134610309301,
+   "VRDN": 1.319823758126353,
+   "MLYS": 2.706864968490387,
+   "NAMS": 2.021107296616923,
+   "CLDX": 1.3756819864346037,
+   "IDYA": 1.2954791828776455,
+   "PHVS": 1.2124151662196463,
+   "DNTH": 0.43920433268749665,
+   "BCRX": 5.279295032505412,
+   "XENE": 1.0018020374978431,
+   "MBX": 0.7404131775633532,
+   "TSHA": 9.687376352750078,
+   "LBRX": 0.9148813210552528,
+   "AMLX": 1.414775107631846,
+   "TYRA": 1.9924391080124277,
+   "KRYS": 0.13202668006769158,
+   "OCUL": 6.544217635967608,
+   "AVBP": 3.402313840152709,
+   "RAPP": 1.5846393228108508,
+   "NKTR": 1.0793289789287959,
+   "OLMA": 5.343851629370287,
+   "ELVN": 0.8259291892516868,
+   "NRIX": 2.6701118799840677,
+   "AURA": 5.447472021075529,
+   "MLTX": 3.353004943918612,
+   "QURE": 1.7975661788009747,
+   "ANRO": 1.4502488197701076,
+   "EWTX": 0.9004292122748471,
+   "STOK": 1.476933833727575,
+   "ARWR": 0.8896346526162706,
+   "ALKS": 0.8452771973386056,
+   "XNCR": 1.1110380788747267,
+   "CGON": 0.46391540448413915,
+   "TARS": 0.4998824096614809,
+   "ABVX": 0.47040722392256096,
+   "COGT": 1.4333362970905728,
+   "SLDB": 6.069559875334154,
+   "CRVS": 3.7104479237891814,
+   "IMVT": 1.1818133411107368,
+   "ACRS": 10.910054921543779,
+   "BLTE": 0.24194603833763115,
+   "SVRA": 8.808678161739154,
+   "ORIC": 5.230152658532623,
+   "TNGX": 1.6272547783270714,
+   "IMTX": 6.374513450918204,
+   "PTCT": 0.6450836147640696,
+   "PRAX": 0.12676297415852428,
+   "TRVI": 2.9594242281538996,
+   "PTGX": 0.31507448523724524,
+   "CORT": 0.5681991908720793,
+   "FTH": 4.23822715432816,
+   "ARQT": 1.448646334886384,
+   "ORKA": 0.3963195081838505,
+   "JBIO": 2.564770002749613,
+   "PCVX": 0.6383825351755449,
+   "SYRE": 0.39580102638789694,
+   "TVTX": 0.7913631386753586,
+   "NGNE": 1.6880149352860652,
+   "ODTX": 2.0315469004217626,
+   "AVLN": 1.3215977147905014,
+   "CGEM": 4.140078736017402,
+   "CBIO": 2.913388740160394,
+   "KARD": 3.0607585986120873,
+   "BHVN": 2.85005420233082,
+   "ALNY": 0.24623269261982922,
+   "GLUE": 4.293749780804074,
+   "CLYM": 3.956815693376793,
+   "AXSM": 0.2870647981327299,
+   "RCUS": 2.3327845784202443,
+   "SNDX": 4.307858487641327,
+   "ZBIO": 1.4081900462644226,
+   "VSTM": 5.10788934963186,
+   "DMRA": 1.748421782270074,
+   "VKTX": 1.4675652235882581,
+   "SEPN": 0.9438624428165423,
+   "PVLA": 0.2719968740813646,
+   "CMPS": 4.755834098206206,
+   "NTLA": 3.988919674661797,
+   "KYMR": 0.3125208422102926,
+   "IVA": 11.846610841013652,
+   "IMNM": 2.2334325946715117,
+   "SLN": 1.9864014137457233,
+   "ASND": 0.14474201594290403,
+   "BCAX": 4.033922870991315,
+   "IONS": 1.4041680825478513,
+   "ANAB": 0.8600644651687147,
+   "MAZE": 1.1601990558160862,
+   "GHRS": 2.097639892915484,
+   "GERN": 41.75238640357253,
+   "BEAM": 1.8782592164357843,
+   "CRSP": 0.9742568241804638,
+   "ABSI": 5.261638527379976,
+   "WVE": 13.704093377061087,
+   "FDMT": 3.483680070165219,
+   "DSGN": 3.964793144371504,
+   "REPL": 1.8370269963645645,
+   "IMMX": 5.258121389326914,
+   "SMMT": 3.32747444942177,
+   "COAG": 1.0070605042162417,
+   "KLRA": 3.12893778776176,
+   "KOD": 0.39045714277936383,
+   "JANX": 3.6017168490993883,
+   "ZYME": 1.4869848012160802,
+   "BMRN": 0.6782332814651719,
+   "BBIO": 0.5084119440559116,
+   "UTHR": 0.06690268080588781,
+   "CAPR": 4.738644336405461,
+   "BNTX": 0.4613036358452418,
+   "SRRK": 0.8830432867571917,
+   "NVCT": 2.058123913771079,
+   "TRAX": 0.8447325599691864,
+   "LEGN": 2.459709067677631,
+   "OVID": 16.387811663402218
+  },
+  "missing_at_start": [
+   "ACHV"
   ]
  },
- "pending_orders": [
+ "pending_orders": [],
+ "trades": [
   {
+   "date": "2026-11-16",
    "side": "buy",
    "ticker": "URGN",
-   "reason": "top quarter, Nov 8 score 25.7%",
-   "created": "2026-11-15"
+   "shares": 5.228182,
+   "price": 28.1281,
+   "value": 147.06,
+   "reason": "top quarter, Nov 8 score 25.7%"
   },
   {
+   "date": "2026-11-16",
    "side": "buy",
    "ticker": "ZLAB",
-   "reason": "top quarter, Nov 8 score 22.1%",
-   "created": "2026-11-15"
+   "shares": 6.259562,
+   "price": 23.4935,
+   "value": 147.06,
+   "reason": "top quarter, Nov 8 score 22.1%"
   },
   {
+   "date": "2026-11-16",
    "side": "buy",
    "ticker": "IMCR",
-   "reason": "top quarter, Nov 8 score 21.6%",
-   "created": "2026-11-15"
+   "shares": 5.086978,
+   "price": 28.9089,
+   "value": 147.06,
+   "reason": "top quarter, Nov 8 score 21.6%"
   },
   {
+   "date": "2026-11-16",
    "side": "buy",
    "ticker": "MIRM",
-   "reason": "top quarter, Nov 8 score 20.2%",
-   "created": "2026-11-15"
+   "shares": 1.604192,
+   "price": 91.6716,
+   "value": 147.06,
+   "reason": "top quarter, Nov 8 score 20.2%"
   },
   {
+   "date": "2026-11-16",
    "side": "buy",
    "ticker": "CYTK",
-   "reason": "top quarter, Nov 8 score 19.8%",
-   "created": "2026-11-15"
+   "shares": 2.76306,
+   "price": 53.2232,
+   "value": 147.06,
+   "reason": "top quarter, Nov 8 score 19.8%"
   },
   {
+   "date": "2026-11-16",
    "side": "buy",
    "ticker": "MDGL",
-   "reason": "top quarter, Nov 8 score 19.7%",
-   "created": "2026-11-15"
+   "shares": 0.346523,
+   "price": 424.384,
+   "value": 147.06,
+   "reason": "top quarter, Nov 8 score 19.7%"
   },
   {
+   "date": "2026-11-16",
    "side": "buy",
    "ticker": "DBVT",
-   "reason": "top quarter, Nov 8 score 19.4%",
-   "created": "2026-11-15"
+   "shares": 14.304957,
+   "price": 10.2803,
+   "value": 147.06,
+   "reason": "top quarter, Nov 8 score 19.4%"
   },
   {
+   "date": "2026-11-16",
    "side": "buy",
    "ticker": "VERA",
-   "reason": "top quarter, Nov 8 score 18.7%",
-   "created": "2026-11-15"
+   "shares": 5.447234,
+   "price": 26.997,
+   "value": 147.06,
+   "reason": "top quarter, Nov 8 score 18.7%"
   },
   {
+   "date": "2026-11-16",
    "side": "buy",
    "ticker": "RYTM",
-   "reason": "top quarter, Nov 8 score 18.0%",
-   "created": "2026-11-15"
+   "shares": 1.366877,
+   "price": 107.5875,
+   "value": 147.06,
+   "reason": "top quarter, Nov 8 score 18.0%"
   },
   {
+   "date": "2026-11-16",
    "side": "buy",
    "ticker": "ACAD",
-   "reason": "top quarter, Nov 8 score 17.8%",
-   "created": "2026-11-15"
+   "shares": 7.868876,
+   "price": 18.6887,
+   "value": 147.06,
+   "reason": "top quarter, Nov 8 score 17.8%"
   },
   {
+   "date": "2026-11-16",
    "side": "buy",
    "ticker": "VOR",
-   "reason": "top quarter, Nov 8 score 17.7%",
-   "created": "2026-11-15"
+   "shares": 7.744434,
+   "price": 18.989,
+   "value": 147.06,
+   "reason": "top quarter, Nov 8 score 17.7%"
   },
   {
+   "date": "2026-11-16",
    "side": "buy",
    "ticker": "GPCR",
-   "reason": "top quarter, Nov 8 score 17.5%",
-   "created": "2026-11-15"
+   "shares": 7.91125,
+   "price": 18.5886,
+   "value": 147.06,
+   "reason": "top quarter, Nov 8 score 17.5%"
   },
   {
+   "date": "2026-11-16",
    "side": "buy",
    "ticker": "IRON",
-   "reason": "top quarter, Nov 8 score 17.4%",
-   "created": "2026-11-15"
+   "shares": 1.91816,
+   "price": 76.6666,
+   "value": 147.06,
+   "reason": "top quarter, Nov 8 score 17.4%"
   },
   {
+   "date": "2026-11-16",
    "side": "buy",
    "ticker": "RLAY",
-   "reason": "top quarter, Nov 8 score 17.3%",
-   "created": "2026-11-15"
+   "shares": 8.50677,
+   "price": 17.2873,
+   "value": 147.06,
+   "reason": "top quarter, Nov 8 score 17.3%"
   },
   {
+   "date": "2026-11-16",
    "side": "buy",
    "ticker": "DYN",
-   "reason": "top quarter, Nov 8 score 17.2%",
-   "created": "2026-11-15"
+   "shares": 8.79712,
+   "price": 16.7167,
+   "value": 147.06,
+   "reason": "top quarter, Nov 8 score 17.2%"
   },
   {
+   "date": "2026-11-16",
    "side": "buy",
    "ticker": "VRDN",
-   "reason": "top quarter, Nov 8 score 17.2%",
-   "created": "2026-11-15"
+   "shares": 4.92993,
+   "price": 29.8298,
+   "value": 147.06,
+   "reason": "top quarter, Nov 8 score 17.2%"
   },
   {
+   "date": "2026-11-16",
    "side": "buy",
    "ticker": "MLYS",
-   "reason": "top quarter, Nov 8 score 16.9%",
-   "created": "2026-11-15"
+   "shares": 10.110937,
+   "price": 14.5445,
+   "value": 147.06,
+   "reason": "top quarter, Nov 8 score 16.9%"
   },
   {
+   "date": "2026-11-16",
    "side": "buy",
    "ticker": "NAMS",
-   "reason": "top quarter, Nov 8 score 16.9%",
-   "created": "2026-11-15"
+   "shares": 7.54943,
+   "price": 19.4795,
+   "value": 147.06,
+   "reason": "top quarter, Nov 8 score 16.9%"
   },
   {
+   "date": "2026-11-16",
    "side": "buy",
    "ticker": "CLDX",
-   "reason": "top quarter, Nov 8 score 16.9%",
-   "created": "2026-11-15"
+   "shares": 5.138577,
+   "price": 28.6186,
+   "value": 147.06,
+   "reason": "top quarter, Nov 8 score 16.9%"
   },
   {
+   "date": "2026-11-16",
    "side": "buy",
    "ticker": "IDYA",
-   "reason": "top quarter, Nov 8 score 16.5%",
-   "created": "2026-11-15"
+   "shares": 4.838996,
+   "price": 30.3904,
+   "value": 147.06,
+   "reason": "top quarter, Nov 8 score 16.5%"
   },
   {
+   "date": "2026-11-16",
    "side": "buy",
    "ticker": "PHVS",
-   "reason": "top quarter, Nov 8 score 16.5%",
-   "created": "2026-11-15"
+   "shares": 4.528727,
+   "price": 32.4724,
+   "value": 147.06,
+   "reason": "top quarter, Nov 8 score 16.5%"
   },
   {
+   "date": "2026-11-16",
    "side": "buy",
    "ticker": "DNTH",
-   "reason": "top quarter, Nov 8 score 16.4%",
-   "created": "2026-11-15"
+   "shares": 1.640557,
+   "price": 89.6395,
+   "value": 147.06,
+   "reason": "top quarter, Nov 8 score 16.4%"
   },
   {
+   "date": "2026-11-16",
    "side": "buy",
    "ticker": "BCRX",
-   "reason": "top quarter, Nov 8 score 16.2%",
-   "created": "2026-11-15"
+   "shares": 19.71972,
+   "price": 7.4574,
+   "value": 147.06,
+   "reason": "top quarter, Nov 8 score 16.2%"
   },
   {
+   "date": "2026-11-16",
    "side": "buy",
    "ticker": "XENE",
-   "reason": "top quarter, Nov 8 score 16.0%",
-   "created": "2026-11-15"
+   "shares": 3.742025,
+   "price": 39.2993,
+   "value": 147.06,
+   "reason": "top quarter, Nov 8 score 16.0%"
   },
   {
+   "date": "2026-11-16",
    "side": "buy",
    "ticker": "MBX",
-   "reason": "top quarter, Nov 8 score 15.8%",
-   "created": "2026-11-15"
+   "shares": 2.765661,
+   "price": 53.1731,
+   "value": 147.06,
+   "reason": "top quarter, Nov 8 score 15.8%"
   },
   {
+   "date": "2026-11-16",
    "side": "buy",
    "ticker": "TSHA",
-   "reason": "top quarter, Nov 8 score 15.8%",
-   "created": "2026-11-15"
+   "shares": 36.1852,
+   "price": 4.0641,
+   "value": 147.06,
+   "reason": "top quarter, Nov 8 score 15.8%"
   },
   {
+   "date": "2026-11-16",
    "side": "buy",
    "ticker": "LBRX",
-   "reason": "top quarter, Nov 8 score 15.4%",
-   "created": "2026-11-15"
+   "shares": 3.417351,
+   "price": 43.033,
+   "value": 147.06,
+   "reason": "top quarter, Nov 8 score 15.4%"
   },
   {
+   "date": "2026-11-16",
    "side": "buy",
    "ticker": "AMLX",
-   "reason": "top quarter, Nov 8 score 15.3%",
-   "created": "2026-11-15"
+   "shares": 5.284601,
+   "price": 27.8278,
+   "value": 147.06,
+   "reason": "top quarter, Nov 8 score 15.3%"
   },
   {
+   "date": "2026-11-16",
    "side": "buy",
    "ticker": "TYRA",
-   "reason": "top quarter, Nov 8 score 15.2%",
-   "created": "2026-11-15"
+   "shares": 7.442346,
+   "price": 19.7597,
+   "value": 147.06,
+   "reason": "top quarter, Nov 8 score 15.2%"
   },
   {
+   "date": "2026-11-16",
    "side": "buy",
    "ticker": "KRYS",
-   "reason": "top quarter, Nov 8 score 15.0%",
-   "created": "2026-11-15"
+   "shares": 0.493158,
+   "price": 298.1979,
+   "value": 147.06,
+   "reason": "top quarter, Nov 8 score 15.0%"
   },
   {
+   "date": "2026-11-16",
    "side": "buy",
    "ticker": "OCUL",
-   "reason": "top quarter, Nov 8 score 14.9%",
-   "created": "2026-11-15"
+   "shares": 24.444578,
+   "price": 6.016,
+   "value": 147.06,
+   "reason": "top quarter, Nov 8 score 14.9%"
   },
   {
+   "date": "2026-11-16",
    "side": "buy",
    "ticker": "AVBP",
-   "reason": "top quarter, Nov 8 score 14.6%",
-   "created": "2026-11-15"
+   "shares": 12.708643,
+   "price": 11.5716,
+   "value": 147.06,
+   "reason": "top quarter, Nov 8 score 14.6%"
   },
   {
+   "date": "2026-11-16",
    "side": "buy",
    "ticker": "RAPP",
-   "reason": "top quarter, Nov 8 score 14.6%",
-   "created": "2026-11-15"
+   "shares": 5.919094,
+   "price": 24.8448,
+   "value": 147.06,
+   "reason": "top quarter, Nov 8 score 14.6%"
   },
   {
+   "date": "2026-11-16",
    "side": "buy",
    "ticker": "NKTR",
-   "reason": "top quarter, Nov 8 score 14.6%",
-   "created": "2026-11-15"
+   "shares": 4.031611,
+   "price": 36.4764,
+   "value": 147.06,
+   "reason": "top quarter, Nov 8 score 14.6%"
   }
  ],
- "trades": [],
  "restricted": [
   "ERAS",
   "NBIX",
@@ -578,7 +1051,96 @@
    "CAPR",
    "SRRK",
    "TRAX"
-  ]
+  ],
+  "shares": {
+   "URGN": 2.043197527306007,
+   "ZLAB": 2.4462654672901065,
+   "IMCR": 1.9880142145879085,
+   "MIRM": 0.6269256444343612,
+   "CYTK": 1.0798166356460184,
+   "MDGL": 0.13542280054085007,
+   "DBVT": 5.590443088344577,
+   "VERA": 2.128804246099325,
+   "RYTM": 0.5341817130377633,
+   "ACAD": 3.075192850417718,
+   "VOR": 3.0265603857300367,
+   "GPCR": 3.091752854997243,
+   "IRON": 0.7496259370322339,
+   "RLAY": 3.3244846854255243,
+   "DYN": 3.4379551207963357,
+   "VRDN": 1.9266392791039864,
+   "MLYS": 3.951400586187116,
+   "NAMS": 2.9503520306936686,
+   "CLDX": 2.0081794514620075,
+   "IDYA": 1.8911017956949538,
+   "PHVS": 1.769847426550518,
+   "DNTH": 0.6411373592104835,
+   "BCRX": 7.706557116415945,
+   "XENE": 1.4624006754278858,
+   "MBX": 1.080833029316619,
+   "TSHA": 14.141342491945517,
+   "LBRX": 1.3355164111955988,
+   "AMLX": 2.0652464214855684,
+   "TYRA": 2.908503065719291,
+   "KRYS": 0.1927286019378946,
+   "OCUL": 9.553053330665358,
+   "AVBP": 4.966596065510276,
+   "RAPP": 2.3132091264020467,
+   "NKTR": 1.5755721876316904,
+   "OLMA": 7.800794907241684,
+   "ELVN": 1.2056667475283243,
+   "NRIX": 3.897749525953754,
+   "AURA": 7.952056858351634,
+   "MLTX": 4.894616412386939,
+   "QURE": 2.6240333874451007,
+   "ANRO": 2.1170298863310766,
+   "EWTX": 1.3144196547000642,
+   "STOK": 2.1559838722230116,
+   "ARWR": 1.2986620791065098,
+   "ALKS": 1.2339103915172747,
+   "XNCR": 1.621860184104486,
+   "CGON": 0.6772098433274215,
+   "TARS": 0.7297134026092882,
+   "ABVX": 0.6866864073352326,
+   "COGT": 2.092341491155204,
+   "SLDB": 8.860162116867098,
+   "CRVS": 5.4164009921980005,
+   "IMVT": 1.725175796793834,
+   "ACRS": 15.926172126851263,
+   "BLTE": 0.35318559619401324,
+   "SVRA": 12.858645132653706,
+   "ORIC": 7.634820547513138,
+   "TNGX": 2.375417894799288,
+   "IMTX": 9.305324232949562,
+   "PTCT": 0.9416737824716878,
+   "PRAX": 0.18504480135784576,
+   "TRVI": 4.320079045695922,
+   "PTGX": 0.4599363175302315,
+   "CORT": 0.8294401981695869,
+   "FTH": 6.186837340226164,
+   "ORKA": 0.5785353740155058,
+   "JBIO": 3.743974601714952,
+   "PCVX": 0.931891746750508,
+   "SYRE": 0.5777785097846311,
+   "NGNE": 2.464113756107244,
+   "ODTX": 2.965591452339814,
+   "AVLN": 1.9292288480275133,
+   "CGEM": 6.043563212347242,
+   "CBIO": 4.252877816096207,
+   "ALNY": 0.3594431260082564,
+   "GLUE": 6.26788761105882,
+   "CLYM": 5.7760412995270425,
+   "DMRA": 2.552293866072407,
+   "SEPN": 1.3778221866402398,
+   "KYMR": 0.4562085857552547,
+   "ASND": 0.21129006924998633,
+   "REPL": 2.6816371096356284,
+   "COAG": 1.4700768279938239,
+   "KLRA": 4.567529874089005,
+   "CAPR": 6.917331387626361,
+   "SRRK": 1.289040200208774,
+   "TRAX": 1.2331153461619158
+  }
  },
  "next_rebalance": "2026-11-17",
  "rebalances": [],
@@ -594,7 +1156,19 @@
    "VERA",
    "RYTM",
    "ACAD"
-  ]
+  ],
+  "shares": {
+   "URGN": 17.77581848756226,
+   "ZLAB": 21.28250956542393,
+   "IMCR": 17.295723666914803,
+   "MIRM": 5.454253106578943,
+   "CYTK": 9.39440473012036,
+   "MDGL": 1.1781783647053956,
+   "DBVT": 48.636854868597815,
+   "VERA": 18.520596941064127,
+   "RYTM": 4.647380903428541,
+   "ACAD": 26.75417779863415
+  }
  },
  "package": {
   "cands": {
@@ -1617,6 +2191,123 @@
   "cands_asof": "13F filings filed on or before 2026-08-14",
   "rebalance_due": false,
   "rules": "Shadow, not traded. Top quarter of candidates by holders x size x stage, rescored monthly at current value; hold XBI instead when the candidate basket trails XBI by 8+ points over 21 trading days (back when the gap is above zero); half in cash when XBI closes below its 200-day average; signals act at the next close; switches cost 0.5%, rebalances 0.2% of turnover, cash earns 4% a year. Pre-registered in loss_control_prereg.md (830f672).",
-  "state": null
+  "state": {
+   "hold": {
+    "BCRX": 21.60640831348777,
+    "NRIX": 10.927884720671003,
+    "OCUL": 26.783318125704472,
+    "TARS": 2.045853354543516,
+    "IMCR": 5.573675274774373,
+    "ACAD": 8.621732294348359,
+    "NKTR": 4.417336496582982,
+    "URGN": 5.728389392721846,
+    "ZLAB": 6.858446609948184,
+    "COGT": 5.86617135333396,
+    "IRON": 2.1016809235603064,
+    "GPCR": 8.668160578108987,
+    "ELVN": 3.380254975545651,
+    "XENE": 4.100044369217623,
+    "AMLX": 5.790206544441865,
+    "MBX": 3.030266226195103,
+    "PHVS": 4.962014239688159,
+    "RLAY": 9.320656742066236,
+    "TRVI": 12.111944464671474,
+    "DYN": 9.638786942244543,
+    "TSHA": 39.64722707770539,
+    "LBRX": 3.7443066279479846,
+    "STOK": 6.044601649849188,
+    "DBVT": 15.673587335490154,
+    "IDYA": 5.301967784436227,
+    "MLYS": 11.078302954954156,
+    "NAMS": 8.27172363491695,
+    "VERA": 5.968399775138446,
+    "VRDN": 5.401602078371942,
+    "ANRO": 5.935388714435246,
+    "CLDX": 5.630211330377191
+   },
+   "pocket_sh": 0.0,
+   "alt_xbi_sh": 0.0,
+   "cash": 0.0,
+   "rs_on": false,
+   "last": "2026-11-16",
+   "month": "2026-11",
+   "pending": null,
+   "signal": {
+    "date": "2026-11-16",
+    "pool_minus_xbi_21d": -0.0025,
+    "xbi_vs_200d": 0.0196
+   },
+   "e": 1.0,
+   "alt": "cash"
+  }
+ },
+ "xbi": {
+  "shares": 34.240505861015876
+ },
+ "last_marks": {
+  "URGN": 28.1,
+  "ZLAB": 23.47,
+  "IMCR": 28.88,
+  "MIRM": 91.58,
+  "CYTK": 53.17,
+  "MDGL": 423.96,
+  "DBVT": 10.27,
+  "VERA": 26.97,
+  "RYTM": 107.48,
+  "ACAD": 18.67,
+  "VOR": 18.97,
+  "GPCR": 18.57,
+  "IRON": 76.59,
+  "RLAY": 17.27,
+  "DYN": 16.7,
+  "VRDN": 29.8,
+  "MLYS": 14.53,
+  "NAMS": 19.46,
+  "CLDX": 28.59,
+  "IDYA": 30.36,
+  "PHVS": 32.44,
+  "DNTH": 89.55,
+  "BCRX": 7.45,
+  "XENE": 39.26,
+  "MBX": 53.12,
+  "TSHA": 4.06,
+  "LBRX": 42.99,
+  "AMLX": 27.8,
+  "TYRA": 19.74,
+  "KRYS": 297.9,
+  "OCUL": 6.01,
+  "AVBP": 11.56,
+  "RAPP": 24.82,
+  "NKTR": 36.44
+ },
+ "last_movers": {
+  "down": [
+   [
+    "AVBP",
+    -0.11145272867025358
+   ],
+   [
+    "AMLX",
+    -0.08220534829976889
+   ],
+   [
+    "GPCR",
+    -0.07150000000000001
+   ]
+  ],
+  "up": [
+   [
+    "URGN",
+    0.07333842627960285
+   ],
+   [
+    "LBRX",
+    -0.00046500813764227544
+   ],
+   [
+    "ACAD",
+    -0.00426666666666653
+   ]
+  ]
  }
 }
