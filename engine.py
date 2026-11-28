@@ -1,10 +1,11 @@
-"""Takeover paper portfolio engine, v1.2 (2026-11-15): adds the loss-control package as a shadow line.
+"""Takeover paper portfolio engine, v1.3 (2026-11-28): the loss-control package rules now run the live book (decide).
 
 State lives next to this script: ledger.json (positions, orders, trades, benchmarks) and nav_history.csv
 (one row per market close). Commands:
   python3 engine.py flags     today's prices; holdings that moved 25% or more; deal filings at the SEC (last 4 days)
   python3 engine.py order sell TICKER "reason"    queue a sale; it fills at the next market close
   python3 engine.py run       fill queued orders at the latest close, mark to market, write the report files
+  python3 engine.py decide    after run: read the signals, set the day's call, queue rebalance or risk orders, put the call atop the report
 Rules (frozen 2026-11-15, see "rules" in ledger.json): equal-weight the 34 top-quarter names of the Nov 8, 2026
 takeover scores with $5,000 of pretend money; fractional shares; every order fills at the first market close after it
 is queued, plus 10 bps slippage; no commissions; deal targets sold once an agreement is confirmed; cash held until the
@@ -118,7 +119,7 @@ def save(s):
     json.dump(s, open(LEDGER, "w"), indent=1)
 
 
-NAV_COLS = ["date", "nav", "cash", "invested", "xbi_nav", "basket_nav", "five_nav", "top10_nav", "tilt_nav", "pkg_nav", "ret", "xbi_ret", "basket_ret", "five_ret", "top10_ret", "tilt_ret", "pkg_ret", "pkg_expo", "positions"]
+NAV_COLS = ["date", "nav", "cash", "invested", "xbi_nav", "basket_nav", "five_nav", "top10_nav", "tilt_nav", "pkg_nav", "frozen_nav", "ret", "xbi_ret", "basket_ret", "five_ret", "top10_ret", "tilt_ret", "pkg_ret", "frozen_ret", "pkg_expo", "positions"]
 
 
 def nav_rows():
@@ -189,7 +190,7 @@ def money(x):
 
 def ret_between(rows, start_date, cap, key):
     prev = [r for r in rows if r["date"] < start_date]
-    b = float(prev[-1][key]) if prev else cap
+    b = float(prev[-1].get(key) or prev[-1]["nav"]) if prev else cap   # frozen_nav is blank before Nov 28; it equals nav there
     return float(rows[-1][key]) / b - 1
 
 
@@ -338,22 +339,34 @@ def cmd_run():
             c = (px.get(o["ticker"]) or {}).get(d)
             if c is None:
                 remaining.append(o); warnings.append(f"Sell {o['ticker']} not filled: no close on {d}"); continue
-            pos = s["positions"].pop(o["ticker"])
-            fill = c * (1 - slip); val = pos["shares"] * fill
+            if o["ticker"] not in s["positions"]:
+                warnings.append(f"Sell {o['ticker']} skipped: not held"); continue
+            pos = s["positions"][o["ticker"]]
+            q = min(o.get("shares") or pos["shares"], pos["shares"])
+            if q >= pos["shares"] * 0.9999:
+                q = pos["shares"]; s["positions"].pop(o["ticker"]); basis = pos["cost"]
+            else:
+                basis = pos["cost"] * q / pos["shares"]; pos["shares"] -= q; pos["cost"] -= basis
+            fill = c * (1 - slip); val = q * fill
             s["cash"] += val
-            tr = {"date": d, "side": "sell", "ticker": o["ticker"], "shares": round(pos["shares"], 6), "price": round(fill, 4), "value": round(val, 2), "reason": o["reason"], "pnl": round(val - pos["cost"], 2)}
+            tr = {"date": d, "side": "sell", "ticker": o["ticker"], "shares": round(q, 6), "price": round(fill, 4), "value": round(val, 2), "reason": o["reason"], "pnl": round(val - basis, 2)}
             s["trades"].append(tr); trades_today.append(tr)
         buys = [o for o in fillable if o["side"] == "buy"]
         if buys:
             per = s["cash"] / len(buys)
+            want = sum(o.get("dollars") or per for o in buys)
+            scale = min(1.0, s["cash"] / want) if want > 0 else 1.0   # never spend more cash than the account holds
             for o in buys:
                 c = (px.get(o["ticker"]) or {}).get(d)
                 if c is None:
                     remaining.append(o); warnings.append(f"Buy {o['ticker']} not filled: no close on {d}"); continue
-                dollars = o.get("dollars") or per
+                dollars = (o.get("dollars") or per) * scale
                 fill = c * (1 + slip); sh = dollars / fill
                 s["cash"] -= dollars
-                s["positions"][o["ticker"]] = {"shares": sh, "cost": dollars, "entry_date": d, "entry_px": round(fill, 4), "cik": s.get("ciks", {}).get(o["ticker"])}
+                if o["ticker"] in s["positions"]:
+                    pos = s["positions"][o["ticker"]]; pos["shares"] += sh; pos["cost"] += dollars
+                else:
+                    s["positions"][o["ticker"]] = {"shares": sh, "cost": dollars, "entry_date": d, "entry_px": round(fill, 4), "cik": s.get("ciks", {}).get(o["ticker"])}
                 tr = {"date": d, "side": "buy", "ticker": o["ticker"], "shares": round(sh, 6), "price": round(fill, 4), "value": round(dollars, 2), "reason": o["reason"]}
                 s["trades"].append(tr); trades_today.append(tr)
         s["pending_orders"] = remaining
@@ -383,6 +396,9 @@ def cmd_run():
         tnav = sum(sh * (mark(px.get(t), d)[0] or 0) for t, sh in s["top10"]["shares"].items())
         prev = rows[-1] if rows else None
         pnav, pexp = pkg_step(s, px, xh, d, new_inception=not rows)
+        fz = s.get("frozen")
+        znav = (fz["cash"] + sum(sh * (mark(px.get(t), d)[0] or 0) for t, sh in fz["shares"].items())) if fz else None
+        zprev = float(prev["frozen_nav"]) if prev and prev.get("frozen_nav") else (prev and float(prev["nav"]))
         cap = s["start_capital"]
         rows.append({"date": d, "nav": round(nav, 2), "cash": round(s["cash"], 2), "invested": round(invested, 2),
                      "xbi_nav": round(xnav, 2), "basket_nav": round(bnav, 2), "five_nav": round(fnav, 2), "top10_nav": round(tnav, 2),
@@ -395,6 +411,7 @@ def cmd_run():
                      "tilt_ret": round((xnav / (float(prev["xbi_nav"]) if prev else cap) - 1) + (fnav / (float(prev["five_nav"]) if prev else cap) - 1) - (bnav / (float(prev["basket_nav"]) if prev else cap) - 1), 6),
                      "pkg_nav": round(pnav, 2) if pnav else "", "pkg_ret": round(pnav / (float(prev["pkg_nav"]) if prev and prev.get("pkg_nav") else cap) - 1, 6) if pnav else "",
                      "pkg_expo": round(pexp, 3) if pexp is not None else "",
+                     "frozen_nav": round(znav, 2) if znav else "", "frozen_ret": round(znav / zprev - 1, 6) if znav and zprev else "",
                      "positions": len(s["positions"])})
         write_nav(rows)
         s["last_marks"] = {t: round(v, 4) for t, v in marks.items()}
@@ -428,26 +445,27 @@ def report(s, rows, d, new_day, trades_today, warnings, today, src):
         last = rows[-1]
         nav, xnav, bnav, fnav, tnav, gnav = (float(last[k]) for k in ("nav", "xbi_nav", "basket_nav", "five_nav", "top10_nav", "tilt_nav"))
         pk = float(last.get("pkg_nav") or cap)
-        ltd, xltd, bltd, fltd, tltd, gltd, pltd = (v / cap - 1 for v in (nav, xnav, bnav, fnav, tnav, gnav, pk))
+        zk = float(last.get("frozen_nav") or nav)
+        ltd, xltd, bltd, fltd, tltd, gltd, pltd, zltd = (v / cap - 1 for v in (nav, xnav, bnav, fnav, tnav, gnav, pk, zk))
         head = f"{pct(float(last['ret']))} today" if new_day else "market closed"
         subject = f"Takeover paper portfolio, {day_label}: {head}, {pct(ltd)} since start (XBI {pct(xltd)})"
-        K = ("nav", "xbi_nav", "basket_nav", "five_nav", "top10_nav", "tilt_nav", "pkg_nav")
-        T = [("", "Portfolio", "XBI", "Pool basket", "5+ holders", "Top 10", "XBI + tilt", "Loss-control package")]
-        T.append(("Value", money(nav), money(xnav), money(bnav), money(fnav), money(tnav), money(gnav), money(pk)))
+        K = ("nav", "frozen_nav", "xbi_nav", "basket_nav", "five_nav", "top10_nav", "tilt_nav", "pkg_nav")
+        T = [("", "Portfolio", "Frozen rules", "XBI", "Pool basket", "5+ holders", "Top 10", "XBI + tilt", "Package since Nov 16")]
+        T.append(("Value", money(nav), money(zk), money(xnav), money(bnav), money(fnav), money(tnav), money(gnav), money(pk)))
         if new_day:
-            T.append((f"Day ({d})", *[pct(float(last[k] or 0)) for k in ("ret", "xbi_ret", "basket_ret", "five_ret", "top10_ret", "tilt_ret", "pkg_ret")]))
+            T.append((f"Day ({d})", *[pct(float(last.get(k) or 0)) for k in ("ret", "frozen_ret", "xbi_ret", "basket_ret", "five_ret", "top10_ret", "tilt_ret", "pkg_ret")]))
         if wd == 5:
             mon = (today - dt.timedelta(days=5)).isoformat()
-            T.append(("Week", *[pct(ret_between(rows, mon, cap, k)) for k in K]))
+            T.append(("Week", *[pct(ret_between(rows, mon, cap, k if rows[-1].get(k) else "nav")) for k in K]))
             ms = today.replace(day=1).isoformat()
-            T.append(("Month to date", *[pct(ret_between(rows, ms, cap, k)) for k in K]))
+            T.append(("Month to date", *[pct(ret_between(rows, ms, cap, k if rows[-1].get(k) else "nav")) for k in K]))
         if today.day == 1:
             pe = today - dt.timedelta(days=1)
             sub = [r for r in rows if r["date"] <= pe.isoformat()]
             if sub:
-                T.append((pe.strftime("%B %Y"), *[pct(ret_between(sub, pe.replace(day=1).isoformat(), cap, k)) for k in K]))
-        T.append((f"Since start ({s['inception']})", pct(ltd), pct(xltd), pct(bltd), pct(fltd), pct(tltd), pct(gltd), pct(pltd)))
-        T.append(("Portfolio ahead by", "", pct(ltd - xltd), pct(ltd - bltd), pct(ltd - fltd), pct(ltd - tltd), pct(ltd - gltd), pct(ltd - pltd)))
+                T.append((pe.strftime("%B %Y"), *[pct(ret_between(sub, pe.replace(day=1).isoformat(), cap, k if sub[-1].get(k) else "nav")) for k in K]))
+        T.append((f"Since start ({s['inception']})", pct(ltd), pct(zltd), pct(xltd), pct(bltd), pct(fltd), pct(tltd), pct(gltd), pct(pltd)))
+        T.append(("Portfolio ahead by", "", pct(ltd - zltd), pct(ltd - xltd), pct(ltd - bltd), pct(ltd - fltd), pct(ltd - tltd), pct(ltd - gltd), pct(ltd - pltd)))
         if not new_day:
             lines.append(f"No trading today ({'weekend' if wd >= 5 else 'market holiday'}). Figures are as of the {last['date']} close.")
             hp.append(f"<p>{html.escape(lines[-1])}</p>")
@@ -486,9 +504,10 @@ def report(s, rows, d, new_day, trades_today, warnings, today, src):
     if warnings:
         lines += ["", "Data notes: " + "; ".join(warnings)]
         hp.append(f"<p style='color:#5F6368'>Data notes: {html.escape('; '.join(warnings))}</p>")
-    foot = ("Pretend money only; no real orders. Rules: equal weight across the 34 top-quarter names of the Nov 8, 2026 takeover scores; "
-            "every order fills at the first close after it is queued, plus 10 bps slippage; deal targets sold once an agreement is confirmed, "
-            "cash held until the quarterly rebalance. Pool basket = all 128 scored names; 5+ holders = the pool names with five or more specialist holders; Top 10 = the ten highest scores; all equal weight. XBI + tilt = XBI plus the daily return of 5+ holders minus the pool basket. Loss-control package = top quarter rescored monthly, switches to XBI when specialist-held names trail XBI by 8 points over a month, half cash when XBI is below its 200-day average (shadow challengers, not traded). Prices: Yahoo Finance closes, "
+    foot = ("Pretend money only; no real orders. Live rules since Nov 28, 2026: monthly rescore to the top quarter of specialist-held names "
+            "at current value, equal weight; rotate into XBI when those names trail XBI by 8 points over 21 trading days; half cash when XBI is "
+            "below its 200-day average; deal targets sold once an agreement is confirmed. Orders fill at the first close after they are queued, "
+            "plus 10 bps slippage. Frozen rules = the Nov 15 book (34 top-quarter names of the Nov 8 scores, buy and hold) tracked from Nov 27. Pool basket = all 128 scored names; 5+ holders = the pool names with five or more specialist holders; Top 10 = the ten highest scores; all equal weight. XBI + tilt = XBI plus the daily return of 5+ holders minus the pool basket. Loss-control package = top quarter rescored monthly, switches to XBI when specialist-held names trail XBI by 8 points over a month, half cash when XBI is below its 200-day average, run from Nov 16 (shadow, not traded). Prices: Yahoo Finance closes, "
             "Nasdaq fallback; unofficial.")
     lines += ["", foot]
     hp.append(f"<p style='color:#5F6368;font-size:12px'>{html.escape(foot)}</p>")
@@ -498,9 +517,119 @@ def report(s, rows, d, new_day, trades_today, warnings, today, src):
     print(subject); print("\n".join(lines))
 
 
+# ---- live decision layer (from Nov 28, 2026): the package rules now run the live book --------------------------
+LIVE_RULES = ("Live from Nov 28, 2026 (owner's instruction): the loss-control package rules run the live book. Each market day, "
+              "after the close: (1) monthly rescore at the first close of each month: top quarter of the specialist-held "
+              "candidates by holders x size x stage at current value, equal weight; (2) rotate the stock sleeve into XBI when the "
+              "candidate basket trails XBI by 8+ points over 21 trading days, back when the gap turns positive; (3) half in cash "
+              "when XBI closes below its 200-day average; (4) confirmed deal targets sold, cash redeployed at the next rescore. "
+              "Orders fill at the next close with 10 bps slippage. The Nov 15 frozen rules continue as a comparison line.")
+MIN_TRADE = 0.001   # skip trades under 0.1% of the book (about $5)
+
+
+def cmd_decide():
+    s = load()
+    P = s["package"]; cands = P["cands"]
+    L = s.setdefault("live", {"since": None, "month": None, "rs_on": False, "last_decided": None, "decisions": []})
+    held = [t for t in s["positions"] if t != "XBI"]
+    px, _ = prices(sorted(set(cands) | set(s["positions"]) | {"XBI"}))
+    xh = prices(["XBI"], "1y")[0].get("XBI") or px["XBI"]
+    d = max(px["XBI"])
+    out = []
+    if L.get("last_decided") == d:
+        last = (L.get("decisions") or [{}])[-1]
+        out.append(f"Call: no new close since {d}. Standing call from that close: {last.get('call', 'HOLD')}.")
+        return _decision_out(out, [])
+    if L.get("since") is None:
+        L["since"] = d; L["month"] = d[:7]
+    vals = {t: pos["shares"] * (mark(px.get(t), d)[0] or pos["cost"] / pos["shares"]) for t, pos in s["positions"].items()}
+    nav = s["cash"] + sum(vals.values())
+    stock = sum(v for t, v in vals.items() if t != "XBI")
+    e_now = stock / nav if nav else 0
+    e, alt = pkg_signal({"cands": cands, "state": L}, px, xh, d)
+    sg = L["signal"]
+    pend_sell = {o["ticker"] for o in s["pending_orders"] if o["side"] == "sell"}
+    rescore = d[:7] != L["month"] or L.get("rebalance_due") or (e > 0 and stock < 0.01 * nav)   # coming back from XBI or cash buys the current top quarter
+    if rescore:
+        names = pkg_select(cands, px, d)
+        target = {t: nav * e / len(names) for t in names}
+        L["month"] = d[:7]; L["rebalance_due"] = False
+    elif abs(e - e_now) > 0.05:
+        k = (nav * e) / stock if stock else 0
+        target = {t: vals[t] * k for t in held if t not in pend_sell}
+    else:
+        target = None
+    orders = []
+    if target is not None:
+        alt_val = nav - sum(target.values())
+        target["XBI"] = alt_val if alt == "xbi" else 0.0
+        for t in sorted(set(target) | set(vals)):
+            if t in pend_sell:
+                continue
+            diff = target.get(t, 0.0) - vals.get(t, 0.0)
+            if abs(diff) < MIN_TRADE * nav and target.get(t, 0.0) > 0:
+                continue
+            c = mark(px.get(t), d)[0]
+            if diff < 0 and c:
+                full = target.get(t, 0.0) <= 0
+                orders.append({"side": "sell", "ticker": t, "shares": None if full else -diff / c, "dollars_est": round(-diff, 2)})
+            elif diff > 0 and t not in RESTRICTED:
+                orders.append({"side": "buy", "ticker": t, "dollars": round(diff, 2)})
+    why = "monthly rescore" if rescore else ("regime change" if target is not None else "")
+    for o in orders:
+        o.update({"reason": f"{why}, decided at the {d} close", "created": max(now_pt().date().isoformat(), d)})
+        s["pending_orders"].append({k: v for k, v in o.items() if k != "dollars_est" and v is not None})
+    sig = (f"Specialist-held candidates are {pct(sg.get('pool_minus_xbi_21d'))} against XBI over 21 trading days (rotate to XBI at -8.00%). "
+           f"XBI is {pct(sg.get('xbi_vs_200d'))} against its 200-day average (half to cash below it).")
+    if not orders:
+        call = "HOLD"
+        nxt = "Next monthly rescore at the first close of " + (dt.date.fromisoformat(d[:7] + "-01") + dt.timedelta(days=32)).strftime("%B") + "."
+        out.append(f"Call: HOLD. {sig} Book is {e_now*100:.0f}% in stocks, target {e*100:.0f}%. {nxt}")
+    else:
+        call = "REBALANCE" if rescore else ("DE-RISK" if e < e_now else "RE-RISK")
+        sells = [o["ticker"] for o in orders if o["side"] == "sell" and o["shares"] is None]
+        trims = [o["ticker"] for o in orders if o["side"] == "sell" and o["shares"] is not None]
+        buys = [o["ticker"] for o in orders if o["side"] == "buy" and o["ticker"] not in vals]
+        adds = [o["ticker"] for o in orders if o["side"] == "buy" and o["ticker"] in vals]
+        parts = [f"exit {', '.join(sells)}" if sells else "", f"new {', '.join(buys)}" if buys else "",
+                 f"trim {len(trims)}" if trims else "", f"add to {len(adds)}" if adds else ""]
+        out.append(f"Call: {call} ({why}). {sig} Target {e*100:.0f}% in stocks{', rest in XBI' if alt == 'xbi' and e < 1 else ', rest in cash' if e < 1 else ''}. "
+                   f"Orders queued to fill at the next close: {'; '.join(x for x in parts if x)}. Turnover {sum(abs(o.get('dollars') or o.get('dollars_est') or 0) for o in orders)/nav*100:.0f}% of the book.")
+    rk = []
+    for t in held:
+        p = px.get(t) or {}; ds = sorted(x for x in p if x <= d)
+        if len(ds) > 21:
+            rk.append((p[ds[-1]] / p[ds[-22]] - 1, t))
+    rk.sort()
+    if rk:
+        out.append("Book over 21 trading days: best " + ", ".join(f"{t} {pct(r)}" for r, t in rk[::-1][:3]) +
+                   "; worst " + ", ".join(f"{t} {pct(r)}" for r, t in rk[:3]) + ".")
+    out.append(f"Scores use the 13F holdings in the ledger ({P.get('cands_asof', 'unknown')}); the Q3 rebuild is still outstanding.")
+    L["last_decided"] = d
+    L.setdefault("decisions", []).append({"date": d, "call": call, "target_stocks": e, "alt": alt, "signal": sg,
+                                          "orders": [{k: v for k, v in o.items() if k in ("side", "ticker", "dollars", "dollars_est")} for o in orders]})
+    L["decisions"] = L["decisions"][-120:]
+    save(s)
+    _decision_out(out, orders)
+
+
+def _decision_out(lines, orders):
+    """Put the call at the top of the report written by `run`."""
+    rt, rh = os.path.join(HERE, "report.txt"), os.path.join(HERE, "report.html")
+    txt = "\n".join(lines)
+    blk = "<div style='font-family:Arial,sans-serif;font-size:14px;color:#1A1A1A;margin-bottom:12px'>" + "".join(
+        f"<p style='margin:0 0 6px 0'>{'<b>' if i == 0 else ''}{html.escape(l)}{'</b>' if i == 0 else ''}</p>" for i, l in enumerate(lines)) + "</div>"
+    if os.path.exists(rt):
+        body = open(rt).read()
+        if not body.startswith("Call:"):
+            open(rt, "w").write(txt + "\n\n" + body)
+            open(rh, "w").write(blk + open(rh).read())
+    print(txt)
+
+
 if __name__ == "__main__":
     a = sys.argv[1:]
     if not a:
         sys.exit(__doc__)
-    {"flags": lambda: cmd_flags(), "run": lambda: cmd_run(),
+    {"flags": lambda: cmd_flags(), "run": lambda: cmd_run(), "decide": lambda: cmd_decide(),
      "order": lambda: cmd_order(a[1], a[2], a[3] if len(a) > 3 else "manual")}.get(a[0], lambda: sys.exit(__doc__))()

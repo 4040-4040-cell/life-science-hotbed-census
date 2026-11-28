@@ -1,14 +1,16 @@
 {
  "version": "v1.1 frozen 2026-11-15",
  "rules": {
-  "universe": "top quarter (34 of 128) of the Nov 8, 2026 takeover scores, restricted list excluded",
+  "universe": "from Nov 28, 2026: top quarter of the specialist-held candidate pool (ledger package.cands), rescored monthly at current value",
   "weights": "equal weight, $5,000 start, fractional shares",
   "fills": "first market close after the order is queued; 10 bps slippage each side; no commission",
-  "deals": "sell a holding once a definitive agreement or tender offer is confirmed by a primary source; cash held to the next rebalance",
-  "rebalance": "quarterly, after each 13F rebuild; model weights frozen until then",
+  "deals": "sell a holding once a definitive agreement or tender offer is confirmed by a primary source; cash redeployed at the next monthly rescore",
+  "rebalance": "monthly at the first close of each month; candidate pool rebuilt after each 13F deadline in a working session",
   "benchmarks": "XBI; equal-weight basket of all 128 scored names; equal-weight basket of the 87 pool names with 5+ specialist holders; all bought at the same first close",
   "kill": "stop and review if the portfolio trails the pool basket by 10 points or more, or falls 35% from its peak",
-  "challengers_in_shadow": "Top 10 (concentrated) and XBI + tilt (XBI plus 5+ holders minus pool); added Nov 15, 2026 after the two-year backtest; not traded"
+  "challengers_in_shadow": "Top 10 (concentrated) and XBI + tilt (XBI plus 5+ holders minus pool); added Nov 15, 2026 after the two-year backtest; not traded",
+  "risk": "rotate stocks into XBI when the candidate basket trails XBI by 8+ points over 21 trading days, back when above zero; half cash when XBI is below its 200-day average",
+  "changed": "2026-11-28, owner's instruction to run an active daily strategy; the frozen Nov 15 rules continue as a comparison line"
  },
  "start_capital": 5000.0,
  "cash": 1.5916157281026244e-12,
@@ -2309,5 +2311,89 @@
     0.03270564915758167
    ]
   ]
- }
+ },
+ "frozen": {
+  "since": "2026-11-27",
+  "shares": {
+   "URGN": 5.2281819081065475,
+   "ZLAB": 6.259561636889391,
+   "IMCR": 5.08697754909259,
+   "MIRM": 1.6041920901702773,
+   "CYTK": 2.7630602147412824,
+   "MDGL": 0.34652304844276344,
+   "DBVT": 14.304957314293477,
+   "VERA": 5.447234394430626,
+   "RYTM": 1.366876736302512,
+   "ACAD": 7.8688758231276905,
+   "VOR": 7.744433928191565,
+   "GPCR": 7.911249952492946,
+   "IRON": 1.918160485935422,
+   "RLAY": 8.506769636235902,
+   "DYN": 8.79712045615533,
+   "VRDN": 4.929929920060201,
+   "MLYS": 10.110936794067033,
+   "NAMS": 7.549430196186741,
+   "CLDX": 5.1385768316821965,
+   "IDYA": 4.838995771337088,
+   "PHVS": 4.528727238526326,
+   "DNTH": 1.640557360332708,
+   "BCRX": 19.719719680240804,
+   "XENE": 3.7420252577125317,
+   "MBX": 2.7656609867807607,
+   "TSHA": 36.185199905860586,
+   "LBRX": 3.417350816882856,
+   "AMLX": 5.28460113733072,
+   "TYRA": 7.4423460799287735,
+   "KRYS": 0.49315848142931856,
+   "OCUL": 24.444577640231948,
+   "AVBP": 12.70864287351159,
+   "RAPP": 5.91909394108759,
+   "NKTR": 4.031611185998737
+  },
+  "cash": 1.5916157281026244e-12,
+  "note": "The Nov 15 frozen book as held at the Nov 27 close, buy and hold. Deal targets keep their last price after delisting (cash-equivalent)."
+ },
+ "live": {
+  "since": "2026-11-27",
+  "month": "2026-11",
+  "rs_on": false,
+  "last_decided": "2026-11-27",
+  "decisions": [
+   {
+    "date": "2026-11-27",
+    "call": "HOLD",
+    "target_stocks": 1.0,
+    "alt": "cash",
+    "signal": {
+     "date": "2026-11-27",
+     "pool_minus_xbi_21d": -0.0077,
+     "xbi_vs_200d": 0.1004
+    },
+    "orders": []
+   }
+  ],
+  "rebalance_due": false,
+  "rules": null,
+  "signal": {
+   "date": "2026-11-27",
+   "pool_minus_xbi_21d": -0.0077,
+   "xbi_vs_200d": 0.1004
+  }
+ },
+ "rules_v1_frozen_2026_11_15": {
+  "universe": "top quarter (34 of 128) of the Nov 8, 2026 takeover scores, restricted list excluded",
+  "weights": "equal weight, $5,000 start, fractional shares",
+  "fills": "first market close after the order is queued; 10 bps slippage each side; no commission",
+  "deals": "sell a holding once a definitive agreement or tender offer is confirmed by a primary source; cash held to the next rebalance",
+  "rebalance": "quarterly, after each 13F rebuild; model weights frozen until then",
+  "benchmarks": "XBI; equal-weight basket of all 128 scored names; equal-weight basket of the 87 pool names with 5+ specialist holders; all bought at the same first close",
+  "kill": "stop and review if the portfolio trails the pool basket by 10 points or more, or falls 35% from its peak",
+  "challengers_in_shadow": "Top 10 (concentrated) and XBI + tilt (XBI plus 5+ holders minus pool); added Nov 15, 2026 after the two-year backtest; not traded"
+ },
+ "rule_changes": [
+  {
+   "date": "2026-11-28",
+   "change": "Promoted the loss-control package rules (R4, R5, R11) from shadow to the live book before their two-quarter trial ended, on the owner's instruction. Daily `engine.py decide` sets the call and queues orders."
+  }
+ ]
 }
